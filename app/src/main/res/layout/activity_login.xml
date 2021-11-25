@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
                 android:padding="0dp"
-                android:text="Forgot password?"
+                android:text="@string/forgot_password"
                 android:textAllCaps="false"
                 android:textSize="13dp" />
 
@@ -118,7 +118,7 @@
                 android:layout_alignParentRight="true"
                 android:fontFamily="@font/roboto_light"
                 android:padding="0dp"
-                android:text="New user? Sign up!"
+                android:text="@string/sign_up"
                 android:textAllCaps="false"
                 android:textSize="13dp" />
         </RelativeLayout>
