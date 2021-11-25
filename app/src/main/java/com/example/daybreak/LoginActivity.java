@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
                     passwordTextInput.setError("Wrong password!");
                 } else {
                     passwordTextInput.setError(null); // Clear the error
-                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent i = new Intent(getApplicationContext(), MainActivity2.class);
                     startActivity(i);
                     finish();
                 }
