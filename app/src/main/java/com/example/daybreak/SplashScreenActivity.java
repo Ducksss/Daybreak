@@ -17,7 +17,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     // Variables
     Animation topAnimation, bottomAnimation;
     ImageView image;
-    TextView logo, slogan;
+    TextView app_name, app_slogan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,19 +26,18 @@ public class SplashScreenActivity extends AppCompatActivity {
         // Launch the layout -> splash.xml
         setContentView(R.layout.activity_splashscreen);
 
-
         // Animations
         topAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
         // Hooks
-        image = findViewById(R.id.daybreak);
-        slogan = findViewById(R.id.slogan);
-        logo = findViewById(R.id.company_name);
+        image = findViewById(R.id.app_logo);
+        app_slogan = findViewById(R.id.app_slogan);
+        app_name = findViewById(R.id.app_name);
 
         image.setAnimation(topAnimation);
-        logo.setAnimation(topAnimation);
-        slogan.setAnimation(bottomAnimation);
+        app_name.setAnimation(topAnimation);
+        app_slogan.setAnimation(bottomAnimation);
 
         // Launching Main Activity Class
         Thread splashThread = new Thread(() -> {
@@ -47,8 +46,9 @@ public class SplashScreenActivity extends AppCompatActivity {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             } finally {
-                Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                Intent intent = new Intent(SplashScreenActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         // To Start the thread

@@ -8,7 +8,7 @@
     tools:context=".SplashScreenActivity">
 
     <TextView
-        android:id="@+id/company_name"
+        android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="148dp"
@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/daybreak"
+        android:id="@+id/app_logo"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="216dp"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/slogan"
+        android:id="@+id/app_slogan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -48,6 +48,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daybreak" />
+        app:layout_constraintTop_toBottomOf="@+id/app_logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
