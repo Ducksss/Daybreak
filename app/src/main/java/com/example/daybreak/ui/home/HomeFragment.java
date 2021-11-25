@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
                 mp.start();
 
                 videoView.setScaleX(1f);
-                videoView.setScaleY(2.16667f);
+                videoView.setScaleY(2f);
             }
         });
 

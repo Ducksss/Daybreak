@@ -45,6 +45,29 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
+        <ImageView
+            android:id="@+id/start_focus_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_greeting"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="530dp"
+            android:background="@drawable/rounded_corner_view"
+            android:padding="10dp"
+            android:src="@drawable/ic_baseline_access_time_24" />
+
+        <TextView
+            android:id="@+id/start_focus_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/start_focus_button"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/roboto_light"
+            android:text="Start focus..."
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:textStyle="italic" />
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

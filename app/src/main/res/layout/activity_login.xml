@@ -49,7 +49,7 @@
         <!-- Email field -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/username_text_input"
-            style="@style/Widget.Shrine.TextInputLayout"
+            style="@style/Widget.DayBreak.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
@@ -67,7 +67,7 @@
         <!-- Password field -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input"
-            style="@style/Widget.Shrine.TextInputLayout"
+            style="@style/Widget.DayBreak.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -102,7 +102,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/forgot_password_button"
-                style="@style/Widget.Shrine.Button.TextButton"
+                style="@style/Widget.DayBreak.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_light"
@@ -113,7 +113,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/sign_up_button"
-                style="@style/Widget.Shrine.Button.TextButton"
+                style="@style/Widget.DayBreak.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
