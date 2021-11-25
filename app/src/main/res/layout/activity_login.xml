@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,6 +17,7 @@
         android:paddingTop="16dp">
 
         <ImageView
+            android:id="@+id/app_logo"
             android:layout_width="230dp"
             android:layout_height="230dp"
             android:layout_gravity="center_horizontal"
@@ -25,6 +25,7 @@
             app:srcCompat="@drawable/logo_daybreak2" />
 
         <TextView
+            android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
@@ -80,11 +81,9 @@
 
         <!-- Button for sign in -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/next_button"
+            android:id="@+id/sign_in_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:layout_marginTop="4dp"
             android:background="@color/light_green"
             android:fontFamily="@font/roboto_light"
@@ -99,6 +98,18 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/forgot_password_button"
+                style="@style/Widget.Shrine.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
+                android:padding="0dp"
+                android:text="Forgot password?"
+                android:textAllCaps="false"
+                android:textSize="13dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sign_up_button"
                 style="@style/Widget.Shrine.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,17 +118,6 @@
                 android:fontFamily="@font/roboto_light"
                 android:padding="0dp"
                 android:text="New user? Sign up!"
-                android:textAllCaps="false"
-                android:textSize="13dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/cancel_button"
-                style="@style/Widget.Shrine.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_light"
-                android:padding="0dp"
-                android:text="Forgot password?"
                 android:textAllCaps="false"
                 android:textSize="13dp" />
         </RelativeLayout>
