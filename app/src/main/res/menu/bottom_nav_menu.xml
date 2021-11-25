@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/navigation_home"
         android:enabled="true"
@@ -11,11 +10,11 @@
         android:id="@+id/navigation_dashboard"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_explore_24"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_explore" />
 
     <item
         android:id="@+id/navigation_notifications"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_account_circle_24"
-        android:title="@string/title_notifications" />
+        android:title="@string/title_profile" />
 </menu>

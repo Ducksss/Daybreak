@@ -74,4 +74,9 @@
         <item name="android:background">?attr/colorAccent</item>
     </style>
 
+    <style name="Theme.Daybreak.BottomNavigationBar" parent="">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 </resources>

@@ -21,7 +21,7 @@
             android:layout_width="230dp"
             android:layout_height="230dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="2dp"
             app:srcCompat="@drawable/logo_daybreak2" />
 
         <TextView
@@ -31,14 +31,14 @@
             android:layout_gravity="start"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/roboto_light"
-            android:text="Hello there,\nwelcome back!"
+            android:text="@string/welcome_text"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/sign_in_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start"
             android:layout_marginBottom="2dp"
             android:fontFamily="@font/roboto_light"
             android:text="Sign in to continue"
@@ -46,6 +46,7 @@
 
         <!-- Email field -->
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username_text_input"
             style="@style/Widget.Shrine.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

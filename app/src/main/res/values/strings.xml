@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">Daybreak</string>
     <string name="title_activity_main2">MainActivity2</string>
+
+    <!-- Login page -->
+    <string name="welcome_text">Hello there,\nwelcome back!</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_up">New user? Sign up!</string>
+
+    <!-- Navigation bar -->
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
-    <string name="title_activity_main3">MainActivity3</string>
-    <string name="title_activity_experiment">Experiment</string>
+    <string name="title_explore">Explore</string>
+    <string name="title_profile">Profile</string>
 </resources>
