@@ -14,19 +14,7 @@
         <!-- Customize your theme here. -->
 
     </style>
-    <style name="Theme.App" parent="Theme.MaterialComponents.*">
-        ...
-        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
-    </style>
 
-    <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView</item>
-    </style>
-
-    <style name="ThemeOverlay.App.BottomNavigationView" parent="">
-        <item name="colorPrimary">@color/shrine_pink_100</item>
-        <item name="colorOnPrimary">@color/shrine_pink_900</item>
-    </style>
     <!-- https://stackoverflow.com/questions/27623627/how-can-i-make-the-status-bar-white-with-black-icons -->
     <style name="Theme.Daybreak.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowLightStatusBar">true</item>
