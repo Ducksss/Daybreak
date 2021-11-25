@@ -10,7 +10,7 @@
     <color name="light_green">#8DBFB5</color>
 
     <color name="colorPrimary">#E0E0E0</color>
-    <color name="colorPrimaryDark">#FBB8AC</color>
+    <color name="colorPrimaryDark">#8e0038</color>
     <color name="colorAccent">#FEDBD0</color>
     <color name="textColorPrimary">#442C2E</color>
     <color name="toolbarIconColor">@color/textColorPrimary</color>

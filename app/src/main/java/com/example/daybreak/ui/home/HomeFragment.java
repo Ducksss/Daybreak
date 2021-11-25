@@ -32,19 +32,28 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         VideoView videoView = view.findViewById(R.id.videoView);
-        String videoPath = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.aaaa;
+        String videoPath = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.trees;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
         MediaController mediaController = new MediaController(getActivity());
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
-        videoView.start();
 
         videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
             public void onPrepared(MediaPlayer mp) {
-                mp.setLooping(true);
+                mp.start();
+
+                videoView.setScaleX(1f);
+                videoView.setScaleY(2.16667f);
+            }
+        });
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mp.start();
             }
         });
 

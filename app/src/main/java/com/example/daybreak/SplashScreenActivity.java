@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private static int TIMEOUT = 0;
+    private static int TIMEOUT = 3000;
 
     // Variables
     Animation topAnimation, bottomAnimation;

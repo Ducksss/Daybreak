@@ -12,37 +12,38 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Daybreak">
+        android:theme="@style/Fullscreen">
+
         <!-- SPLASHSCREEN -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/Theme.Daybreak.NoActionBar">
+            android:fitsSystemWindows="true"
+            android:theme="@style/Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <!-- LOGIN -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.Daybreak.NoActionBar"
+            android:fitsSystemWindows="true"
+            android:theme="@style/Fullscreen"
             android:windowLightStatusBar="true" />
+
         <!-- MAIN ACTIVITY -->
-        <!-- MAIN ACTIVITY2 -->
         <activity
             android:name=".MainActivity"
-            android:layout_marginTop="?android:attr/actionBarSize"
-            android:exported="false"
-            android:label="@string/title_activity_main2" />
+            android:exported="true"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Fullscreen" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
-
-
 </manifest>
