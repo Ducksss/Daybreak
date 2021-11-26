@@ -32,7 +32,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         VideoView videoView = view.findViewById(R.id.videoView);
-        String videoPath = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.trees;
+        String videoPath = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.treesvideo;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
 
