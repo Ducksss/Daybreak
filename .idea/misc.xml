@@ -4,33 +4,36 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.28888888888888886" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_explore_24.xml" value="0.221875" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.3828125" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.3046875" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_timer_24.xml" value="0.3046875" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.221875" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.221875" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_launcher_background.xml" value="0.28888888888888886" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.221875" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/rounded_corner_view.xml" value="0.3769230769230769" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_main2.xml" value="0.22" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_splashscreen.xml" value="0.33" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_trial.xml" value="0.20572916666666666" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_dashboard.xml" value="0.22" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_home.xml" value="0.33" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_notifications.xml" value="0.20572916666666666" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_splashscreen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/color_selector.xml" value="0.221875" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/drawable_selector.xml" value="0.3828125" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.221875" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_explore_24.xml" value="0.3" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.3" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.3" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.221875" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_bottomnavbar.xml" value="0.3828125" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.221875" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.221875" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37864583333333335" />
-        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_navbar.xml" value="0.3828125" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_newone.xml" value="0.3828125" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.221875" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_resource_this.xml" value="0.3828125" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_untitled__887_x_372_px_.xml" value="0.221875" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/item_bg.xml" value="0.3828125" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/drawable/rounded_corner_view.xml" value="0.221875" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/layout/activity_login.xml" value="0.3625" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/layout/activity_splashscreen.xml" value="0.28306159420289856" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_dashboard.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_home.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20572916666666666" />
         <entry key="..\:/Users/mchan/StudioProjects/Daybreak/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.36666666666666664" />
       </map>
     </option>

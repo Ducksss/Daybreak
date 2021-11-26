@@ -9,8 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_green">#8DBFB5</color>
 
+    <color name="colorInactive">#939393</color>
     <color name="colorPrimary">#E0E0E0</color>
-    <color name="colorPrimaryDark">#8e0038</color>
+    <color name="colorPrimaryDark">#E8DEF8</color>
     <color name="colorAccent">#FEDBD0</color>
     <color name="textColorPrimary">#442C2E</color>
     <color name="toolbarIconColor">@color/textColorPrimary</color>
