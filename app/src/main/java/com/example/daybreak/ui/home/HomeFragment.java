@@ -31,7 +31,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        VideoView videoView = view.findViewById(R.id.videoView);
+        VideoView videoView = view.findViewById(R.id.animated_video_background);
         String videoPath = "android.resource://" + getActivity().getPackageName() + "/" + R.raw.treesvideo;
         Uri uri = Uri.parse(videoPath);
         videoView.setVideoURI(uri);
@@ -46,7 +46,7 @@ public class HomeFragment extends Fragment {
                 mp.start();
 
                 videoView.setScaleX(1f);
-                videoView.setScaleY(2f);
+                videoView.setScaleY(1.3f);
             }
         });
 
