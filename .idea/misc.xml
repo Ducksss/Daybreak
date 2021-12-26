@@ -3,11 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/color_selector.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/drawable_selector.xml" value="0.24739583333333334" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.23125" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/activity_splashscreen.xml" value="0.33" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_notifications.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/videoview_recycleritem.xml" value="0.22" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/menu/bottom_nav_menu.xml" value="0.23125" />
       </map>
     </option>
   </component>

@@ -45,7 +45,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="500dp">
+        android:layout_marginTop="525dp">
 
         <ImageView
             android:id="@+id/start_focus_button"
