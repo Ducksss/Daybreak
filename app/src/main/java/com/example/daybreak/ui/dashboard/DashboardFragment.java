@@ -9,33 +9,69 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.daybreak.R;
 import com.example.daybreak.databinding.FragmentDashboardBinding;
+import com.google.android.material.tabs.TabLayout;
 
 public class DashboardFragment extends Fragment {
 
+    TabLayout tabLayout;
+    ViewPager2 viewPager2;
+    DashboardFragmentAdapter adapter;
     private DashboardViewModel dashboardViewModel;
     private FragmentDashboardBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
 
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        final TextView textView = binding.textDashboard;
-        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        // Tab layout and View pager
+        tabLayout = view.findViewById(R.id.tab_layout);
+        viewPager2 = view.findViewById(R.id.view_pager2);
+        FragmentManager fm = getParentFragmentManager();
+
+        adapter = new DashboardFragmentAdapter(fm, getLifecycle());
+        viewPager2.setAdapter(adapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Explore"));
+        tabLayout.addTab(tabLayout.newTab().setText("Meditation"));
+        tabLayout.addTab(tabLayout.newTab().setText("Sleep"));
+        tabLayout.addTab(tabLayout.newTab().setText("Sound"));
+        tabLayout.addTab(tabLayout.newTab().setText("Delta1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Delta2"));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager2.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
-        return root;
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+        });
+
+        return view;
     }
 
     @Override
