@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".LoginActivity">
+    android:paddingTop="?attr/actionBarSize"
+    tools:context=".SignupActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,24 +13,23 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:orientation="vertical"
-        android:padding="24dp"
-        android:paddingTop="16dp">
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
 
         <ImageView
-            android:id="@+id/app_logo"
-            android:layout_width="230dp"
-            android:layout_height="230dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="2dp"
-            app:srcCompat="@drawable/logo_daybreak2" />
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
-            android:id="@+id/welcome_text"
+            android:id="@+id/signup_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:fontFamily="@font/poppins"
-            android:text="Welcome"
+            android:paddingTop="30dp"
+            android:text="Create a daybreak account"
             android:textColor="#000000"
             android:textFontWeight="900"
             android:textSize="30sp" />
@@ -42,9 +41,9 @@
             android:layout_marginTop="-7.5dp"
             android:layout_marginBottom="7.5dp"
             android:fontFamily="@font/poppins_light"
-            android:text="Nice to see you again!"
+            android:text="Enter your user account information"
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/sign_in_text"
@@ -52,8 +51,26 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:fontFamily="@font/poppins_light"
-            android:text="Sign in to continue"
+            android:text="Sign up to continue"
             android:textSize="14sp" />
+
+        <!-- Username field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username_text_input"
+            style="@style/Widget.DayBreak.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:hint="Username"
+            app:startIconDrawable="@drawable/ic_baseline_person_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Email field -->
         <com.google.android.material.textfield.TextInputLayout
@@ -61,14 +78,17 @@
             style="@style/Widget.DayBreak.TextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
+            android:layout_marginBottom="2dp"
             android:hint="Email"
+            app:boxStrokeColor="@color/light_green"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black"
             app:startIconDrawable="@drawable/ic_baseline_email_24">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="textEmailAddress"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -80,7 +100,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            app:boxStrokeColor="@color/light_green"
+            app:boxStrokeWidthFocused="2dp"
             app:helperTextEnabled="true"
+            app:hintTextColor="@color/black"
             app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -91,37 +114,22 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Button for sign in -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/sign_in_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@color/light_green"
-            android:fontFamily="@font/roboto_light"
-            android:text="Sign in"
-            android:textAllCaps="false"
-            app:backgroundTint="@color/light_green"
-            app:cornerRadius="8dp" />
-
-        <!-- Forgot password and reset password -->
+        <!-- Remember me  and forgot password-->
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/forgot_password_button"
-                style="@style/Widget.DayBreak.Button.TextButton"
+            <CheckBox
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_light"
-                android:padding="0dp"
-                android:text="@string/forgot_password"
-                android:textAllCaps="false"
+                android:gravity="center"
+                android:text="Remember me"
                 android:textSize="13dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/sign_up_button"
+                android:id="@+id/forgot_password_button"
                 style="@style/Widget.DayBreak.Button.TextButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -129,9 +137,22 @@
                 android:layout_alignParentRight="true"
                 android:fontFamily="@font/roboto_light"
                 android:padding="0dp"
-                android:text="@string/sign_up"
+                android:text="@string/forgot_password"
                 android:textAllCaps="false"
                 android:textSize="13dp" />
         </RelativeLayout>
+
+        <!-- Button for sign in -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sign_up_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/light_green"
+            android:fontFamily="@font/roboto_light"
+            android:text="Sign up"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/light_green"
+            app:cornerRadius="8dp" />
     </LinearLayout>
 </ScrollView>

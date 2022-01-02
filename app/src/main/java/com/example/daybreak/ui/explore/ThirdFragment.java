@@ -1,4 +1,4 @@
-package com.example.daybreak.ui.dashboard;
+package com.example.daybreak.ui.explore;
 
 import android.os.Bundle;
 

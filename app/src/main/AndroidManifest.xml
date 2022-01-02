@@ -13,8 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Fullscreen">
-
-        <!-- SPLASHSCREEN -->
+        <activity
+            android:name=".OnboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExploreRecycleritemActivity"
+            android:exported="false" /> <!-- SPLASHSCREEN -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"
@@ -25,17 +32,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- LOGIN -->
+        </activity> <!-- LOGIN -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"
             android:fitsSystemWindows="true"
             android:theme="@style/Fullscreen"
-            android:windowLightStatusBar="true" />
-
-        <!-- MAIN ACTIVITY -->
+            android:windowLightStatusBar="true" /> <!-- MAIN ACTIVITY -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -46,4 +49,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

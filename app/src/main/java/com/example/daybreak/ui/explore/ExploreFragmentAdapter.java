@@ -1,16 +1,13 @@
-package com.example.daybreak.ui.dashboard;
-
-import android.widget.Switch;
+package com.example.daybreak.ui.explore;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class DashboardFragmentAdapter extends FragmentStateAdapter {
-    public DashboardFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+public class ExploreFragmentAdapter extends FragmentStateAdapter {
+    public ExploreFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 

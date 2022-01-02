@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:clipToPadding="false"
     android:orientation="vertical"
-    tools:context=".ui.dashboard.DashboardFragment">
+    tools:context=".ui.explore.ExploreFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"

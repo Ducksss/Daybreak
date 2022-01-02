@@ -1,43 +1,38 @@
-package com.example.daybreak.ui.dashboard;
+package com.example.daybreak.ui.explore;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.daybreak.R;
-import com.example.daybreak.databinding.FragmentDashboardBinding;
+import com.example.daybreak.databinding.FragmentExploreBinding;
 import com.google.android.material.tabs.TabLayout;
 
-public class DashboardFragment extends Fragment {
+public class ExploreFragment extends Fragment {
 
     TabLayout tabLayout;
     ViewPager2 viewPager2;
-    DashboardFragmentAdapter adapter;
-    private DashboardViewModel dashboardViewModel;
-    private FragmentDashboardBinding binding;
+    ExploreFragmentAdapter adapter;
+    private ExploreViewModel exploreViewModel;
+    private FragmentExploreBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_explore, container, false);
 
         // Tab layout and View pager
         tabLayout = view.findViewById(R.id.tab_layout);
         viewPager2 = view.findViewById(R.id.view_pager2);
         FragmentManager fm = getParentFragmentManager();
 
-        adapter = new DashboardFragmentAdapter(fm, getLifecycle());
+        adapter = new ExploreFragmentAdapter(fm, getLifecycle());
         viewPager2.setAdapter(adapter);
 
         tabLayout.addTab(tabLayout.newTab().setText("Explore"));
