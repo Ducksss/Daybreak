@@ -115,7 +115,7 @@ public class FirstFragment extends Fragment {
         meditationSeriesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, true));
         //Create adapter
         RecyclerExploreCardAdapter myRecyclerViewAdapter2 = new RecyclerExploreCardAdapter(meditationSeriesItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
-            //Handling clicks
+            //Handling clicks navigation
             @Override
             public void onItemClicked(RecyclerExploreCardItem country) {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
