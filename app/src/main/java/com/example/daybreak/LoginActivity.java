@@ -3,6 +3,7 @@ package com.example.daybreak;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -22,10 +23,12 @@ public class LoginActivity extends AppCompatActivity {
 
         final TextInputLayout passwordTextInput = findViewById(R.id.password_text_input);
         final TextInputEditText passwordEditText = findViewById(R.id.password_edit_text);
-        MaterialButton nextButton = findViewById(R.id.sign_in_button);
+
+        Bundle animationBundle = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_left,
+                R.animator.slide_out_right).toBundle();
 
         // Set an error if the password is less than 8 characters.
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!isPasswordValid(passwordEditText.getText())) {

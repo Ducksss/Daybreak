@@ -2,6 +2,7 @@ package com.example.daybreak;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,13 +16,16 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        Bundle animationBundle = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_left,
+                R.animator.slide_out_right).toBundle();
+
         // Back button
         ImageView sign_in_button = (ImageView) findViewById(R.id.back_button);
         sign_in_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
                 Intent intent = new Intent(SignupActivity.this, OnboardActivity.class);
-                startActivity(intent);
+                startActivity(intent, animationBundle);
             }
         });
 
@@ -31,7 +35,7 @@ public class SignupActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Do something in response to button click
                 Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-                startActivity(intent);
+                startActivity(intent, animationBundle);
             }
         });
     }

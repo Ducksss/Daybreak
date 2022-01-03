@@ -22,5 +22,10 @@
         android:name="com.example.daybreak.ui.notifications.NotificationsFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_notifications" />
+    <activity
+        android:id="@+id/innerExploreActivity"
+        android:name="com.example.daybreak.InnerExploreActivity"
+        android:label="inner_explore"
+        tools:layout="@layout/activity_inner_explore" />
 
 </navigation>

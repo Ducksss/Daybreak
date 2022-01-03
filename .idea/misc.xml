@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_onboard.xml" value="0.190625" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_first.xml" value="0.21331521739130435" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/inner_explore.xml" value="0.21331521739130435" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/color_selector.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/drawable_selector.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.20729166666666668" />

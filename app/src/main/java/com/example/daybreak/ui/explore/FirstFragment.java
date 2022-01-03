@@ -1,8 +1,10 @@
 package com.example.daybreak.ui.explore;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,7 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.daybreak.InnerExploreActivity;
+import com.example.daybreak.MainActivity;
+import com.example.daybreak.OnboardActivity;
 import com.example.daybreak.R;
+import com.example.daybreak.SignupActivity;
+import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
@@ -77,6 +84,16 @@ public class FirstFragment extends Fragment {
         // Recyclerview configs
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
 
+        // Find View of the MaterialCard
+        MaterialCardView materialCardView = view.findViewById(R.id.card_view);
+        materialCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
+                startActivity(intent);
+            }
+        });
+
         // SINGLE SERIES
         singlePracticeRecyclerView = view.findViewById(R.id.selected_podcasts);
         // Set Layout Manager to RecyclerView
@@ -86,7 +103,8 @@ public class FirstFragment extends Fragment {
             //Handling clicks
             @Override
             public void onItemClicked(RecyclerExploreCardItem country) {
-                Toast.makeText(getActivity(), country.getTitle(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
+                startActivity(intent);
             }
         });
         singlePracticeRecyclerView.setAdapter(myRecyclerViewAdapter);
@@ -100,7 +118,8 @@ public class FirstFragment extends Fragment {
             //Handling clicks
             @Override
             public void onItemClicked(RecyclerExploreCardItem country) {
-                Toast.makeText(getActivity(), country.getTitle(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
+                startActivity(intent);
             }
         });
         meditationSeriesRecyclerView.setAdapter(myRecyclerViewAdapter2);

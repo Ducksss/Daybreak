@@ -21,6 +21,9 @@
         <item name="android:windowTranslucentNavigation">false</item>
     </style>
 
+    <style name="Fullscreen2" parent="Theme.MaterialComponents.DayNight">
+    </style>
+
     <style name="Widget.DayBreak.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.DayBreak.TextInputLayout.HintText</item>
         <item name="hintTextColor">@color/textColorPrimary</item>
