@@ -35,6 +35,7 @@ public class HomeFragment extends Fragment implements StartTimer.FragmentAListen
     private RecyclerVideoViewItemAdapter RecyclerVideoViewItemAdapter;
     private StartTimer StartTimer;
     private FragmentB fragmentB;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -45,13 +46,13 @@ public class HomeFragment extends Fragment implements StartTimer.FragmentAListen
         ViewPager2 = view.findViewById(R.id.animated_video_background);
         bindVideoData();
         ViewPager2.setAdapter(new RecyclerVideoViewItemAdapter(RecyclerVideoViewItemsList));
-        StartTimer = new StartTimer();
-        fragmentB = new FragmentB();
-
-        getParentFragmentManager().beginTransaction()
-                .replace(R.id.container_a, StartTimer)
-                .replace(R.id.container_b, fragmentB)
-                .commit();
+//        StartTimer = new StartTimer();
+//        fragmentB = new FragmentB();
+//
+//        getParentFragmentManager().beginTransaction()
+//                .replace(R.id.container_a, StartTimer)
+//                .replace(R.id.container_b, fragmentB)
+//                .commit();
 
         return view;
     }
@@ -68,10 +69,12 @@ public class HomeFragment extends Fragment implements StartTimer.FragmentAListen
         RecyclerVideoViewItemsList.add(new RecyclerVideoViewItem("Water flowing in the river", "“Courage is like a muscle. We strengthen it by use.” —Ruth Gordo", "android.resource://" + getActivity().getPackageName() + "/" + R.raw.waves));
         RecyclerVideoViewItemsList.add(new RecyclerVideoViewItem("Lofi in da hood", "More is lost by indecision than wrong decision.” —Marcus Tullius Cicero", "android.resource://" + getActivity().getPackageName() + "/" + R.raw.video));
     }
+
     @Override
     public void onInputASent(CharSequence input) {
         StartTimer.updateEditText(input);
     }
+
     @Override
     public void onInputBSent(CharSequence input) {
         fragmentB.updateEditText(input);

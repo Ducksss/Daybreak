@@ -30,23 +30,23 @@
                 android:paddingHorizontal="30dp">
 
                 <TextView
-                    android:id="@+id/app_name"
+                    android:id="@+id/onboard_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="70dp"
                     android:fontFamily="@font/roboto"
-                    android:text="Welcome"
+                    android:text="@string/onboard_title"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textFontWeight="600"
                     android:textSize="40dp" />
 
                 <TextView
-                    android:id="@+id/app_slogan"
+                    android:id="@+id/onboard_subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="Take back the control of your life."
+                    android:text="@string/onboard_subtitle"
                     android:textAlignment="center"
                     android:textColor="#333333"
                     android:textFontWeight="600"
@@ -69,9 +69,8 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="#007BFF"
                 android:fontFamily="@font/roboto"
-                android:onClick="ButtonPress"
                 android:padding="15dp"
-                android:text="Sign in"
+                android:text="@string/signin_button"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="13dp"
@@ -87,7 +86,7 @@
                 android:layout_marginTop="-15dp"
                 android:fontFamily="@font/roboto"
                 android:padding="15dp"
-                android:text="@string/sign_up"
+                android:text="@string/signup_button"
                 android:textAllCaps="false"
                 android:textSize="13dp"
                 app:cornerRadius="30dp" />

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -26,6 +27,16 @@ public class LoginActivity extends AppCompatActivity {
 
         Bundle animationBundle = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_left,
                 R.animator.slide_out_right).toBundle();
+
+        // Back button to navigate back to the onboarding screens
+        ImageView back_button = (ImageView) findViewById(R.id.back_button);
+        back_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Do something in response to button click
+                Intent intent = new Intent(LoginActivity.this, OnboardActivity.class);
+                startActivity(intent, animationBundle);
+            }
+        });
 
         // Set an error if the password is less than 8 characters.
         findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {

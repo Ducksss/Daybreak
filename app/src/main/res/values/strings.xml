@@ -2,15 +2,44 @@
     <string name="app_name">Daybreak</string>
     <string name="title_activity_main2">MainActivity2</string>
 
-    <!-- Login page -->
-    <string name="welcome_text">Hello there,\nwelcome back!</string>
+    <!-- Onboard page -->
+    <string name="onboard_title">Welcome</string>
+    <string name="onboard_subtitle">Take back the control of your life.</string>
+    <string name="signin_button">Sign in</string>
+    <string name="signup_button">Sign up</string>
+
+    <!-- Login / Sign in page -->
+    <string name="signin_title">Welcome</string>
+    <string name="signin_subtitle">Nice to see you again.</string>
+    <string name="signin_text">Sign in to continue</string>
     <string name="forgot_password">Forgot password?</string>
     <string name="sign_up">New user? Sign up!</string>
+    <string name="welcome_text">Hello there,\nwelcome back!</string>
+
+    <!-- Sign up page -->
+    <string name="signup_title">Create a daybreak account</string>
+    <string name="signup_subtitle">Enter your user account information</string>
+    <string name="signup_text">Sign up to continue</string>
+    <string name="remember_me_checkbox">Remember me</string>
+
+    <!-- Home page -->
+
+
+    <!-- Explore page -->
+    <string name="weekly_recommendation_title">Weekly Recommendation:</string>
+    <string name="weekly_recommendation_subtitle">Our weekly recommended picks</string>
+    <string name="weekly_recommendation_card_title">Featured</string>
+    <string name="weekly_recommendation_card_subtitle">Mind Before Matter - Jollie Choo</string>
+    <string name="single_practice_title">Single Practice</string>
+    <string name="single_practice_subtitle">Slow down, energy up</string>
+    <string name="meditation_series_title">Meditation Series</string>
+    <string name="meditation_series_subtitle">Go deeper into meditation</string>
 
     <!-- Navigation bar -->
     <string name="title_home">Home</string>
     <string name="title_explore">Explore</string>
     <string name="title_profile">Profile</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="large_text">

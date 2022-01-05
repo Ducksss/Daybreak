@@ -24,7 +24,7 @@
             android:id="@+id/explore_card_image"
             android:layout_width="240dp"
             android:layout_height="240dp"
-            android:contentDescription="Relaxed Cat"
+            android:contentDescription="Background image"
             android:scaleType="centerCrop"
             android:src="@drawable/background_image_1" />
 
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
-                android:text="Curiosity"
+                android:text="Title"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textFontWeight="800"
                 android:textSize="16sp" />
@@ -50,7 +50,7 @@
                 android:id="@+id/explore_card_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10 min • singles"
+                android:text="Timing • SUBTITLE"
                 android:textAllCaps="true"
                 android:textAppearance="?attr/textAppearanceBody2"
                 android:textColor="?android:attr/textColorSecondary"

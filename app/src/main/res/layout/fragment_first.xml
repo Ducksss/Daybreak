@@ -67,7 +67,7 @@
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginTop="20dp"
                     android:fontFamily="@font/roboto"
-                    android:text="Weekly Recommendation:"
+                    android:text="@string/weekly_recommendation_title"
                     android:textColor="@color/black"
                     android:textFontWeight="800"
                     android:textSize="18dp" />
@@ -79,7 +79,7 @@
                     android:layout_below="@+id/weekly_recommendation_title"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/roboto_light"
-                    android:text="Our weekly recommended picks"
+                    android:text="@string/weekly_recommendation_subtitle"
                     android:textColor="#808080"
                     android:textSize="12dp" />
 
@@ -103,7 +103,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="300dp"
-                            android:contentDescription="Relaxed Cat"
+                            android:contentDescription="Calm background image"
                             android:scaleType="centerCrop"
                             android:src="@drawable/calm_background_3" />
 
@@ -115,6 +115,7 @@
                             android:padding="13dp">
 
                             <ImageView
+                                android:id="@+id/weekly_recommendation_author_image"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
                                 android:src="@drawable/ic_baseline_account_circle_24" />
@@ -122,23 +123,25 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:layout_marginLeft="8dp">
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
 
                                 <!-- Title, secondary and supporting text -->
                                 <TextView
+                                    android:id="@+id/weekly_recommendation_card_title"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/roboto_bold"
-                                    android:text="Featured"
+                                    android:text="@string/weekly_recommendation_card_title"
                                     android:textColor="#EBEBEB"
                                     android:textFontWeight="800"
                                     android:textSize="12sp" />
 
                                 <TextView
+                                    android:id="@+id/weekly_recommendation_card_subtitle"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Mind Before Matter - Choo Jollie"
+                                    android:text="@string/weekly_recommendation_card_subtitle"
                                     android:textAppearance="?attr/textAppearanceBody2"
                                     android:textColor="@color/white"
                                     android:textSize="18sp"
@@ -156,13 +159,13 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/selected_podcast_title"
+                    android:id="@+id/single_practice_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Single Practice"
+                    android:text="@string/single_practice_title"
                     android:textColor="@color/black"
                     android:textSize="18dp" />
 
@@ -170,10 +173,10 @@
                     android:id="@+id/selected_podcast_subtitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/selected_podcast_title"
+                    android:layout_below="@+id/single_practice_title"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/roboto_light"
-                    android:text="Slow down, energy up"
+                    android:text="@string/single_practice_subtitle"
                     android:textColor="#808080"
                     android:textSize="12dp" />
 
@@ -199,7 +202,7 @@
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginTop="15dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Meditation Series"
+                    android:text="@string/meditation_series_title"
                     android:textColor="@color/black"
                     android:textSize="18dp" />
 
@@ -210,7 +213,7 @@
                     android:layout_below="@+id/meditation_series_title"
                     android:layout_marginHorizontal="15dp"
                     android:fontFamily="@font/roboto_light"
-                    android:text="Go deeper into meditation"
+                    android:text="@string/meditation_series_subtitle"
                     android:textColor="#808080"
                     android:textSize="12dp" />
 

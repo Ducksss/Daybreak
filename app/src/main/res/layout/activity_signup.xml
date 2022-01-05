@@ -23,35 +23,36 @@
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
-            android:id="@+id/signup_text"
+            android:id="@+id/signup_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:fontFamily="@font/poppins"
             android:paddingTop="30dp"
-            android:text="Create a daybreak account"
+            android:text="@string/signup_title"
             android:textColor="#000000"
             android:textFontWeight="900"
             android:textSize="30sp" />
 
         <TextView
+            android:id="@+id/signup_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginTop="-7.5dp"
             android:layout_marginBottom="7.5dp"
             android:fontFamily="@font/poppins_light"
-            android:text="Enter your user account information"
+            android:text="@string/signup_subtitle"
             android:textColor="#000000"
             android:textSize="18dp" />
 
         <TextView
-            android:id="@+id/sign_in_text"
+            android:id="@+id/signin_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
             android:fontFamily="@font/poppins_light"
-            android:text="Sign up to continue"
+            android:text="@string/signup_text"
             android:textSize="14sp" />
 
         <!-- Username field -->
@@ -125,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Remember me"
+                android:text="@string/remember_me_checkbox"
                 android:textSize="13dp" />
 
             <com.google.android.material.button.MaterialButton
@@ -150,7 +151,7 @@
             android:layout_marginTop="5dp"
             android:background="@color/light_green"
             android:fontFamily="@font/roboto_light"
-            android:text="Sign up"
+            android:text="@string/signup_button"
             android:textAllCaps="false"
             app:backgroundTint="@color/light_green"
             app:cornerRadius="8dp" />

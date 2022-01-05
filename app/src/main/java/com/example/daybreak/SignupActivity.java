@@ -20,8 +20,8 @@ public class SignupActivity extends AppCompatActivity {
                 R.animator.slide_out_right).toBundle();
 
         // Back button
-        ImageView sign_in_button = (ImageView) findViewById(R.id.back_button);
-        sign_in_button.setOnClickListener(new View.OnClickListener() {
+        ImageView back_button = (ImageView) findViewById(R.id.back_button);
+        back_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Do something in response to button click
                 Intent intent = new Intent(SignupActivity.this, OnboardActivity.class);
