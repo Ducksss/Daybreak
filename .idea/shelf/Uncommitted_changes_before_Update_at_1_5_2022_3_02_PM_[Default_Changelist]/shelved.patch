@@ -1,0 +1,835 @@
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\r\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\r\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
+--- a/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml	(date 1641227301292)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <background android:drawable="@drawable/ic_launcher_background"/>
++    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+ </adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_first.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<FrameLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".ui.explore.FirstFragment\">\r\n\r\n    <!-- TODO: Update blank fragment layout -->\r\n    <ScrollView\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:paddingBottom=\"75dp\">\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"10dp\"\r\n            android:background=\"@color/white\"\r\n            android:orientation=\"vertical\">\r\n\r\n            <!-- Searchbar-->\r\n            <RelativeLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\">\r\n\r\n                <EditText\r\n                    android:id=\"@+id/search_field\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginHorizontal=\"15dp\"\r\n                    android:layout_marginTop=\"0dp\"\r\n                    android:background=\"@drawable/search_bar\"\r\n                    android:ems=\"20\"\r\n                    android:fontFamily=\"@font/roboto\"\r\n                    android:hint=\"Search entire library\"\r\n                    android:inputType=\"textPersonName\"\r\n                    android:paddingLeft=\"20dp\"\r\n                    android:paddingTop=\"7.5dp\"\r\n                    android:paddingRight=\"20dp\"\r\n                    android:paddingBottom=\"7.5dp\"\r\n                    android:textColor=\"#999999\"\r\n                    android:textSize=\"16sp\" />\r\n\r\n                <ImageButton\r\n                    android:id=\"@+id/search_btn\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_alignTop=\"@+id/search_field\"\r\n                    android:layout_alignBottom=\"@+id/search_field\"\r\n                    android:layout_alignParentEnd=\"true\"\r\n                    android:layout_marginHorizontal=\"12.5dp\"\r\n                    android:layout_marginRight=\"30dp\"\r\n                    android:background=\"#F5F5F5\"\r\n                    android:src=\"@drawable/ic_baseline_search_24\" />\r\n            </RelativeLayout>\r\n\r\n            <!-- Weekly Recommendations-->\r\n            <RelativeLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/weekly_recommendation_title\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginHorizontal=\"15dp\"\r\n                    android:layout_marginTop=\"20dp\"\r\n                    android:fontFamily=\"@font/roboto\"\r\n                    android:text=\"Weekly Recommendation:\"\r\n                    android:textColor=\"@color/black\"\r\n                    android:textFontWeight=\"800\"\r\n                    android:textSize=\"18dp\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/weekly_recommendation_subtitle\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_below=\"@+id/weekly_recommendation_title\"\r\n                    android:layout_marginHorizontal=\"15dp\"\r\n                    android:fontFamily=\"@font/roboto_light\"\r\n                    android:text=\"Our weekly recommended picks\"\r\n                    android:textColor=\"#808080\"\r\n                    android:textSize=\"12dp\" />\r\n\r\n                <com.google.android.material.card.MaterialCardView\r\n                    android:id=\"@+id/card_view\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_alignTop=\"@+id/weekly_recommendation_subtitle\"\r\n                    android:layout_marginHorizontal=\"5dp\"\r\n                    android:layout_marginTop=\"15dp\"\r\n                    app:cardCornerRadius=\"7dp\"\r\n                    app:cardElevation=\"8dp\"\r\n                    app:cardUseCompatPadding=\"true\">\r\n\r\n                    <LinearLayout\r\n                        android:layout_width=\"match_parent\"\r\n                        android:layout_height=\"wrap_content\"\r\n                        android:orientation=\"vertical\">\r\n\r\n                        <!-- Media -->\r\n                        <ImageView\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"300dp\"\r\n                            android:contentDescription=\"Relaxed Cat\"\r\n                            android:scaleType=\"centerCrop\"\r\n                            android:src=\"@drawable/calm_background_3\" />\r\n\r\n                        <LinearLayout\r\n                            android:layout_width=\"match_parent\"\r\n                            android:layout_height=\"wrap_content\"\r\n                            android:layout_marginTop=\"-70dp\"\r\n                            android:orientation=\"horizontal\"\r\n                            android:padding=\"13dp\">\r\n\r\n                            <ImageView\r\n                                android:layout_width=\"40dp\"\r\n                                android:layout_height=\"40dp\"\r\n                                android:src=\"@drawable/ic_baseline_account_circle_24\" />\r\n\r\n                            <LinearLayout\r\n                                android:layout_width=\"match_parent\"\r\n                                android:layout_height=\"wrap_content\"\r\n                                android:orientation=\"vertical\"\r\n                                android:layout_marginLeft=\"8dp\">\r\n\r\n                                <!-- Title, secondary and supporting text -->\r\n                                <TextView\r\n                                    android:layout_width=\"wrap_content\"\r\n                                    android:layout_height=\"wrap_content\"\r\n                                    android:fontFamily=\"@font/roboto_bold\"\r\n                                    android:text=\"Featured\"\r\n                                    android:textColor=\"#EBEBEB\"\r\n                                    android:textFontWeight=\"800\"\r\n                                    android:textSize=\"12sp\" />\r\n\r\n                                <TextView\r\n                                    android:layout_width=\"wrap_content\"\r\n                                    android:layout_height=\"wrap_content\"\r\n                                    android:text=\"Mind Before Matter - Choo Jollie\"\r\n                                    android:textAppearance=\"?attr/textAppearanceBody2\"\r\n                                    android:textColor=\"@color/white\"\r\n                                    android:textSize=\"18sp\"\r\n                                    android:textStyle=\"bold\" />\r\n                            </LinearLayout>\r\n                        </LinearLayout>\r\n                    </LinearLayout>\r\n                </com.google.android.material.card.MaterialCardView>\r\n\r\n            </RelativeLayout>\r\n\r\n            <!-- Selected Podcasts Recommendations -->\r\n            <RelativeLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/selected_podcast_title\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginHorizontal=\"15dp\"\r\n                    android:layout_marginTop=\"10dp\"\r\n                    android:fontFamily=\"@font/roboto_bold\"\r\n                    android:text=\"Single Practice\"\r\n                    android:textColor=\"@color/black\"\r\n                    android:textSize=\"18dp\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/selected_podcast_subtitle\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_below=\"@+id/selected_podcast_title\"\r\n                    android:layout_marginHorizontal=\"15dp\"\r\n                    android:fontFamily=\"@font/roboto_light\"\r\n                    android:text=\"Slow down, energy up\"\r\n                    android:textColor=\"#808080\"\r\n                    android:textSize=\"12dp\" />\r\n\r\n                <androidx.recyclerview.widget.RecyclerView\r\n                    android:id=\"@+id/selected_podcasts\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_below=\"@id/selected_podcast_subtitle\"\r\n                    android:layout_marginHorizontal=\"4.5dp\"\r\n                    android:layout_marginTop=\"-5dp\"\r\n                    android:orientation=\"horizontal\" />\r\n            </RelativeLayout>\r\n\r\n            <!-- Selected Meditation Recommendations -->\r\n            <RelativeLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/meditation_series_title\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginHorizontal=\"15dp\"\r\n                    android:layout_marginTop=\"15dp\"\r\n                    android:fontFamily=\"@font/roboto_bold\"\r\n                    android:text=\"Meditation Series\"\r\n                    android:textColor=\"@color/black\"\r\n                    android:textSize=\"18dp\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/meditation_series_subtitle\"\r\n                    android:layout_width=\"match_parent\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_below=\"@+id/meditation_series_title\"\r\n                    android:layout_marginHorizontal=\"15dp\"\r\n                    android:fontFamily=\"@font/roboto_light\"\r\n                    android:text=\"Go deeper into meditation\"\r\n                    android:textColor=\"#808080\"\r\n                    android:textSize=\"12dp\" />\r\n\r\n                <androidx.recyclerview.widget.RecyclerView\r\n                    android:id=\"@+id/meditation_series\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_below=\"@id/meditation_series_subtitle\"\r\n                    android:layout_marginHorizontal=\"4.5dp\"\r\n                    android:layout_marginTop=\"-5dp\"\r\n                    android:orientation=\"horizontal\" />\r\n            </RelativeLayout>\r\n\r\n            <!-- For you Recommendations -->\r\n\r\n        </LinearLayout>\r\n    </ScrollView>\r\n</FrameLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/fragment_first.xml b/app/src/main/res/layout/fragment_first.xml
+--- a/app/src/main/res/layout/fragment_first.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/layout/fragment_first.xml	(date 1641225505211)
+@@ -67,7 +67,7 @@
+                     android:layout_marginHorizontal="15dp"
+                     android:layout_marginTop="20dp"
+                     android:fontFamily="@font/roboto"
+-                    android:text="Weekly Recommendation:"
++                    android:text="@string/weekly_recommendation_title"
+                     android:textColor="@color/black"
+                     android:textFontWeight="800"
+                     android:textSize="18dp" />
+@@ -79,7 +79,7 @@
+                     android:layout_below="@+id/weekly_recommendation_title"
+                     android:layout_marginHorizontal="15dp"
+                     android:fontFamily="@font/roboto_light"
+-                    android:text="Our weekly recommended picks"
++                    android:text="@string/weekly_recommendation_subtitle"
+                     android:textColor="#808080"
+                     android:textSize="12dp" />
+ 
+@@ -103,7 +103,7 @@
+                         <ImageView
+                             android:layout_width="match_parent"
+                             android:layout_height="300dp"
+-                            android:contentDescription="Relaxed Cat"
++                            android:contentDescription="Calm background image"
+                             android:scaleType="centerCrop"
+                             android:src="@drawable/calm_background_3" />
+ 
+@@ -115,6 +115,7 @@
+                             android:padding="13dp">
+ 
+                             <ImageView
++                                android:id="@+id/weekly_recommendation_author_image"
+                                 android:layout_width="40dp"
+                                 android:layout_height="40dp"
+                                 android:src="@drawable/ic_baseline_account_circle_24" />
+@@ -122,23 +123,25 @@
+                             <LinearLayout
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+-                                android:orientation="vertical"
+-                                android:layout_marginLeft="8dp">
++                                android:layout_marginLeft="8dp"
++                                android:orientation="vertical">
+ 
+                                 <!-- Title, secondary and supporting text -->
+                                 <TextView
++                                    android:id="@+id/weekly_recommendation_card_title"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+                                     android:fontFamily="@font/roboto_bold"
+-                                    android:text="Featured"
++                                    android:text="@string/weekly_recommendation_card_title"
+                                     android:textColor="#EBEBEB"
+                                     android:textFontWeight="800"
+                                     android:textSize="12sp" />
+ 
+                                 <TextView
++                                    android:id="@+id/weekly_recommendation_card_subtitle"
+                                     android:layout_width="wrap_content"
+                                     android:layout_height="wrap_content"
+-                                    android:text="Mind Before Matter - Choo Jollie"
++                                    android:text="@string/weekly_recommendation_card_subtitle"
+                                     android:textAppearance="?attr/textAppearanceBody2"
+                                     android:textColor="@color/white"
+                                     android:textSize="18sp"
+@@ -156,13 +159,13 @@
+                 android:layout_height="wrap_content">
+ 
+                 <TextView
+-                    android:id="@+id/selected_podcast_title"
++                    android:id="@+id/single_practice_title"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginHorizontal="15dp"
+                     android:layout_marginTop="10dp"
+                     android:fontFamily="@font/roboto_bold"
+-                    android:text="Single Practice"
++                    android:text="@string/single_practice_title"
+                     android:textColor="@color/black"
+                     android:textSize="18dp" />
+ 
+@@ -170,10 +173,10 @@
+                     android:id="@+id/selected_podcast_subtitle"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+-                    android:layout_below="@+id/selected_podcast_title"
++                    android:layout_below="@+id/single_practice_title"
+                     android:layout_marginHorizontal="15dp"
+                     android:fontFamily="@font/roboto_light"
+-                    android:text="Slow down, energy up"
++                    android:text="@string/single_practice_subtitle"
+                     android:textColor="#808080"
+                     android:textSize="12dp" />
+ 
+@@ -199,7 +202,7 @@
+                     android:layout_marginHorizontal="15dp"
+                     android:layout_marginTop="15dp"
+                     android:fontFamily="@font/roboto_bold"
+-                    android:text="Meditation Series"
++                    android:text="@string/meditation_series_title"
+                     android:textColor="@color/black"
+                     android:textSize="18dp" />
+ 
+@@ -210,7 +213,7 @@
+                     android:layout_below="@+id/meditation_series_title"
+                     android:layout_marginHorizontal="15dp"
+                     android:fontFamily="@font/roboto_light"
+-                    android:text="Go deeper into meditation"
++                    android:text="@string/meditation_series_subtitle"
+                     android:textColor="#808080"
+                     android:textSize="12dp" />
+ 
+Index: app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<adaptive-icon xmlns:android=\"http://schemas.android.com/apk/res/android\">\r\n    <background android:drawable=\"@drawable/ic_launcher_background\" />\r\n    <foreground android:drawable=\"@drawable/ic_launcher_foreground\" />\r\n</adaptive-icon>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+--- a/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml	(date 1641227301205)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+-    <background android:drawable="@drawable/ic_launcher_background" />
+-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
++    <background android:drawable="@drawable/ic_launcher_background"/>
++    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>
+ </adaptive-icon>
+\ No newline at end of file
+Index: app/src/main/res/layout/activity_signup.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:paddingTop=\"?attr/actionBarSize\"\r\n    tools:context=\".SignupActivity\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:clipChildren=\"false\"\r\n        android:clipToPadding=\"false\"\r\n        android:orientation=\"vertical\"\r\n        android:paddingLeft=\"24dp\"\r\n        android:paddingRight=\"24dp\">\r\n\r\n        <ImageView\r\n            android:id=\"@+id/back_button\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            app:srcCompat=\"@drawable/ic_baseline_arrow_back_24\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/signup_text\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"start\"\r\n            android:fontFamily=\"@font/poppins\"\r\n            android:paddingTop=\"30dp\"\r\n            android:text=\"Create a daybreak account\"\r\n            android:textColor=\"#000000\"\r\n            android:textFontWeight=\"900\"\r\n            android:textSize=\"30sp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"start\"\r\n            android:layout_marginTop=\"-7.5dp\"\r\n            android:layout_marginBottom=\"7.5dp\"\r\n            android:fontFamily=\"@font/poppins_light\"\r\n            android:text=\"Enter your user account information\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"18dp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/sign_in_text\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"2dp\"\r\n            android:fontFamily=\"@font/poppins_light\"\r\n            android:text=\"Sign up to continue\"\r\n            android:textSize=\"14sp\" />\r\n\r\n        <!-- Username field -->\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            android:id=\"@+id/username_text_input\"\r\n            style=\"@style/Widget.DayBreak.TextInputLayout\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"2dp\"\r\n            android:hint=\"Username\"\r\n            app:startIconDrawable=\"@drawable/ic_baseline_person_24\">\r\n\r\n            <com.google.android.material.textfield.TextInputEditText\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:inputType=\"text\"\r\n                android:maxLines=\"1\" />\r\n\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <!-- Email field -->\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            android:id=\"@+id/email_text_input\"\r\n            style=\"@style/Widget.DayBreak.TextInputLayout\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"2dp\"\r\n            android:hint=\"Email\"\r\n            app:boxStrokeColor=\"@color/light_green\"\r\n            app:boxStrokeWidthFocused=\"2dp\"\r\n            app:hintTextColor=\"@color/black\"\r\n            app:startIconDrawable=\"@drawable/ic_baseline_email_24\">\r\n\r\n            <com.google.android.material.textfield.TextInputEditText\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:inputType=\"textEmailAddress\"\r\n                android:maxLines=\"1\" />\r\n\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <!-- Password field -->\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            android:id=\"@+id/password_text_input\"\r\n            style=\"@style/Widget.DayBreak.TextInputLayout\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Password\"\r\n            app:boxStrokeColor=\"@color/light_green\"\r\n            app:boxStrokeWidthFocused=\"2dp\"\r\n            app:helperTextEnabled=\"true\"\r\n            app:hintTextColor=\"@color/black\"\r\n            app:startIconDrawable=\"@drawable/ic_baseline_lock_24\">\r\n\r\n            <com.google.android.material.textfield.TextInputEditText\r\n                android:id=\"@+id/password_edit_text\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:inputType=\"textPassword\" />\r\n\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <!-- Remember me  and forgot password-->\r\n        <RelativeLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"-5dp\">\r\n\r\n            <CheckBox\r\n                style=\"@style/Widget.AppCompat.CompoundButton.CheckBox\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:gravity=\"center\"\r\n                android:text=\"Remember me\"\r\n                android:textSize=\"13dp\" />\r\n\r\n            <com.google.android.material.button.MaterialButton\r\n                android:id=\"@+id/forgot_password_button\"\r\n                style=\"@style/Widget.DayBreak.Button.TextButton\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_alignParentEnd=\"true\"\r\n                android:layout_alignParentRight=\"true\"\r\n                android:fontFamily=\"@font/roboto_light\"\r\n                android:padding=\"0dp\"\r\n                android:text=\"@string/forgot_password\"\r\n                android:textAllCaps=\"false\"\r\n                android:textSize=\"13dp\" />\r\n        </RelativeLayout>\r\n\r\n        <!-- Button for sign in -->\r\n        <com.google.android.material.button.MaterialButton\r\n            android:id=\"@+id/sign_up_button\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"5dp\"\r\n            android:background=\"@color/light_green\"\r\n            android:fontFamily=\"@font/roboto_light\"\r\n            android:text=\"Sign up\"\r\n            android:textAllCaps=\"false\"\r\n            app:backgroundTint=\"@color/light_green\"\r\n            app:cornerRadius=\"8dp\" />\r\n    </LinearLayout>\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_signup.xml b/app/src/main/res/layout/activity_signup.xml
+--- a/app/src/main/res/layout/activity_signup.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/layout/activity_signup.xml	(date 1641224556363)
+@@ -23,35 +23,36 @@
+             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+ 
+         <TextView
+-            android:id="@+id/signup_text"
++            android:id="@+id/signup_title"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="start"
+             android:fontFamily="@font/poppins"
+             android:paddingTop="30dp"
+-            android:text="Create a daybreak account"
++            android:text="@string/signup_title"
+             android:textColor="#000000"
+             android:textFontWeight="900"
+             android:textSize="30sp" />
+ 
+         <TextView
++            android:id="@+id/signup_subtitle"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="start"
+             android:layout_marginTop="-7.5dp"
+             android:layout_marginBottom="7.5dp"
+             android:fontFamily="@font/poppins_light"
+-            android:text="Enter your user account information"
++            android:text="@string/signup_subtitle"
+             android:textColor="#000000"
+             android:textSize="18dp" />
+ 
+         <TextView
+-            android:id="@+id/sign_in_text"
++            android:id="@+id/signin_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="2dp"
+             android:fontFamily="@font/poppins_light"
+-            android:text="Sign up to continue"
++            android:text="@string/signup_text"
+             android:textSize="14sp" />
+ 
+         <!-- Username field -->
+@@ -125,7 +126,7 @@
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+-                android:text="Remember me"
++                android:text="@string/remember_me_checkbox"
+                 android:textSize="13dp" />
+ 
+             <com.google.android.material.button.MaterialButton
+@@ -150,7 +151,7 @@
+             android:layout_marginTop="5dp"
+             android:background="@color/light_green"
+             android:fontFamily="@font/roboto_light"
+-            android:text="Sign up"
++            android:text="@string/signup_button"
+             android:textAllCaps="false"
+             app:backgroundTint="@color/light_green"
+             app:cornerRadius="8dp" />
+Index: app/src/main/res/layout/explore_recycleritem.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<com.google.android.material.card.MaterialCardView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/smaller_card_view\"\r\n    android:layout_width=\"wrap_content\"\r\n    android:layout_height=\"wrap_content\"\r\n    app:cardCornerRadius=\"7dp\"\r\n    app:cardElevation=\"8dp\"\r\n    app:cardUseCompatPadding=\"true\"\r\n    tools:context=\".ExploreRecycleritemActivity\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:orientation=\"vertical\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <!-- Media -->\r\n        <ImageView\r\n            android:id=\"@+id/explore_card_image\"\r\n            android:layout_width=\"240dp\"\r\n            android:layout_height=\"240dp\"\r\n            android:contentDescription=\"Relaxed Cat\"\r\n            android:scaleType=\"centerCrop\"\r\n            android:src=\"@drawable/background_image_1\" />\r\n\r\n        <!-- Text -->\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\"\r\n            android:padding=\"12dp\">\r\n\r\n            <!-- Title, secondary and supporting text -->\r\n            <TextView\r\n                android:id=\"@+id/explore_card_title\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:fontFamily=\"@font/roboto_bold\"\r\n                android:text=\"Curiosity\"\r\n                android:textAppearance=\"?attr/textAppearanceHeadline6\"\r\n                android:textFontWeight=\"800\"\r\n                android:textSize=\"16sp\" />\r\n\r\n            <TextView\r\n                android:id=\"@+id/explore_card_subtitle\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:text=\"10 min • singles\"\r\n                android:textAllCaps=\"true\"\r\n                android:textAppearance=\"?attr/textAppearanceBody2\"\r\n                android:textColor=\"?android:attr/textColorSecondary\"\r\n                android:textSize=\"14sp\"\r\n                android:textStyle=\"italic\" />\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n</com.google.android.material.card.MaterialCardView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/explore_recycleritem.xml b/app/src/main/res/layout/explore_recycleritem.xml
+--- a/app/src/main/res/layout/explore_recycleritem.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/layout/explore_recycleritem.xml	(date 1641225903673)
+@@ -24,7 +24,7 @@
+             android:id="@+id/explore_card_image"
+             android:layout_width="240dp"
+             android:layout_height="240dp"
+-            android:contentDescription="Relaxed Cat"
++            android:contentDescription="Background image"
+             android:scaleType="centerCrop"
+             android:src="@drawable/background_image_1" />
+ 
+@@ -41,7 +41,7 @@
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:fontFamily="@font/roboto_bold"
+-                android:text="Curiosity"
++                android:text="Title"
+                 android:textAppearance="?attr/textAppearanceHeadline6"
+                 android:textFontWeight="800"
+                 android:textSize="16sp" />
+@@ -50,7 +50,7 @@
+                 android:id="@+id/explore_card_subtitle"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+-                android:text="10 min • singles"
++                android:text="Timing • SUBTITLE"
+                 android:textAllCaps="true"
+                 android:textAppearance="?attr/textAppearanceBody2"
+                 android:textColor="?android:attr/textColorSecondary"
+Index: app/src/main/res/drawable/ic_launcher_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<vector xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:width=\"108dp\"\r\n    android:height=\"108dp\"\r\n    android:viewportWidth=\"108\"\r\n    android:viewportHeight=\"108\">\r\n    <path\r\n        android:fillColor=\"#3DDC84\"\r\n        android:pathData=\"M0,0h108v108h-108z\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M9,0L9,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,0L19,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M29,0L29,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M39,0L39,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M49,0L49,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M59,0L59,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M69,0L69,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M79,0L79,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M89,0L89,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M99,0L99,108\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,9L108,9\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,19L108,19\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,29L108,29\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,39L108,39\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,49L108,49\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,59L108,59\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,69L108,69\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,79L108,79\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,89L108,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M0,99L108,99\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,29L89,29\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,39L89,39\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,49L89,49\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,59L89,59\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,69L89,69\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M19,79L89,79\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M29,19L29,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M39,19L39,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M49,19L49,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M59,19L59,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M69,19L69,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n    <path\r\n        android:fillColor=\"#00000000\"\r\n        android:pathData=\"M79,19L79,89\"\r\n        android:strokeWidth=\"0.8\"\r\n        android:strokeColor=\"#33FFFFFF\" />\r\n</vector>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/drawable/ic_launcher_background.xml b/app/src/main/res/drawable/ic_launcher_background.xml
+--- a/app/src/main/res/drawable/ic_launcher_background.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/drawable/ic_launcher_background.xml	(date 1641227301195)
+@@ -1,170 +1,74 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<vector xmlns:android="http://schemas.android.com/apk/res/android"
+-    android:width="108dp"
++<vector
+     android:height="108dp"
++    android:width="108dp"
++    android:viewportHeight="108"
+     android:viewportWidth="108"
+-    android:viewportHeight="108">
+-    <path
+-        android:fillColor="#3DDC84"
+-        android:pathData="M0,0h108v108h-108z" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M9,0L9,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,0L19,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M29,0L29,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M39,0L39,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M49,0L49,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M59,0L59,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M69,0L69,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M79,0L79,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M89,0L89,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M99,0L99,108"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,9L108,9"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,19L108,19"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,29L108,29"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,39L108,39"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,49L108,49"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,59L108,59"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,69L108,69"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,79L108,79"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,89L108,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M0,99L108,99"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,29L89,29"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,39L89,39"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,49L89,49"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,59L89,59"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,69L89,69"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M19,79L89,79"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M29,19L29,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M39,19L39,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M49,19L49,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M59,19L59,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M69,19L69,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
+-    <path
+-        android:fillColor="#00000000"
+-        android:pathData="M79,19L79,89"
+-        android:strokeWidth="0.8"
+-        android:strokeColor="#33FFFFFF" />
++    xmlns:android="http://schemas.android.com/apk/res/android">
++    <path android:fillColor="#3DDC84"
++          android:pathData="M0,0h108v108h-108z"/>
++    <path android:fillColor="#00000000" android:pathData="M9,0L9,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,0L19,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M29,0L29,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M39,0L39,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M49,0L49,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M59,0L59,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M69,0L69,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M79,0L79,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M89,0L89,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M99,0L99,108"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,9L108,9"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,19L108,19"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,29L108,29"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,39L108,39"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,49L108,49"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,59L108,59"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,69L108,69"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,79L108,79"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,89L108,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M0,99L108,99"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,29L89,29"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,39L89,39"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,49L89,49"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,59L89,59"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,69L89,69"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M19,79L89,79"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M29,19L29,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M39,19L39,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M49,19L49,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M59,19L59,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M69,19L69,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
++    <path android:fillColor="#00000000" android:pathData="M79,19L79,89"
++          android:strokeColor="#33FFFFFF" android:strokeWidth="0.8"/>
+ </vector>
+Index: app/src/main/res/layout/activity_onboard.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/white\"\r\n    tools:context=\".OnboardActivity\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <RelativeLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\">\r\n            <!-- Image -->\r\n            <ImageView\r\n                android:id=\"@+id/onboard_image\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"650dp\"\r\n                android:scaleType=\"fitXY\"\r\n                app:srcCompat=\"@drawable/onboard_background_image3\" />\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"vertical\"\r\n                android:paddingHorizontal=\"30dp\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/app_name\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:layout_marginTop=\"70dp\"\r\n                    android:fontFamily=\"@font/roboto\"\r\n                    android:text=\"Welcome\"\r\n                    android:textAlignment=\"center\"\r\n                    android:textColor=\"@color/black\"\r\n                    android:textFontWeight=\"600\"\r\n                    android:textSize=\"40dp\" />\r\n\r\n                <TextView\r\n                    android:id=\"@+id/app_slogan\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:fontFamily=\"@font/roboto\"\r\n                    android:text=\"Take back the control of your life.\"\r\n                    android:textAlignment=\"center\"\r\n                    android:textColor=\"#333333\"\r\n                    android:textFontWeight=\"600\"\r\n                    android:textSize=\"14dp\" />\r\n            </LinearLayout>\r\n        </RelativeLayout>\r\n\r\n        <!-- Register and Sign in buttons -->\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"match_parent\"\r\n            android:orientation=\"vertical\"\r\n            android:paddingHorizontal=\"20dp\"\r\n            android:paddingTop=\"10dp\">\r\n\r\n            <com.google.android.material.button.MaterialButton\r\n                android:id=\"@+id/sign_in_button\"\r\n                style=\"@style/Widget.DayBreak.Button.TextButton\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:backgroundTint=\"#007BFF\"\r\n                android:fontFamily=\"@font/roboto\"\r\n                android:onClick=\"ButtonPress\"\r\n                android:padding=\"15dp\"\r\n                android:text=\"Sign in\"\r\n                android:textAllCaps=\"false\"\r\n                android:textColor=\"@color/white\"\r\n                android:textSize=\"13dp\"\r\n                app:cornerRadius=\"30dp\" />\r\n\r\n            <com.google.android.material.button.MaterialButton\r\n                android:id=\"@+id/sign_up_button\"\r\n                style=\"@style/Widget.DayBreak.Button.TextButton\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_alignParentEnd=\"true\"\r\n                android:layout_alignParentRight=\"true\"\r\n                android:layout_marginTop=\"-15dp\"\r\n                android:fontFamily=\"@font/roboto\"\r\n                android:padding=\"15dp\"\r\n                android:text=\"@string/sign_up\"\r\n                android:textAllCaps=\"false\"\r\n                android:textSize=\"13dp\"\r\n                app:cornerRadius=\"30dp\" />\r\n        </LinearLayout>\r\n    </LinearLayout>\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_onboard.xml b/app/src/main/res/layout/activity_onboard.xml
+--- a/app/src/main/res/layout/activity_onboard.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/layout/activity_onboard.xml	(date 1641224556355)
+@@ -30,23 +30,23 @@
+                 android:paddingHorizontal="30dp">
+ 
+                 <TextView
+-                    android:id="@+id/app_name"
++                    android:id="@+id/onboard_title"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="70dp"
+                     android:fontFamily="@font/roboto"
+-                    android:text="Welcome"
++                    android:text="@string/onboard_title"
+                     android:textAlignment="center"
+                     android:textColor="@color/black"
+                     android:textFontWeight="600"
+                     android:textSize="40dp" />
+ 
+                 <TextView
+-                    android:id="@+id/app_slogan"
++                    android:id="@+id/onboard_subtitle"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:fontFamily="@font/roboto"
+-                    android:text="Take back the control of your life."
++                    android:text="@string/onboard_subtitle"
+                     android:textAlignment="center"
+                     android:textColor="#333333"
+                     android:textFontWeight="600"
+@@ -69,9 +69,8 @@
+                 android:layout_height="wrap_content"
+                 android:backgroundTint="#007BFF"
+                 android:fontFamily="@font/roboto"
+-                android:onClick="ButtonPress"
+                 android:padding="15dp"
+-                android:text="Sign in"
++                android:text="@string/signin_button"
+                 android:textAllCaps="false"
+                 android:textColor="@color/white"
+                 android:textSize="13dp"
+@@ -87,7 +86,7 @@
+                 android:layout_marginTop="-15dp"
+                 android:fontFamily="@font/roboto"
+                 android:padding="15dp"
+-                android:text="@string/sign_up"
++                android:text="@string/signup_button"
+                 android:textAllCaps="false"
+                 android:textSize="13dp"
+                 app:cornerRadius="30dp" />
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_onboard.xml\" value=\"0.190625\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_first.xml\" value=\"0.21331521739130435\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/inner_explore.xml\" value=\"0.21331521739130435\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/color_selector.xml\" value=\"0.24739583333333334\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/drawable_selector.xml\" value=\"0.24739583333333334\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/ic_baseline_email_24.xml\" value=\"0.20729166666666668\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/ic_baseline_search_24.xml\" value=\"0.20729166666666668\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/ic_baseline_sick_24.xml\" value=\"0.3828125\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/ic_baseline_timer_24.xml\" value=\"0.20729166666666668\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/search_bar.xml\" value=\"0.20729166666666668\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/tab_indicator.xml\" value=\"0.3828125\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/activity_login.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/activity_main.xml\" value=\"0.23125\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/activity_onboard.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/activity_signup.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/activity_splashscreen.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/explore_recycleritem.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/explore_recycleritem2.xml\" value=\"0.36666666666666664\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_dashboard.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_explore.xml\" value=\"0.23177083333333334\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_first.xml\" value=\"0.33\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_home.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_inner_explore.xml\" value=\"0.11927083333333334\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_notifications.xml\" value=\"0.20520833333333333\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_second.xml\" value=\"0.19114583333333332\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/fragment_third.xml\" value=\"0.38229166666666664\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/layout/videoview_recycleritem.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/menu/bottom_nav_menu.xml\" value=\"0.23125\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/.idea/misc.xml	(date 1641226919701)
+@@ -3,9 +3,48 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
+-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_onboard.xml" value="0.190625" />
+-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_first.xml" value="0.21331521739130435" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/color_selector.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/drawable_selector.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_explore_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_play_arrow_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_sick_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_timer_24.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_bottomnavbar.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_navbar.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/item_bg.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/rounded_corner_view.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/search_bar.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/tab_indicator.xml" value="0.22135416666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/font/poppins.xml" value="0.23541666666666666" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_inner_explore.xml" value="0.19746376811594202" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_onboard.xml" value="0.22" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_signup.xml" value="0.20520833333333333" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_splashscreen.xml" value="0.17391304347826086" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/explore_recycleritem.xml" value="0.19746376811594202" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/explore_recycleritem2.xml" value="0.19746376811594202" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_first.xml" value="0.18" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_home.xml" value="0.17391304347826086" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_second.xml" value="0.19746376811594202" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_third.xml" value="0.19746376811594202" />
+         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/inner_explore.xml" value="0.21331521739130435" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/videoview_recycleritem.xml" value="0.19746376811594202" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.221875" />
++        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.221875" />
+         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/color_selector.xml" value="0.24739583333333334" />
+         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/drawable_selector.xml" value="0.24739583333333334" />
+         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak_DIT2B02/Daybreak/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.20729166666666668" />
+Index: app/src/main/java/com/example/daybreak/SignupActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.daybreak;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.app.ActivityOptions;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\nimport android.widget.ImageView;\r\n\r\npublic class SignupActivity extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_signup);\r\n\r\n        Bundle animationBundle = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_left,\r\n                R.animator.slide_out_right).toBundle();\r\n\r\n        // Back button\r\n        ImageView sign_in_button = (ImageView) findViewById(R.id.back_button);\r\n        sign_in_button.setOnClickListener(new View.OnClickListener() {\r\n            public void onClick(View v) {\r\n                // Do something in response to button click\r\n                Intent intent = new Intent(SignupActivity.this, OnboardActivity.class);\r\n                startActivity(intent, animationBundle);\r\n            }\r\n        });\r\n\r\n        // Sign up button\r\n        Button sign_up_button = (Button) findViewById(R.id.sign_up_button);\r\n        sign_up_button.setOnClickListener(new View.OnClickListener() {\r\n            public void onClick(View v) {\r\n                // Do something in response to button click\r\n                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);\r\n                startActivity(intent, animationBundle);\r\n            }\r\n        });\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/daybreak/SignupActivity.java b/app/src/main/java/com/example/daybreak/SignupActivity.java
+--- a/app/src/main/java/com/example/daybreak/SignupActivity.java	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/java/com/example/daybreak/SignupActivity.java	(date 1641222876594)
+@@ -20,8 +20,8 @@
+                 R.animator.slide_out_right).toBundle();
+ 
+         // Back button
+-        ImageView sign_in_button = (ImageView) findViewById(R.id.back_button);
+-        sign_in_button.setOnClickListener(new View.OnClickListener() {
++        ImageView back_button = (ImageView) findViewById(R.id.back_button);
++        back_button.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+                 // Do something in response to button click
+                 Intent intent = new Intent(SignupActivity.this, OnboardActivity.class);
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Daybreak</string>\r\n    <string name=\"title_activity_main2\">MainActivity2</string>\r\n\r\n    <!-- Login page -->\r\n    <string name=\"welcome_text\">Hello there,\\nwelcome back!</string>\r\n    <string name=\"forgot_password\">Forgot password?</string>\r\n    <string name=\"sign_up\">New user? Sign up!</string>\r\n\r\n    <!-- Navigation bar -->\r\n    <string name=\"title_home\">Home</string>\r\n    <string name=\"title_explore\">Explore</string>\r\n    <string name=\"title_profile\">Profile</string>\r\n    <!-- TODO: Remove or change this placeholder text -->\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n    <string name=\"large_text\">\r\n        \"Material is the metaphor.\\n\\n\"\r\n\r\n        \"A material metaphor is the unifying theory of a rationalized space and a system of motion.\"\r\n        \"The material is grounded in tactile reality, inspired by the study of paper and ink, yet \"\r\n        \"technologically advanced and open to imagination and magic.\\n\"\r\n        \"Surfaces and edges of the material provide visual cues that are grounded in reality. The \"\r\n        \"use of familiar tactile attributes helps users quickly understand affordances. Yet the \"\r\n        \"flexibility of the material creates new affordances that supercede those in the physical \"\r\n        \"world, without breaking the rules of physics.\\n\"\r\n        \"The fundamentals of light, surface, and movement are key to conveying how objects move, \"\r\n        \"interact, and exist in space and in relation to each other. Realistic lighting shows \"\r\n        \"seams, divides space, and indicates moving parts.\\n\\n\"\r\n\r\n        \"Bold, graphic, intentional.\\n\\n\"\r\n\r\n        \"The foundational elements of print based design typography, grids, space, scale, color, \"\r\n        \"and use of imagery guide visual treatments. These elements do far more than please the \"\r\n        \"eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge \"\r\n        \"imagery, large scale typography, and intentional white space create a bold and graphic \"\r\n        \"interface that immerse the user in the experience.\\n\"\r\n        \"An emphasis on user actions makes core functionality immediately apparent and provides \"\r\n        \"waypoints for the user.\\n\\n\"\r\n\r\n        \"Motion provides meaning.\\n\\n\"\r\n\r\n        \"Motion respects and reinforces the user as the prime mover. Primary user actions are \"\r\n        \"inflection points that initiate motion, transforming the whole design.\\n\"\r\n        \"All action takes place in a single environment. Objects are presented to the user without \"\r\n        \"breaking the continuity of experience even as they transform and reorganize.\\n\"\r\n        \"Motion is meaningful and appropriate, serving to focus attention and maintain continuity. \"\r\n        \"Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\\n\\n\"\r\n\r\n        \"3D world.\\n\\n\"\r\n\r\n        \"The material environment is a 3D space, which means all objects have x, y, and z \"\r\n        \"dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the \"\r\n        \"positive z-axis extending towards the viewer. Every sheet of material occupies a single \"\r\n        \"position along the z-axis and has a standard 1dp thickness.\\n\"\r\n        \"On the web, the z-axis is used for layering and not for perspective. The 3D world is \"\r\n        \"emulated by manipulating the y-axis.\\n\\n\"\r\n\r\n        \"Light and shadow.\\n\\n\"\r\n\r\n        \"Within the material environment, virtual lights illuminate the scene. Key lights create \"\r\n        \"directional shadows, while ambient light creates soft shadows from all angles.\\n\"\r\n        \"Shadows in the material environment are cast by these two light sources. In Android \"\r\n        \"development, shadows occur when light sources are blocked by sheets of material at \"\r\n        \"various positions along the z-axis. On the web, shadows are depicted by manipulating the \"\r\n        \"y-axis only. The following example shows the card with a height of 6dp.\\n\\n\"\r\n\r\n        \"Resting elevation.\\n\\n\"\r\n\r\n        \"All material objects, regardless of size, have a resting elevation, or default elevation \"\r\n        \"that does not change. If an object changes elevation, it should return to its resting \"\r\n        \"elevation as soon as possible.\\n\\n\"\r\n\r\n        \"Component elevations.\\n\\n\"\r\n\r\n        \"The resting elevation for a component type is consistent across apps (e.g., FAB elevation \"\r\n        \"does not vary from 6dp in one app to 16dp in another app).\\n\"\r\n        \"Components may have different resting elevations across platforms, depending on the depth \"\r\n        \"of the environment (e.g., TV has a greater depth than mobile or desktop).\\n\\n\"\r\n\r\n        \"Responsive elevation and dynamic elevation offsets.\\n\\n\"\r\n\r\n        \"Some component types have responsive elevation, meaning they change elevation in response \"\r\n        \"to user input (e.g., normal, focused, and pressed) or system events. These elevation \"\r\n        \"changes are consistently implemented using dynamic elevation offsets.\\n\"\r\n        \"Dynamic elevation offsets are the goal elevation that a component moves towards, relative \"\r\n        \"to the component’s resting state. They ensure that elevation changes are consistent \"\r\n        \"across actions and component types. For example, all components that lift on press have \"\r\n        \"the same elevation change relative to their resting elevation.\\n\"\r\n        \"Once the input event is completed or cancelled, the component will return to its resting \"\r\n        \"elevation.\\n\\n\"\r\n\r\n        \"Avoiding elevation interference.\\n\\n\"\r\n\r\n        \"Components with responsive elevations may encounter other components as they move between \"\r\n        \"their resting elevations and dynamic elevation offsets. Because material cannot pass \"\r\n        \"through other material, components avoid interfering with one another any number of ways, \"\r\n        \"whether on a per component basis or using the entire app layout.\\n\"\r\n        \"On a component level, components can move or be removed before they cause interference. \"\r\n        \"For example, a floating action button (FAB) can disappear or move off screen before a \"\r\n        \"user picks up a card, or it can move if a snackbar appears.\\n\"\r\n        \"On the layout level, design your app layout to minimize opportunities for interference. \"\r\n        \"For example, position the FAB to one side of stream of a cards so the FAB won’t interfere \"\r\n        \"when a user tries to pick up one of cards.\\n\\n\"\r\n    </string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/values/strings.xml	(date 1641226091245)
+@@ -2,15 +2,44 @@
+     <string name="app_name">Daybreak</string>
+     <string name="title_activity_main2">MainActivity2</string>
+ 
+-    <!-- Login page -->
+-    <string name="welcome_text">Hello there,\nwelcome back!</string>
++    <!-- Onboard page -->
++    <string name="onboard_title">Welcome</string>
++    <string name="onboard_subtitle">Take back the control of your life.</string>
++    <string name="signin_button">Sign in</string>
++    <string name="signup_button">Sign up</string>
++
++    <!-- Login / Sign in page -->
++    <string name="signin_title">Welcome</string>
++    <string name="signin_subtitle">Nice to see you again.</string>
++    <string name="signin_text">Sign in to continue</string>
+     <string name="forgot_password">Forgot password?</string>
+     <string name="sign_up">New user? Sign up!</string>
++    <string name="welcome_text">Hello there,\nwelcome back!</string>
++
++    <!-- Sign up page -->
++    <string name="signup_title">Create a daybreak account</string>
++    <string name="signup_subtitle">Enter your user account information</string>
++    <string name="signup_text">Sign up to continue</string>
++    <string name="remember_me_checkbox">Remember me</string>
++
++    <!-- Home page -->
++
++
++    <!-- Explore page -->
++    <string name="weekly_recommendation_title">Weekly Recommendation:</string>
++    <string name="weekly_recommendation_subtitle">Our weekly recommended picks</string>
++    <string name="weekly_recommendation_card_title">Featured</string>
++    <string name="weekly_recommendation_card_subtitle">Mind Before Matter - Jollie Choo</string>
++    <string name="single_practice_title">Single Practice</string>
++    <string name="single_practice_subtitle">Slow down, energy up</string>
++    <string name="meditation_series_title">Meditation Series</string>
++    <string name="meditation_series_subtitle">Go deeper into meditation</string>
+ 
+     <!-- Navigation bar -->
+     <string name="title_home">Home</string>
+     <string name="title_explore">Explore</string>
+     <string name="title_profile">Profile</string>
++
+     <!-- TODO: Remove or change this placeholder text -->
+     <string name="hello_blank_fragment">Hello blank fragment</string>
+     <string name="large_text">
+Index: app/src/main/res/layout/activity_login.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/white\"\r\n    tools:context=\".LoginActivity\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:clipChildren=\"false\"\r\n        android:clipToPadding=\"false\"\r\n        android:orientation=\"vertical\"\r\n        android:padding=\"24dp\"\r\n        android:paddingTop=\"16dp\">\r\n\r\n        <ImageView\r\n            android:id=\"@+id/app_logo\"\r\n            android:layout_width=\"230dp\"\r\n            android:layout_height=\"230dp\"\r\n            android:layout_gravity=\"center_horizontal\"\r\n            android:layout_marginTop=\"2dp\"\r\n            app:srcCompat=\"@drawable/logo_daybreak2\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/welcome_text\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"start\"\r\n            android:fontFamily=\"@font/poppins\"\r\n            android:text=\"Welcome\"\r\n            android:textColor=\"#000000\"\r\n            android:textFontWeight=\"900\"\r\n            android:textSize=\"30sp\" />\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"start\"\r\n            android:layout_marginTop=\"-7.5dp\"\r\n            android:layout_marginBottom=\"7.5dp\"\r\n            android:fontFamily=\"@font/poppins_light\"\r\n            android:text=\"Nice to see you again!\"\r\n            android:textColor=\"#000000\"\r\n            android:textSize=\"18sp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/sign_in_text\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"2dp\"\r\n            android:fontFamily=\"@font/poppins_light\"\r\n            android:text=\"Sign in to continue\"\r\n            android:textSize=\"14sp\" />\r\n\r\n        <!-- Email field -->\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            android:id=\"@+id/email_text_input\"\r\n            style=\"@style/Widget.DayBreak.TextInputLayout\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"4dp\"\r\n            android:hint=\"Email\"\r\n            app:startIconDrawable=\"@drawable/ic_baseline_email_24\">\r\n\r\n            <com.google.android.material.textfield.TextInputEditText\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:inputType=\"text\"\r\n                android:maxLines=\"1\" />\r\n\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <!-- Password field -->\r\n        <com.google.android.material.textfield.TextInputLayout\r\n            android:id=\"@+id/password_text_input\"\r\n            style=\"@style/Widget.DayBreak.TextInputLayout\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:hint=\"Password\"\r\n            app:helperTextEnabled=\"true\"\r\n            app:startIconDrawable=\"@drawable/ic_baseline_lock_24\">\r\n\r\n            <com.google.android.material.textfield.TextInputEditText\r\n                android:id=\"@+id/password_edit_text\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:inputType=\"textPassword\" />\r\n\r\n        </com.google.android.material.textfield.TextInputLayout>\r\n\r\n        <!-- Button for sign in -->\r\n        <com.google.android.material.button.MaterialButton\r\n            android:id=\"@+id/sign_in_button\"\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginTop=\"4dp\"\r\n            android:background=\"@color/light_green\"\r\n            android:fontFamily=\"@font/roboto_light\"\r\n            android:text=\"Sign in\"\r\n            android:textAllCaps=\"false\"\r\n            app:backgroundTint=\"@color/light_green\"\r\n            app:cornerRadius=\"8dp\" />\r\n\r\n        <!-- Forgot password and reset password -->\r\n        <RelativeLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\">\r\n\r\n            <com.google.android.material.button.MaterialButton\r\n                android:id=\"@+id/forgot_password_button\"\r\n                style=\"@style/Widget.DayBreak.Button.TextButton\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:fontFamily=\"@font/roboto_light\"\r\n                android:padding=\"0dp\"\r\n                android:text=\"@string/forgot_password\"\r\n                android:textAllCaps=\"false\"\r\n                android:textSize=\"13dp\" />\r\n\r\n            <com.google.android.material.button.MaterialButton\r\n                android:id=\"@+id/sign_up_button\"\r\n                style=\"@style/Widget.DayBreak.Button.TextButton\"\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:layout_alignParentEnd=\"true\"\r\n                android:layout_alignParentRight=\"true\"\r\n                android:fontFamily=\"@font/roboto_light\"\r\n                android:padding=\"0dp\"\r\n                android:text=\"@string/sign_up\"\r\n                android:textAllCaps=\"false\"\r\n                android:textSize=\"13dp\" />\r\n        </RelativeLayout>\r\n    </LinearLayout>\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/activity_login.xml b/app/src/main/res/layout/activity_login.xml
+--- a/app/src/main/res/layout/activity_login.xml	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/res/layout/activity_login.xml	(date 1641224556347)
+@@ -5,6 +5,7 @@
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="@color/white"
++    android:paddingTop="?attr/actionBarSize"
+     tools:context=".LoginActivity">
+ 
+     <LinearLayout
+@@ -13,8 +14,14 @@
+         android:clipChildren="false"
+         android:clipToPadding="false"
+         android:orientation="vertical"
+-        android:padding="24dp"
+-        android:paddingTop="16dp">
++        android:paddingLeft="24dp"
++        android:paddingRight="24dp">
++
++        <ImageView
++            android:id="@+id/back_button"
++            android:layout_width="wrap_content"
++            android:layout_height="wrap_content"
++            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+ 
+         <ImageView
+             android:id="@+id/app_logo"
+@@ -25,34 +32,35 @@
+             app:srcCompat="@drawable/logo_daybreak2" />
+ 
+         <TextView
+-            android:id="@+id/welcome_text"
++            android:id="@+id/signin_title"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="start"
+             android:fontFamily="@font/poppins"
+-            android:text="Welcome"
++            android:text="@string/signin_title"
+             android:textColor="#000000"
+             android:textFontWeight="900"
+             android:textSize="30sp" />
+ 
+         <TextView
++            android:id="@+id/signin_subtitle"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="start"
+             android:layout_marginTop="-7.5dp"
+             android:layout_marginBottom="7.5dp"
+             android:fontFamily="@font/poppins_light"
+-            android:text="Nice to see you again!"
++            android:text="@string/signin_subtitle"
+             android:textColor="#000000"
+             android:textSize="18sp" />
+ 
+         <TextView
+-            android:id="@+id/sign_in_text"
++            android:id="@+id/signin_text"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="2dp"
+             android:fontFamily="@font/poppins_light"
+-            android:text="Sign in to continue"
++            android:text="@string/signin_text"
+             android:textSize="14sp" />
+ 
+         <!-- Email field -->
+@@ -99,7 +107,7 @@
+             android:layout_marginTop="4dp"
+             android:background="@color/light_green"
+             android:fontFamily="@font/roboto_light"
+-            android:text="Sign in"
++            android:text="@string/signin_button"
+             android:textAllCaps="false"
+             app:backgroundTint="@color/light_green"
+             app:cornerRadius="8dp" />
+Index: app/src/main/java/com/example/daybreak/LoginActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.daybreak;\r\n\r\nimport androidx.annotation.Nullable;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\nimport android.app.ActivityOptions;\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.text.Editable;\r\nimport android.view.KeyEvent;\r\nimport android.view.View;\r\n\r\nimport com.google.android.material.button.MaterialButton;\r\nimport com.google.android.material.textfield.TextInputEditText;\r\nimport com.google.android.material.textfield.TextInputLayout;\r\n\r\npublic class LoginActivity extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_login);\r\n\r\n        final TextInputLayout passwordTextInput = findViewById(R.id.password_text_input);\r\n        final TextInputEditText passwordEditText = findViewById(R.id.password_edit_text);\r\n\r\n        Bundle animationBundle = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_left,\r\n                R.animator.slide_out_right).toBundle();\r\n\r\n        // Set an error if the password is less than 8 characters.\r\n        findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View view) {\r\n                if (!isPasswordValid(passwordEditText.getText())) {\r\n                    passwordTextInput.setError(\"Wrong password!\");\r\n                } else {\r\n                    passwordTextInput.setError(null); // Clear the error\r\n                    Intent i = new Intent(getApplicationContext(), MainActivity.class);\r\n                    startActivity(i);\r\n                    finish();\r\n                }\r\n            }\r\n        });\r\n\r\n        // Clear the error once more than 8 characters are typed.\r\n        passwordEditText.setOnKeyListener(new View.OnKeyListener() {\r\n            @Override\r\n            public boolean onKey(View view, int i, KeyEvent keyEvent) {\r\n                if (isPasswordValid(passwordEditText.getText())) {\r\n                    passwordTextInput.setError(null); //Clear the error\r\n                }\r\n                return false;\r\n            }\r\n        });\r\n    }\r\n\r\n    /*\r\n        In reality, this will have more complex logic including, but not limited to, actual\r\n        authentication of the username and password.\r\n     */\r\n    private boolean isPasswordValid(@Nullable Editable text) {\r\n        return text != null && text.length() >= 8;\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/daybreak/LoginActivity.java b/app/src/main/java/com/example/daybreak/LoginActivity.java
+--- a/app/src/main/java/com/example/daybreak/LoginActivity.java	(revision ba3c2ff7267360d6454aa520f49602f92e5edbf7)
++++ b/app/src/main/java/com/example/daybreak/LoginActivity.java	(date 1641222876601)
+@@ -9,6 +9,7 @@
+ import android.text.Editable;
+ import android.view.KeyEvent;
+ import android.view.View;
++import android.widget.ImageView;
+ 
+ import com.google.android.material.button.MaterialButton;
+ import com.google.android.material.textfield.TextInputEditText;
+@@ -27,6 +28,16 @@
+         Bundle animationBundle = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_left,
+                 R.animator.slide_out_right).toBundle();
+ 
++        // Back button to navigate back to the onboarding screens
++        ImageView back_button = (ImageView) findViewById(R.id.back_button);
++        back_button.setOnClickListener(new View.OnClickListener() {
++            public void onClick(View v) {
++                // Do something in response to button click
++                Intent intent = new Intent(LoginActivity.this, OnboardActivity.class);
++                startActivity(intent, animationBundle);
++            }
++        });
++
+         // Set an error if the password is less than 8 characters.
+         findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
+             @Override
