@@ -13,6 +13,7 @@ import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
@@ -24,7 +25,7 @@ import com.example.daybreak.databinding.FragmentNotificationsBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements StartTimer.FragmentAListener, FragmentB.FragmentBListener {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding view;
@@ -32,7 +33,8 @@ public class HomeFragment extends Fragment {
     private androidx.viewpager2.widget.ViewPager2 ViewPager2;
     private List<RecyclerVideoViewItem> RecyclerVideoViewItemsList;
     private RecyclerVideoViewItemAdapter RecyclerVideoViewItemAdapter;
-
+    private StartTimer StartTimer;
+    private FragmentB fragmentB;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -43,6 +45,13 @@ public class HomeFragment extends Fragment {
         ViewPager2 = view.findViewById(R.id.animated_video_background);
         bindVideoData();
         ViewPager2.setAdapter(new RecyclerVideoViewItemAdapter(RecyclerVideoViewItemsList));
+        StartTimer = new StartTimer();
+        fragmentB = new FragmentB();
+
+        getParentFragmentManager().beginTransaction()
+                .replace(R.id.container_a, StartTimer)
+                .replace(R.id.container_b, fragmentB)
+                .commit();
 
         return view;
     }
@@ -58,5 +67,13 @@ public class HomeFragment extends Fragment {
         RecyclerVideoViewItemsList.add(new RecyclerVideoViewItem("Rocky river in the forest", "“The best way out is always through.” ―Robert Frost", "android.resource://" + getActivity().getPackageName() + "/" + R.raw.video));
         RecyclerVideoViewItemsList.add(new RecyclerVideoViewItem("Water flowing in the river", "“Courage is like a muscle. We strengthen it by use.” —Ruth Gordo", "android.resource://" + getActivity().getPackageName() + "/" + R.raw.waves));
         RecyclerVideoViewItemsList.add(new RecyclerVideoViewItem("Lofi in da hood", "More is lost by indecision than wrong decision.” —Marcus Tullius Cicero", "android.resource://" + getActivity().getPackageName() + "/" + R.raw.video));
+    }
+    @Override
+    public void onInputASent(CharSequence input) {
+        StartTimer.updateEditText(input);
+    }
+    @Override
+    public void onInputBSent(CharSequence input) {
+        fragmentB.updateEditText(input);
     }
 }
