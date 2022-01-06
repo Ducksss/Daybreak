@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "60332608217",
+    "firebase_url": "https://daybreak-b9a84-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "daybreak-b9a84",
+    "storage_bucket": "daybreak-b9a84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60332608217:android:d768c80d54184fe6ff8cc8",
+        "android_client_info": {
+          "package_name": "com.example.daybreak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60332608217-er6h1pg5ivt70ah0pu1i8paaph9rlqda.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBABRDQCkykJ3ecA4fiHey1haR9_HsNHms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60332608217-er6h1pg5ivt70ah0pu1i8paaph9rlqda.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

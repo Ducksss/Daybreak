@@ -20,6 +20,7 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onClick"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
@@ -94,6 +95,27 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Contact number field -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/contact_number_text_input"
+            style="@style/Widget.DayBreak.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:hint="Phone number"
+            app:boxStrokeColor="@color/light_green"
+            app:boxStrokeWidthFocused="2dp"
+            app:hintTextColor="@color/black"
+            app:startIconDrawable="@drawable/ic_baseline_phone_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <!-- Password field -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password_text_input"
@@ -143,7 +165,7 @@
                 android:textSize="13dp" />
         </RelativeLayout>
 
-        <!-- Button for sign in -->
+        <!-- Button for sign ups -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sign_up_button"
             android:layout_width="match_parent"
@@ -151,6 +173,7 @@
             android:layout_marginTop="5dp"
             android:background="@color/light_green"
             android:fontFamily="@font/roboto_light"
+            android:onClick="onClick"
             android:text="@string/signup_button"
             android:textAllCaps="false"
             app:backgroundTint="@color/light_green"

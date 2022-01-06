@@ -21,6 +21,7 @@
             android:id="@+id/back_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="onClick"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <ImageView
@@ -74,6 +75,7 @@
             app:startIconDrawable="@drawable/ic_baseline_email_24">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -107,6 +109,7 @@
             android:layout_marginTop="4dp"
             android:background="@color/light_green"
             android:fontFamily="@font/roboto_light"
+            android:onClick="onClick"
             android:text="@string/signin_button"
             android:textAllCaps="false"
             app:backgroundTint="@color/light_green"
