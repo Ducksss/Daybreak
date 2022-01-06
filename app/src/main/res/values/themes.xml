@@ -21,11 +21,11 @@
         <item name="android:windowTranslucentNavigation">false</item>
     </style>
 
-    <style name="Fullscreen2" parent="Theme.MaterialComponents.DayNight">
-    </style>
+    <style name="Fullscreen2" parent="Theme.MaterialComponents.DayNight"></style>
 
     <style name="Widget.DayBreak.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="hintTextAppearance">@style/TextAppearance.DayBreak.TextInputLayout.HintText</item>
+        <item name="hintTextAppearance">@style/TextAppearance.DayBreak.TextInputLayout.HintText
+        </item>
         <item name="hintTextColor">@color/textColorPrimary</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="boxStrokeColor">@color/textInputOutlineColor</item>
@@ -38,8 +38,18 @@
     <style name="Widget.DayBreak.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
+
     <style name="Theme.MobileUX5.AppBarOverlay" parent="Theme.Daybreak" />
 
     <style name="Theme.MobileUX5.PopupOverlay" parent="Theme.Daybreak" />
+
+    <style name="Fullscreen.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Fullscreen.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Fullscreen.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

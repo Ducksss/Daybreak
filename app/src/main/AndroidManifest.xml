@@ -20,6 +20,9 @@
             android:name=".OnboardActivity"
             android:exported="false" />
         <activity
+            android:name=".Timer.TimerActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignupActivity"
             android:exported="false" />
         <activity

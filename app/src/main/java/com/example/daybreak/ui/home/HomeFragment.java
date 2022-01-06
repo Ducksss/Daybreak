@@ -1,5 +1,6 @@
 package com.example.daybreak.ui.home;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.daybreak.R;
+import com.example.daybreak.Timer.TimerActivity;
 import com.example.daybreak.databinding.FragmentHomeBinding;
 import com.example.daybreak.databinding.FragmentNotificationsBinding;
 
@@ -53,7 +55,17 @@ public class HomeFragment extends Fragment implements StartTimer.FragmentAListen
 //                .replace(R.id.container_a, StartTimer)
 //                .replace(R.id.container_b, fragmentB)
 //                .commit();
+// Set an error if the password is less than 8 characters.
+        view.findViewById(R.id.start_focus_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                    Intent i = new Intent(getActivity(), TimerActivity.class);
+                    startActivity(i);
+
+
+            }
+        });
         return view;
     }
 

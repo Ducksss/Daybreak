@@ -44,7 +44,6 @@
                 android:background="@color/transparency"
                 app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
-
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 

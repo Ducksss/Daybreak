@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -29,6 +31,7 @@ import com.anychart.enums.Position;
 import com.anychart.enums.TooltipPositionMode;
 import com.example.daybreak.R;
 import com.example.daybreak.databinding.FragmentNotificationsBinding;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +48,14 @@ public class NotificationsFragment extends Fragment {
 
         bindGraphData();
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
+        binding = FragmentNotificationsBinding.inflate(inflater, container, false);
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+
+
+        CollapsingToolbarLayout toolBarLayout = view.findViewById(R.id.toolbar_layout);
+        toolBarLayout.setTitle("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
         // Pie chart creation
         AnyChartView anyChartView = view.findViewById(R.id.any_chart_view);
@@ -81,6 +92,8 @@ public class NotificationsFragment extends Fragment {
 
         return view;
     }
+
+
 
     public void bindGraphData() {
         pieChartData.add(new ValueDataEntry("Focus", 10));

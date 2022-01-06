@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".Timer.ContinuedTimer">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Fragment 2"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/dataFrom1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:textColor="@color/black"
+        android:textSize="26dp"/>
+
+    <TextView
+        android:id="@+id/timer_tv"
+        android:layout_width="137dp"
+        android:layout_height="147dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="26dp"
+        android:layout_marginTop="300dp"
+        android:text="0:30"
+        android:textSize="60sp" />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timer_tv"
+        android:id="@+id/timer_sb" />
+    <Button
+        android:id="@+id/start_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/timer_tv"
+        android:layout_alignEnd="@+id/timer_tv"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="start_timer"
+        android:text="Pause" />
+
+    <Button
+        android:id="@+id/sendData2btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:text="Send Data to Fragment 1" />
+
+    <Button
+        android:id="@+id/timer_back_button"
+        android:layout_width="51dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dataFrom1"
+        android:layout_marginTop="-184dp"
+        android:background="@drawable/ic_baseline_arrow_circle_left_24"
+
+        android:backgroundTint="@color/grey" />
+</RelativeLayout>
