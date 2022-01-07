@@ -37,9 +37,9 @@ public class ExploreFragment extends Fragment {
 
         tabLayout.addTab(tabLayout.newTab().setText("Explore"));
         tabLayout.addTab(tabLayout.newTab().setText("Meditation"));
-        tabLayout.addTab(tabLayout.newTab().setText("Sleep"));
-        tabLayout.addTab(tabLayout.newTab().setText("Sound"));
-        tabLayout.addTab(tabLayout.newTab().setText("Delta1"));
+        tabLayout.addTab(tabLayout.newTab().setText("Single Series"));
+        tabLayout.addTab(tabLayout.newTab().setText("Selected Mix"));
+        tabLayout.addTab(tabLayout.newTab().setText("Selected Story"));
         tabLayout.addTab(tabLayout.newTab().setText("Delta2"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
