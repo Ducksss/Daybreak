@@ -59,7 +59,7 @@ public class StartTimer extends Fragment {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                EditText editText = view.findViewById(R.id.fragment1Data);
+
                 viewModel.setData(Integer.toString(numberPicker.getValue()));
                 replaceFragment(new ContinuedTimer());
             }
