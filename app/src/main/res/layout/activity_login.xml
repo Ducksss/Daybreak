@@ -101,6 +101,35 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Remember me  and forgot password-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-5dp">
+
+            <CheckBox
+                android:id="@+id/save_login_checkbox"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/remember_me_checkbox"
+                android:textSize="13dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/forgot_password_button"
+                style="@style/Widget.DayBreak.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/roboto_light"
+                android:padding="0dp"
+                android:text="@string/forgot_password"
+                android:textAllCaps="false"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
         <!-- Button for sign in -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sign_in_button"
@@ -114,35 +143,5 @@
             android:textAllCaps="false"
             app:backgroundTint="@color/light_green"
             app:cornerRadius="8dp" />
-
-        <!-- Forgot password and reset password -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/forgot_password_button"
-                style="@style/Widget.DayBreak.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_light"
-                android:padding="0dp"
-                android:text="@string/forgot_password"
-                android:textAllCaps="false"
-                android:textSize="13dp" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/sign_up_button"
-                style="@style/Widget.DayBreak.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:fontFamily="@font/roboto_light"
-                android:padding="0dp"
-                android:text="@string/sign_up"
-                android:textAllCaps="false"
-                android:textSize="13dp" />
-        </RelativeLayout>
     </LinearLayout>
 </ScrollView>
