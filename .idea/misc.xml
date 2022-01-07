@@ -10,27 +10,32 @@
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_arrow_circle_left_24.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.3828125" />
+        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_navbar.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/item_bg.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/rounded_corner_view.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/search_bar.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/tab_indicator.xml" value="0.3828125" />
+        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/timer_selector_bg.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/activity_login.xml" value="0.12537993920972645" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.12537993920972645" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/activity_splashscreen.xml" value="0.12537993920972645" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/activity_timer.xml" value="0.12993920972644377" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/content_timer.xml" value="0.2578125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/explore_recycleritem.xml" value="0.36231884057971014" />
+        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/explore_recycleritem2.xml" value="0.20153985507246377" />
+        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_continued_timer.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_explore.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_home.xml" value="0.12537993920972645" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_notifications.xml" value="0.33" />
+        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_second2.xml" value="0.2578125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_start_timer.xml" value="0.12639311043566362" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_third.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_timer_continued.xml" value="0.2598958333333333" />
-        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_timer_selection.xml" value="0.2598958333333333" />
+        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_timer_continued.xml" value="0.33" />
+        <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/fragment_timer_selection.xml" value="0.25" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/main_fragment.xml" value="0.24375" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/start_timer_activity.xml" value="0.2578125" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/layout/timer_selection.xml" value="0.2598958333333333" />

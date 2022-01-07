@@ -51,5 +51,7 @@
     <style name="Fullscreen.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Fullscreen.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
+    <style name="NumberPickerText">
+        <item name="android:textSize">25sp</item>
+    </style>
 </resources>

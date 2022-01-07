@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:background="@drawable/calm_background_4"
+    android:background="@drawable/calm_background_3"
     android:backgroundTint="#80FFFFFF"
     android:backgroundTintMode="src_over"
     tools:context=".Timer.StartTimer">
@@ -13,38 +14,43 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text="Fragment 1"
-        android:textSize="30dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-
-        android:textColor="@color/black"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/timerTextView"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:text="a"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/fragmentText"/>
+        android:text="Focus"
+        android:textColor="@color/grey"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/timerTextView"-->
+<!--        android:textSize="50dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:text="a"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:id=@+id/fragmentTextDisplay"/>-->
     <TextView
         android:id="@+id/timerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:text=""
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/grey"/>
+
     <NumberPicker
         android:id="@+id/minutes_numberSpinner"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
+        android:selectionDividerHeight="0dp"
+
+        android:theme="@style/NumberPickerText"
+        android:dividerPadding="10dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp" />
+        android:background="@drawable/timer_selector_bg"
+        android:layout_marginTop="250dp" />
 
     <TextView
         android:id="@+id/dataFrom2"
@@ -56,25 +62,21 @@
         android:textColor="@color/black"
         android:textSize="26dp"/>
 
-    <EditText
-        android:id="@+id/fragment1Data"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="26dp"
-        android:layout_marginTop="300dp"
-        android:ems="10"
-        android:hint="Data to Fragment 2"
-        android:inputType="textPersonName" />
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/sendData1btn"
-        android:layout_width="wrap_content"
+        android:layout_width="103dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/fragment1Data"
+        android:layout_below="@+id/minutes_numberSpinner"
+        android:layout_alignStart="@+id/minutes_numberSpinner"
+        android:layout_alignEnd="@+id/minutes_numberSpinner"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/black"
-        android:text="Send Data to Fragment 2" />
+        android:layout_marginStart="-13dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="-22dp"
+        android:backgroundTint="@color/white"
+        android:text="Start"
+        android:textColor="@color/orange"
+        app:cornerRadius="100dp" />
 
 
 </RelativeLayout>
