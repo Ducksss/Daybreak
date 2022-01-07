@@ -52,12 +52,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         saveLogin = loginPreferences.getBoolean("saveLogin", false);
 
-        if (saveLogin == true) {
-            email_edit_text.setText(loginPreferences.getString("username", ""));
-            passwordEditText.setText(loginPreferences.getString("password", ""));
-            save_login_checkbox.setChecked(true);
-        }
-
         // KEYSTROKE LISTENER
         // Clear the error once more than 8 characters are typed.
         passwordEditText.setOnKeyListener(new View.OnKeyListener() {
@@ -126,15 +120,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    if (save_login_checkbox.isChecked()) {
-                                        loginPrefsEditor.putBoolean("saveLogin", true);
-                                        loginPrefsEditor.putString("username", email_text_input_string);
-                                        loginPrefsEditor.putString("password", password_text_input_string);
-                                        loginPrefsEditor.commit();
-                                    } else {
-                                        loginPrefsEditor.clear();
-                                        loginPrefsEditor.commit();
-                                    }
+                                    loginPrefsEditor.putBoolean("saveLogin", true);
+                                    loginPrefsEditor.putString("username", email_text_input_string);
+                                    loginPrefsEditor.putString("password", password_text_input_string);
+                                    loginPrefsEditor.commit();
 
                                     passwordTextInput.setErrorEnabled(false); // Clear the error
                                     Intent i = new Intent(getApplicationContext(), MainActivity.class);

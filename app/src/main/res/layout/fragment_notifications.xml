@@ -50,6 +50,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".ScrollingActivity"
         tools:showIn="@layout/fragment_notifications">
@@ -58,29 +59,32 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/profile_focus_header"
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
+                android:paddingTop="20dp"
                 android:text="Focus"
                 android:textSize="25dp"
-                android:paddingTop="20dp"
                 android:textStyle="bold" />
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/a"
-                android:layout_width="360dp"
+                android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
+                android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/white">
+                app:cardElevation="8dp">
 
                 <RelativeLayout
-                    android:background="@color/white"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
 
                     <com.anychart.AnyChartView
                         android:id="@+id/any_chart_view1"
@@ -90,6 +94,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_marginEnd="-1dp"
                         android:gravity="end" />
+
                     <ProgressBar
                         android:id="@+id/progress_bar"
                         android:layout_width="wrap_content"
@@ -97,8 +102,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/focus_graph"
@@ -112,31 +116,31 @@
                         android:textColor="@color/orange" />
 
                 </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="20dp"
+                android:paddingTop="20dp"
                 android:text="Abstract"
                 android:textSize="25dp"
-                android:paddingTop="20dp"
                 android:textStyle="bold" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="15dp"
-                android:paddingLeft="17dp"
-                android:paddingRight="17dp">
+                android:layout_marginHorizontal="15dp">
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/time_card"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
+                    android:layout_width="185dp"
+                    android:layout_height="185dp"
                     android:layout_gravity="start"
-                    app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -169,15 +173,17 @@
                             android:textStyle="bold" />
 
                     </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/streak_card"
-                    android:layout_width="170dp"
-                    android:layout_height="170dp"
+                    android:layout_width="185dp"
+                    android:layout_height="185dp"
                     android:layout_gravity="end"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="true"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/time_card">
 
@@ -196,6 +202,7 @@
                             android:gravity="start"
                             android:text="Day Streak"
                             android:textColor="@color/orange" />
+
                         <TextView
                             android:id="@+id/streak_max"
                             android:layout_width="wrap_content"
@@ -206,6 +213,7 @@
                             android:gravity="start"
                             android:text="Max 1 day"
                             android:textColor="@color/black" />
+
                         <TextView
                             android:id="@+id/streak_description"
                             android:layout_width="wrap_content"
@@ -218,22 +226,24 @@
                             android:textColor="@color/black"
                             android:textStyle="bold" />
                     </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.cardview.widget.CardView
+
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/hours_card"
-                android:layout_width="360dp"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="50dp"
                 app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/white">
+                app:cardElevation="8dp">
 
                 <RelativeLayout
-                    android:background="@color/white"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:background="@color/white">
 
                     <TextView
                         android:id="@+id/info_text"
@@ -251,8 +261,8 @@
                         android:layout_width="250dp"
                         android:layout_height="200dp"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="-1dp"
-                        android:gravity="end" />
+                        android:gravity="end"
+                        android:padding="5dp" />
 
                     <TextView
                         android:id="@+id/hour_description"
@@ -266,8 +276,7 @@
                         android:textColor="@color/black"
                         android:textStyle="bold" />
                 </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
