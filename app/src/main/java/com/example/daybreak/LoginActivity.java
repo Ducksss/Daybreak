@@ -41,8 +41,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // For better coding, remove this when the app is ready
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
         passwordTextInput = findViewById(R.id.password_text_input);
         passwordEditText = findViewById(R.id.password_edit_text);
         email_text_input = findViewById(R.id.email_text_input);
@@ -53,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginPrefsEditor = loginPreferences.edit();
 
         saveLogin = loginPreferences.getBoolean("saveLogin", false);
+
         if (saveLogin == true) {
             email_edit_text.setText(loginPreferences.getString("username", ""));
             passwordEditText.setText(loginPreferences.getString("password", ""));
@@ -89,7 +88,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Intent i;
         Bundle animationBundle = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_left,
                 R.animator.slide_out_right).toBundle();
-
 
         switch (v.getId()) {
             case R.id.back_button:
