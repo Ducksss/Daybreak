@@ -47,6 +47,7 @@
                     android:textColor="@color/light_green" />
 
                 <TextView
+                    android:id="@+id/explore_card_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_bold"
@@ -55,22 +56,10 @@
                     android:textSize="18dp" />
 
                 <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/explore_card_chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
-                    <com.google.android.material.chip.Chip
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Urban"
-                        app:chipCornerRadius="5dp"
-                        app:chipMinHeight="38dp" />
-
-                    <com.google.android.material.chip.Chip
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Melody"
-                        app:chipCornerRadius="5dp"
-                        app:chipMinHeight="38dp" />
                 </com.google.android.material.chip.ChipGroup>
             </LinearLayout>
         </LinearLayout>
@@ -79,7 +68,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="10dp">
+            android:paddingVertical="10dp">
+
+            <View
+                android:layout_marginVertical="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#c0c0c0"/>
 
             <!-- Title, secondary and supporting text -->
             <TextView

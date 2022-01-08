@@ -20,6 +20,7 @@ import com.example.daybreak.R;
 import com.example.daybreak.SignupActivity;
 import com.google.android.material.card.MaterialCardView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -39,8 +40,10 @@ public class FirstFragment extends Fragment {
     private String mParam2;
     private RecyclerView singlePracticeRecyclerView;
     private RecyclerView meditationSeriesRecyclerView;
+    private RecyclerView forYouSeriesRecyclerView;
     private ArrayList<RecyclerExploreCardItem> singlePracticeItems = new ArrayList<>();
     private ArrayList<RecyclerExploreCardItem> meditationSeriesItems = new ArrayList<>();
+    private ArrayList<RecyclerExploreLongCardItem> forYouSeriesItems = new ArrayList<>();
 
     public FirstFragment() {
         // Required empty public constructor
@@ -79,10 +82,7 @@ public class FirstFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
-        // Get data for recycler views
-        bindPodCastData();
-        // Recyclerview configs
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false);
+        bindRecyclerViews(view);
 
         // Find View of the MaterialCard
         MaterialCardView materialCardView = view.findViewById(R.id.card_view);
@@ -96,37 +96,23 @@ public class FirstFragment extends Fragment {
             }
         });
 
+        return view;
+    }
+
+    private void bindRecyclerViews(View view) {
+        // Get data for recycler views
+        bindPodCastData();
+
         // SINGLE SERIES
-        singlePracticeRecyclerView = view.findViewById(R.id.selected_podcasts);
-        // Set Layout Manager to RecyclerView
-        singlePracticeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
-        //Create adapter
-        RecyclerExploreCardAdapter myRecyclerViewAdapter = new RecyclerExploreCardAdapter(singlePracticeItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
-            //Handling clicks
-            @Override
-            public void onItemClicked(RecyclerExploreCardItem country) {
-                Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
-                startActivity(intent);
-            }
-        });
-        singlePracticeRecyclerView.setAdapter(myRecyclerViewAdapter);
+        bindSinglePracticeItems(view);
 
         // MEDITATION SERIES
-        meditationSeriesRecyclerView = view.findViewById(R.id.meditation_series);
-        // Set Layout Manager to RecyclerView
-        meditationSeriesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, true));
-        //Create adapter
-        RecyclerExploreCardAdapter myRecyclerViewAdapter2 = new RecyclerExploreCardAdapter(meditationSeriesItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
-            //Handling clicks navigation
-            @Override
-            public void onItemClicked(RecyclerExploreCardItem country) {
-                Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
-                startActivity(intent);
-            }
-        });
-        meditationSeriesRecyclerView.setAdapter(myRecyclerViewAdapter2);
+        bindMeditationSeriesItems(view);
 
-        return view;
+        // SELECTED MIX
+
+        // FOR YOU
+        bindForYouSeriesItems(view);
     }
 
     private void bindPodCastData() {
@@ -139,15 +125,73 @@ public class FirstFragment extends Fragment {
         singlePracticeItems.add(new RecyclerExploreCardItem("Falling Asleep", "5 Min • Singles", getActivity().getDrawable(R.drawable.background_image_3)));
 
         // MEDITATION SERIES
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Coping With Stress", "5-15 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_4)));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Happiness", "5-15 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_2)));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Healthy Eating", "10 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_3)));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Morning Exercise", "5 Min • Singles", getActivity().getDrawable(R.drawable.background_image_1)));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Fantasyland", "5-10 Min • Singles", getActivity().getDrawable(R.drawable.background_image_2)));
         meditationSeriesItems.add(new RecyclerExploreCardItem("Dreamland", "10 Min • Singles", getActivity().getDrawable(R.drawable.background_image_3)));
+        meditationSeriesItems.add(new RecyclerExploreCardItem("Fantasyland", "5-10 Min • Singles", getActivity().getDrawable(R.drawable.background_image_2)));
+        meditationSeriesItems.add(new RecyclerExploreCardItem("Morning Exercise", "5 Min • Singles", getActivity().getDrawable(R.drawable.background_image_1)));
+        meditationSeriesItems.add(new RecyclerExploreCardItem("Healthy Eating", "10 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_3)));
+        meditationSeriesItems.add(new RecyclerExploreCardItem("Happiness", "5-15 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_2)));
+        meditationSeriesItems.add(new RecyclerExploreCardItem("Coping With Stress", "5-15 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_4)));
+
         // SELECTED MIX
 
         // SELECTED STORY
 
+
+        // FOR YOU
+        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Steps", "Slow down your pace, feel the wonderful coordination of your body, and meet your own true self.", getActivity().getDrawable(R.drawable.calm_background_4), new String[]{"Meditation", "Melody"}));
+        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Street", "I know this one the best. I think of the streets in Japan, which are quiet and full of lovely shops. I want this alarm!", getActivity().getDrawable(R.drawable.calm_background_1), new String[]{"Nature", "Sleep"}));
+        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Lighthouse", "As I inhale the impalpable breeze that set in upon me, the ocean mysterious rolls toward me closer and closer.", getActivity().getDrawable(R.drawable.calm_background_3), new String[]{"Nature", "Meditation"}));
+        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Library", "Close the book, still feeling what it was like to dwell in that light.", getActivity().getDrawable(R.drawable.calm_background_2), new String[]{"Performance", "Stress"}));
+    }
+
+    public void bindSinglePracticeItems(View view) {
+        // SINGLE SERIES
+        singlePracticeRecyclerView = view.findViewById(R.id.selected_podcasts);
+        // Set Layout Manager to RecyclerView
+        singlePracticeRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        //Create adapter
+        RecyclerExploreCardAdapter myRecyclerViewAdapter = new RecyclerExploreCardAdapter(singlePracticeItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
+            //Handling clicks
+            @Override
+            public void onItemClicked(RecyclerExploreCardItem country) {
+                Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
+
+                startActivity(intent);
+            }
+        });
+        singlePracticeRecyclerView.setAdapter(myRecyclerViewAdapter);
+    }
+
+    public void bindMeditationSeriesItems(View view) {
+        meditationSeriesRecyclerView = view.findViewById(R.id.meditation_series);
+        // Set Layout Manager to RecyclerView
+        meditationSeriesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        //Create adapter
+        RecyclerExploreCardAdapter myRecyclerViewAdapter2 = new RecyclerExploreCardAdapter(meditationSeriesItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
+            //Handling clicks navigation
+            @Override
+            public void onItemClicked(RecyclerExploreCardItem country) {
+                Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        meditationSeriesRecyclerView.setAdapter(myRecyclerViewAdapter2);
+    }
+
+    public void bindForYouSeriesItems(View view) {
+        forYouSeriesRecyclerView = view.findViewById(R.id.for_you_series);
+        // Set Layout Manager to RecyclerView
+        forYouSeriesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
+        //Create adapter
+        RecyclerExploreLongCardAdapter myRecyclerViewAdapter3 = new RecyclerExploreLongCardAdapter(forYouSeriesItems, new RecyclerExploreLongCardAdapter.MyRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerExploreLongCardItem title) {
+                Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
+                intent.putExtra("Title", "dynamic text");
+                startActivity(intent);
+            }
+        });
+        forYouSeriesRecyclerView.setAdapter(myRecyclerViewAdapter3);
     }
 }
