@@ -27,34 +27,12 @@ public class TimerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
-//        firstFragmentBtn = findViewById(R.id.fragment1btn);
-//        secondFragmentBtn = findViewById(R.id.fragment2btn);
-        FragmentText = findViewById(R.id.fragmentText);
 
         // View Model Logic
         viewModel = new ViewModelProvider(this).get(ItemViewModel.class);
         viewModel.getSelectedItem().observe(this, item ->{
-            FragmentText.setText(item);
         });
         replaceFragment(new StartTimer());
-//        firstFragmentBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                replaceFragment(new StartTimer());
-//
-//            }
-//        });
-//
-//        secondFragmentBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                replaceFragment(new ContinuedTimer());
-//
-//            }
-//        });
-
     }
 
     private void replaceFragment(Fragment fragment) {

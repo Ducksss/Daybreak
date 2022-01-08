@@ -90,6 +90,8 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
+                intent.putExtra("firstKeyName","FirstKeyValue");
+                intent.putExtra("secondKeyName","SecondKeyValue");
                 startActivity(intent);
             }
         });

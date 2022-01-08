@@ -32,7 +32,6 @@ import java.util.Locale;
 public class ContinuedTimer extends Fragment {
     View view;
     TextView textView;
-    String TAG = "Main";
     TextView tv;
     ItemViewModel viewModel;
     private static final long START_TIME_IN_MILLIS = 600000;
@@ -45,7 +44,7 @@ public class ContinuedTimer extends Fragment {
 
         tv = view.findViewById(R.id.txt);
         viewModel = new ViewModelProvider(requireActivity()).get(ItemViewModel.class);
-        textView = view.findViewById(R.id.fragmentText);
+
         System.out.println(viewModel.getSelectedItem().getValue());
         new CountDownTimer(Integer.parseInt(viewModel.getSelectedItem().getValue())*60000, 1000) {
 
@@ -60,8 +59,6 @@ public class ContinuedTimer extends Fragment {
             }
 
         }.start();
-
-
 
         return view;
     }
@@ -78,6 +75,16 @@ public class ContinuedTimer extends Fragment {
             public void onClick(View v) {
                 replaceFragment(new StartTimer());
                 viewModel.setData("");
+            }
+        });
+        //end Button
+        Button endTimer = view.findViewById(R.id.sendData1btn);
+        endTimer.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                // Add shared preference here
+
+                replaceFragment(new EndTimer());
             }
         });
     }

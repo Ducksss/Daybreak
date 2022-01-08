@@ -36,7 +36,7 @@ public class StartTimer extends Fragment {
         Button button = view.findViewById(R.id.sendData1btn);
         textView = view.findViewById(R.id.timerTextView);
         numberPicker = view.findViewById(R.id.minutes_numberSpinner);
-        numberPicker.setMinValue(0);
+        numberPicker.setMinValue(1);
         numberPicker.setMaxValue(60);
         textView.setText(String.format("User's Number: %s", numberPicker.getValue()));
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
@@ -59,7 +59,6 @@ public class StartTimer extends Fragment {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
                 viewModel.setData(Integer.toString(numberPicker.getValue()));
                 replaceFragment(new ContinuedTimer());
             }
