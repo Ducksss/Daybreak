@@ -30,8 +30,16 @@ import com.anychart.enums.HoverMode;
 import com.anychart.enums.Position;
 import com.anychart.enums.TooltipPositionMode;
 import com.example.daybreak.R;
+import com.example.daybreak.User;
 import com.example.daybreak.databinding.FragmentNotificationsBinding;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +50,7 @@ public class NotificationsFragment extends Fragment {
     private FragmentNotificationsBinding binding;
     List<DataEntry> pieChartData = new ArrayList<>();
     List<DataEntry> columnChartData = new ArrayList<>();
-
+    private FirebaseUser MUser;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -50,12 +58,29 @@ public class NotificationsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         Toolbar toolbar = view.findViewById(R.id.toolbar);
+        // Dynamically greet the user
+        MUser = FirebaseAuth.getInstance().getCurrentUser();
+        // Retrieving data from firebase on the user user name / full name
+        FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://daybreak-b9a84-default-rtdb.asia-southeast1.firebasedatabase.app");
+        // Getting a reference of the table
+        DatabaseReference reference = rootNode.getReference("Users");
+        // Retrieving the UID
+        String UserID = MUser.getUid();
+        // Calling database for the items
+        reference.child(UserID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user = snapshot.getValue(User.class);
+                ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+                CollapsingToolbarLayout toolBarLayout = view.findViewById(R.id.toolbar_layout);
+                toolBarLayout.setTitle(user.getUsername());
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getActivity(), "Uh oh! Failure!", Toast.LENGTH_LONG).show();
+            }
+        });
 
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-
-
-        CollapsingToolbarLayout toolBarLayout = view.findViewById(R.id.toolbar_layout);
-        toolBarLayout.setTitle("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
         // Pie chart creation
         AnyChartView anyChartView = view.findViewById(R.id.any_chart_view);

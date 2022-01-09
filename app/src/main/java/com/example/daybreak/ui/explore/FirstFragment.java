@@ -1,6 +1,9 @@
 package com.example.daybreak.ui.explore;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +11,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +24,7 @@ import com.example.daybreak.R;
 import com.example.daybreak.SignupActivity;
 import com.google.android.material.card.MaterialCardView;
 
+import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
@@ -86,6 +91,7 @@ public class FirstFragment extends Fragment {
 
         // Find View of the MaterialCard
         MaterialCardView materialCardView = view.findViewById(R.id.card_view);
+
         materialCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -166,12 +172,19 @@ public class FirstFragment extends Fragment {
         meditationSeriesRecyclerView = view.findViewById(R.id.meditation_series);
         // Set Layout Manager to RecyclerView
         meditationSeriesRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        System.out.println(meditationSeriesItems);
         //Create adapter
         RecyclerExploreCardAdapter myRecyclerViewAdapter2 = new RecyclerExploreCardAdapter(meditationSeriesItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
             //Handling clicks navigation
             @Override
             public void onItemClicked(RecyclerExploreCardItem country) {
+
+
+                System.out.println(country.getTitle());
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
+                intent.putExtra("Title", country.getTitle());
+                intent.putExtra("Subtitle", country.getSubtitle());
+
                 startActivity(intent);
             }
         });

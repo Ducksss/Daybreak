@@ -132,7 +132,7 @@
                 android:layout_gravity="right" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/inner_explore_subtitle"
                 android:layout_width="121dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -144,6 +144,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/text_margin"
+                android:id="@+id/inner_explore_description"
                 android:text="@string/large_text" />
 
         </LinearLayout>

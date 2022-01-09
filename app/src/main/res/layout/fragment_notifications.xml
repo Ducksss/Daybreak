@@ -30,19 +30,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/white"
+                android:background="@color/grey"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/Theme.MobileUX5.PopupOverlay" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="70dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/transparency"
-                app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -50,14 +40,14 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="20dp"
+        android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context=".ScrollingActivity"
+        tools:context=".ui.notifications.NotificationsFragment"
         tools:showIn="@layout/fragment_notifications">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="1500dp"
             android:orientation="vertical">
 
             <TextView
@@ -238,6 +228,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="50dp"
                 app:cardCornerRadius="10dp"
+                android:layout_marginBottom="100dp"
                 app:cardElevation="8dp">
 
                 <RelativeLayout

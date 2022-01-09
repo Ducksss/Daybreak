@@ -1,5 +1,7 @@
 package com.example.daybreak;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -16,18 +18,27 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.daybreak.databinding.ActivityInnerExploreBinding;
 
-public class InnerExploreActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+import java.util.Optional;
+
+public class InnerExploreActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ActivityInnerExploreBinding binding;
     MediaPlayer player = null;
+    TextView descriptionTextView;
+    TextView subtitleTextView;
+    String Title;
+    String Subtitle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+
 
         binding = ActivityInnerExploreBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -44,6 +55,20 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         spinner.setOnItemSelectedListener(this);
 
         FloatingActionButton fab = binding.fab;
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        descriptionTextView = findViewById(R.id.inner_explore_description);
+        subtitleTextView = findViewById(R.id.inner_explore_subtitle);
+        if (bundle == null) {
+
+        } else {
+            Title = Optional.ofNullable(intent.getStringExtra("Title")).orElse("Unable to retrieve Title");
+            System.out.println(Title);
+            descriptionTextView.setText(Title);
+            Subtitle = Optional.ofNullable(intent.getStringExtra("Subtitle")).orElse("Unable to retrieve Subtitle");
+            subtitleTextView.setText(Subtitle);
+            Bitmap bitmap = (Bitmap) intent.getParcelableExtra("Bitmap");
+        }
         if (player == null) {
             player = MediaPlayer.create(this, R.raw.bgm);
 
@@ -64,6 +89,7 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
             }
         });
     }
+
     private void stopPlayer() {
         if (player != null) {
             player.release();
@@ -71,16 +97,17 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
             Toast.makeText(this, "MediaPlayer released", Toast.LENGTH_SHORT).show();
         }
     }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String text = parent.getItemAtPosition(position).toString();
-        if(text.equals("1x")){
+        if (text.equals("1x")) {
             player.setPlaybackParams(player.getPlaybackParams().setSpeed(1f));
-        }else if (text.equals("2x")){
+        } else if (text.equals("2x")) {
             player.setPlaybackParams(player.getPlaybackParams().setSpeed(2f));
-        }else if (text.equals("4x")){
+        } else if (text.equals("4x")) {
             player.setPlaybackParams(player.getPlaybackParams().setSpeed(4f));
-        }else if (text.equals("0.5x")){
+        } else if (text.equals("0.5x")) {
             player.setPlaybackParams(player.getPlaybackParams().setSpeed(0.5f));
         }
     }
