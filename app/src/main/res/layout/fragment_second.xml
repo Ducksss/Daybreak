@@ -6,10 +6,127 @@
     tools:context=".ui.explore.SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Second fragment"
-        android:layout_gravity="center"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="75dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <!-- Selected Podcasts Recommendations -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/single_practice_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/single_practice_title"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/selected_podcast_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/single_practice_title"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/single_practice_subtitle"
+                    android:textColor="#808080"
+                    android:textSize="12dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/selected_podcasts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" />
+            </RelativeLayout>
+
+            <!-- Selected Meditation Recommendations -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/meditation_series_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/meditation_series_title"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/meditation_series_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/meditation_series_title"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/meditation_series_subtitle"
+                    android:textColor="#808080"
+                    android:textSize="12dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/meditation_series"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/meditation_series_subtitle"
+                    android:layout_marginHorizontal="4.5dp"
+                    android:layout_marginTop="-5dp"
+                    android:orientation="horizontal" />
+            </RelativeLayout>
+
+            <!-- For you Recommendations -->
+            <!-- Selected Meditation Recommendations -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/for_you_series_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="For You Series"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/for_you_series_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/for_you_series_title"
+                    android:layout_marginHorizontal="15dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/meditation_series_subtitle"
+                    android:textColor="#808080"
+                    android:textSize="12dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/for_you_series"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/for_you_series_subtitle"
+                    android:layout_marginHorizontal="4.5dp"
+                    android:layout_marginTop="-5dp"
+                    android:orientation="horizontal" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
