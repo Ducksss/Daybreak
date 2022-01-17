@@ -32,7 +32,7 @@ public class EndTimer extends Fragment {
         timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
         loginPrefsEditor = timerPreferences.edit();
         timerCount = view.findViewById(R.id.timer_count);
-        timerCount.setText(Integer.toString(timerPreferences.getInt("focusamount", 0)) +" Times");
+        timerCount.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) +" Times");
         // Check if threshold is met
         if (true) {
             loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0)+1);

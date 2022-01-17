@@ -121,7 +121,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="15dp">
+                android:layout_marginHorizontal="5dp">
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/time_card"
@@ -134,16 +134,17 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/white">
+                        android:layout_marginLeft="13dp"
+                        android:background="@color/white"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/focus_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="13dp"
                             android:layout_marginTop="10dp"
                             android:background="@color/white"
                             android:gravity="start"
@@ -154,15 +155,14 @@
                             android:id="@+id/focus_description"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="13dp"
-                            android:layout_marginTop="140dp"
+                            android:layout_marginTop="90dp"
                             android:background="@color/white"
                             android:gravity="bottom"
                             android:text="13 time(s)"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
 
-                    </RelativeLayout>
+                    </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
@@ -177,16 +177,17 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/time_card">
 
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/white">
+                        android:layout_marginLeft="13dp"
+                        android:background="@color/white"
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/streak_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="13dp"
                             android:layout_marginTop="10dp"
                             android:background="@color/white"
                             android:gravity="start"
@@ -197,12 +198,12 @@
                             android:id="@+id/streak_max"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="13dp"
-                            android:layout_marginTop="30dp"
+                            android:layout_marginTop="90dp"
                             android:background="@color/white"
                             android:gravity="start"
                             android:text="Max 1 day"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/streak_description"
@@ -215,7 +216,7 @@
                             android:text="1 time(s)"
                             android:textColor="@color/black"
                             android:textStyle="bold" />
-                    </RelativeLayout>
+                    </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -226,9 +227,8 @@
                 android:layout_height="200dp"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
                 app:cardCornerRadius="10dp"
-                android:layout_marginBottom="100dp"
                 app:cardElevation="8dp">
 
                 <RelativeLayout

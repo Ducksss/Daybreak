@@ -2,6 +2,9 @@ package com.example.daybreak;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -12,11 +15,13 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,15 +34,17 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
 
     private ActivityInnerExploreBinding binding;
     MediaPlayer player = null;
-    TextView descriptionTextView;
+    TextView titleTextView;
     TextView subtitleTextView;
+    TextView descriptionTextView;
+    ImageView imageView;
     String Title;
     String Subtitle;
+    String Description;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
 
 
         binding = ActivityInnerExploreBinding.inflate(getLayoutInflater());
@@ -57,17 +64,24 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         FloatingActionButton fab = binding.fab;
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        descriptionTextView = findViewById(R.id.inner_explore_description);
+        titleTextView = findViewById(R.id.inner_explore_title);
         subtitleTextView = findViewById(R.id.inner_explore_subtitle);
+        descriptionTextView = findViewById(R.id.inner_explore_description);
+        imageView = findViewById(R.id.imageView1);
+
         if (bundle == null) {
 
         } else {
             Title = Optional.ofNullable(intent.getStringExtra("Title")).orElse("Unable to retrieve Title");
-            System.out.println(Title);
-            descriptionTextView.setText(Title);
             Subtitle = Optional.ofNullable(intent.getStringExtra("Subtitle")).orElse("Unable to retrieve Subtitle");
+            Description = Optional.ofNullable(intent.getStringExtra("Description")).orElse("Unable to retrieve Description");
+            int diff = getIntent().getIntExtra("Background", 0);
+
+            titleTextView.setText(Title);
             subtitleTextView.setText(Subtitle);
-            Bitmap bitmap = (Bitmap) intent.getParcelableExtra("Bitmap");
+            descriptionTextView.setText(Description);
+            imageView.getLayoutParams().height = 1500;
+            imageView.setImageDrawable(getDrawable(diff));
         }
         if (player == null) {
             player = MediaPlayer.create(this, R.raw.bgm);
