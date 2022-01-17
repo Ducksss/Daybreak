@@ -99,9 +99,26 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
-                intent.putExtra("firstKeyName", "FirstKeyValue");
-                intent.putExtra("secondKeyName", "SecondKeyValue");
-
+                intent.putExtra("Title", "Mind Before Matter");
+                intent.putExtra("Subtitle", "SecondKeyValue");
+                intent.putExtra("background", R.drawable.background_image_1);
+                intent.putExtra("Description", "mind before matter.\n" +
+                        "\n" +
+                        "You can't force my decisions.\n" +
+                        "\n" +
+                        "If I don't want to talk about it, then that's just the way it is.\"\n" +
+                        "\n" +
+                        "How many people do you know who have this kind of mindset?\n" +
+                        "\n" +
+                        "This is a poor quality to have.\n" +
+                        "\n" +
+                        "She is being swayed by her emotions, instead of trusting her judgment, or even considering her son's words.\n" +
+                        "\n" +
+                        "Instead of seeing that he is holding back for his own reasons, she sees that he doesn't want to talk about it, and as a result, she is pulling away.\n" +
+                        "\n" +
+                        "Yes, when people like this get offended by your comments, it is usually because they believe that their loved one is a coward, or maybe just need more understanding.\n" +
+                        "\n" +
+                        "They don't know how to handle your comment.");
                 startActivity(intent);
             }
         });
@@ -150,10 +167,10 @@ public class FirstFragment extends Fragment {
 
 
         // FOR YOU
-        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Steps", "Slow down your pace, feel the wonderful coordination of your body, and meet your own true self.", getActivity().getDrawable(R.drawable.calm_background_4), new String[]{"Meditation", "Melody"}));
-        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Street", "I know this one the best. I think of the streets in Japan, which are quiet and full of lovely shops. I want this alarm!", getActivity().getDrawable(R.drawable.calm_background_1), new String[]{"Nature", "Sleep"}));
-        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Lighthouse", "As I inhale the impalpable breeze that set in upon me, the ocean mysterious rolls toward me closer and closer.", getActivity().getDrawable(R.drawable.calm_background_3), new String[]{"Nature", "Meditation"}));
-        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Library", "Close the book, still feeling what it was like to dwell in that light.", getActivity().getDrawable(R.drawable.calm_background_2), new String[]{"Performance", "Stress"}));
+        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Steps", "Slow down your pace, feel the wonderful coordination of your body, and meet your own true self.", getActivity().getDrawable(R.drawable.calm_background_4), new String[]{"Meditation", "Melody"}, R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
+        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Street", "I know this one the best. I think of the streets in Japan, which are quiet and full of lovely shops. I want this alarm!", getActivity().getDrawable(R.drawable.calm_background_1), new String[]{"Nature", "Sleep"}, R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
+        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Lighthouse", "As I inhale the impalpable breeze that set in upon me, the ocean mysterious rolls toward me closer and closer.", getActivity().getDrawable(R.drawable.calm_background_3), new String[]{"Nature", "Meditation"}, R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
+        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Library", "Close the book, still feeling what it was like to dwell in that light.", getActivity().getDrawable(R.drawable.calm_background_2), new String[]{"Performance", "Stress"}, R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
     }
 
     public void bindSinglePracticeItems(View view) {
@@ -165,9 +182,12 @@ public class FirstFragment extends Fragment {
         RecyclerExploreCardAdapter myRecyclerViewAdapter = new RecyclerExploreCardAdapter(singlePracticeItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
             //Handling clicks
             @Override
-            public void onItemClicked(RecyclerExploreCardItem country) {
+            public void onItemClicked(RecyclerExploreCardItem item) {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
-
+                intent.putExtra("Title", item.getTitle());
+                intent.putExtra("Subtitle", item.getSubtitle());
+                intent.putExtra("Background", item.getDrawableID());
+                intent.putExtra("Description", item.getInnerContent());
                 startActivity(intent);
             }
         });
@@ -182,12 +202,12 @@ public class FirstFragment extends Fragment {
         RecyclerExploreCardAdapter myRecyclerViewAdapter2 = new RecyclerExploreCardAdapter(meditationSeriesItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
             //Handling clicks navigation
             @Override
-            public void onItemClicked(RecyclerExploreCardItem country) {
+            public void onItemClicked(RecyclerExploreCardItem item) {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
-                intent.putExtra("Title", country.getTitle());
-                intent.putExtra("Subtitle", country.getSubtitle());
-                intent.putExtra("Background", country.getDrawableID());
-                intent.putExtra("Description", country.getInnerContent());
+                intent.putExtra("Title", item.getTitle());
+                intent.putExtra("Subtitle", item.getSubtitle());
+                intent.putExtra("Background", item.getDrawableID());
+                intent.putExtra("Description", item.getInnerContent());
                 startActivity(intent);
             }
         });
@@ -202,9 +222,12 @@ public class FirstFragment extends Fragment {
         //Create adapter
         RecyclerExploreLongCardAdapter myRecyclerViewAdapter3 = new RecyclerExploreLongCardAdapter(forYouSeriesItems, new RecyclerExploreLongCardAdapter.MyRecyclerViewItemClickListener() {
             @Override
-            public void onItemClicked(RecyclerExploreLongCardItem title) {
+            public void onItemClicked(RecyclerExploreLongCardItem item) {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
-                intent.putExtra("Title", "dynamic text");
+                intent.putExtra("Title", item.getTitle());
+                intent.putExtra("Subtitle", item.getSubtitle());
+                intent.putExtra("Background", item.getDrawableID());
+                intent.putExtra("Description", item.getInnerContent());
                 startActivity(intent);
             }
         });

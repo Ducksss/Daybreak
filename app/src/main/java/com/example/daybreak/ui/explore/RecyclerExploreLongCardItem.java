@@ -10,12 +10,16 @@ public class RecyclerExploreLongCardItem {
     private String subtitle;
     private Drawable image;
     private String[] cardChips;
+    private int drawableID;
+    private String innerContent;
 
-    public RecyclerExploreLongCardItem(String title, String subtitle, Drawable image, String[] cardChips) {
+    public RecyclerExploreLongCardItem(String title, String subtitle, Drawable image, String[] cardChips, int drawableID, String innerContent) {
         this.title = title;
         this.subtitle = subtitle;
         this.image = image;
         this.cardChips = cardChips;
+        this.drawableID = drawableID;
+        this.innerContent = innerContent;
     }
 
     public String getTitle() {
@@ -48,5 +52,21 @@ public class RecyclerExploreLongCardItem {
 
     public void setCardChips(String[] cardChips) {
         this.cardChips = cardChips;
+    }
+
+    public int getDrawableID() {
+        return drawableID;
+    }
+
+    public void setDrawableID(int drawableID) {
+        this.drawableID = drawableID;
+    }
+
+    public String getInnerContent() {
+        return innerContent;
+    }
+
+    public void setInnerContent(String innerContent) {
+        this.innerContent = innerContent;
     }
 }
