@@ -64,13 +64,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/sendData1btn"
-        android:layout_width="103dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/minutes_numberSpinner"
-        android:layout_alignStart="@+id/minutes_numberSpinner"
-        android:layout_alignEnd="@+id/minutes_numberSpinner"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginLeft="100dp"
         android:backgroundTint="@color/white"
         android:text="Start"
         android:textColor="@color/orange"

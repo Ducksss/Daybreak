@@ -1,5 +1,7 @@
 package com.example.daybreak.ui.notifications;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +52,8 @@ public class NotificationsFragment extends Fragment {
     private FragmentNotificationsBinding binding;
     List<DataEntry> pieChartData = new ArrayList<>();
     List<DataEntry> columnChartData = new ArrayList<>();
+    private SharedPreferences timerPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
     private FirebaseUser MUser;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -115,6 +119,17 @@ public class NotificationsFragment extends Fragment {
         cartesian.palette(new String[]{"#ff7e05", "#ff7e05"});
         anyChartView1.setChart(cartesian);
 
+        timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
+        loginPrefsEditor = timerPreferences.edit();
+        TextView tv = view.findViewById(R.id.focus_description);
+        tv.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) +" Times");
+        // Check if threshold is met
+        if (true) {
+            loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0)+1);
+        } else {
+            loginPrefsEditor.clear();
+        }
+        loginPrefsEditor.commit();
         return view;
     }
 
