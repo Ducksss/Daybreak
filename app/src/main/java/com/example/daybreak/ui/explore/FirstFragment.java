@@ -226,6 +226,7 @@ public class FirstFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
                 intent.putExtra("Title", item.getTitle());
                 intent.putExtra("Subtitle", item.getSubtitle());
+                intent.putExtra("Chip", item.getCardChips());
                 intent.putExtra("Background", item.getDrawableID());
                 intent.putExtra("Description", item.getInnerContent());
                 startActivity(intent);

@@ -42,14 +42,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+
 
     <com.like.LikeButton
         app:icon_type="heart"
@@ -104,12 +97,6 @@
                     android:id="@+id/chip7"
                     android:layout_width="wrap_content"
                     android:text="#Inspiration"
-                    android:layout_height="wrap_content" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chip8"
-                    android:layout_width="wrap_content"
-                    android:text="#Health"
                     android:layout_height="wrap_content" />
             </com.google.android.material.chip.ChipGroup>
 

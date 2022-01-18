@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.chip.Chip;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -37,10 +38,13 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
     TextView titleTextView;
     TextView subtitleTextView;
     TextView descriptionTextView;
+    Chip Chip1;
+    Chip Chip2;
     ImageView imageView;
     String Title;
     String Subtitle;
     String Description;
+    String[] ChipArray;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -61,28 +65,32 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
-        FloatingActionButton fab = binding.fab;
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         titleTextView = findViewById(R.id.inner_explore_title);
         subtitleTextView = findViewById(R.id.inner_explore_subtitle);
         descriptionTextView = findViewById(R.id.inner_explore_description);
         imageView = findViewById(R.id.imageView1);
+        Chip1 = findViewById(R.id.chip6);
+        Chip2 = findViewById(R.id.chip7);
 
-        if (bundle == null) {
-
-        } else {
+        if (bundle != null) {
             Title = Optional.ofNullable(intent.getStringExtra("Title")).orElse("Unable to retrieve Title");
             Subtitle = Optional.ofNullable(intent.getStringExtra("Subtitle")).orElse("Unable to retrieve Subtitle");
             Description = Optional.ofNullable(intent.getStringExtra("Description")).orElse("Unable to retrieve Description");
             int diff = getIntent().getIntExtra("Background", 0);
-
+            ChipArray = intent.getStringArrayExtra("Chip");;
+            if(ChipArray[0] != null){
+                Chip1.setText(ChipArray[0]);
+                Chip2.setText(ChipArray[1]);
+            }
             titleTextView.setText(Title);
             subtitleTextView.setText(Subtitle);
             descriptionTextView.setText(Description);
             imageView.getLayoutParams().height = 1500;
             imageView.setImageDrawable(getDrawable(diff));
         }
+
         if (player == null) {
             player = MediaPlayer.create(this, R.raw.bgm);
 
@@ -95,13 +103,6 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         }
 
         player.start();
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     private void stopPlayer() {
