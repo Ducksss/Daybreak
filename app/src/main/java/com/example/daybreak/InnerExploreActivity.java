@@ -57,7 +57,7 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
-        toolBarLayout.setTitle(getTitle());
+
         Spinner spinner = findViewById(R.id.playback_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.playback_speed, android.R.layout.simple_spinner_item);
@@ -79,11 +79,16 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
             Subtitle = Optional.ofNullable(intent.getStringExtra("Subtitle")).orElse("Unable to retrieve Subtitle");
             Description = Optional.ofNullable(intent.getStringExtra("Description")).orElse("Unable to retrieve Description");
             int diff = getIntent().getIntExtra("Background", 0);
-            ChipArray = intent.getStringArrayExtra("Chip");;
-            if(ChipArray[0] != null){
+            try{
+                ChipArray = intent.getStringArrayExtra("Chip");;
+            }catch (Exception e){
+
+            }
+            if(ChipArray != null){
                 Chip1.setText(ChipArray[0]);
                 Chip2.setText(ChipArray[1]);
             }
+            toolBarLayout.setTitle(Title);
             titleTextView.setText(Title);
             subtitleTextView.setText(Subtitle);
             descriptionTextView.setText(Description);
