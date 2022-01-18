@@ -8,8 +8,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+
 import com.example.daybreak.R;
 
 public class FragmentB extends Fragment {
@@ -28,6 +32,7 @@ public class FragmentB extends Fragment {
 
         editText = v.findViewById(R.id.edit_text);
         buttonOk = v.findViewById(R.id.button_ok);
+
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

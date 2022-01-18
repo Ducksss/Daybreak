@@ -8,6 +8,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -108,6 +111,9 @@ public class HomeFragment extends Fragment implements StartTimer.FragmentAListen
                 startActivity(i);
             }
         });
+        final Animation animShake = AnimationUtils.loadAnimation(getActivity(), R.anim.shake);
+        ImageView btn_done = view.findViewById(R.id.start_focus_button);
+        btn_done.setAnimation(animShake);
         return view;
     }
 
