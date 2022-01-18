@@ -5,21 +5,11 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    android:background="@drawable/calm_background_3"
+    android:background="@drawable/timerbg"
     android:backgroundTint="#80FFFFFF"
     android:backgroundTintMode="src_over"
     tools:context=".Timer.StartTimer">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Focus"
-        android:textColor="@color/grey"
-        android:textSize="25dp"
-        android:textStyle="bold" />
 <!--    <TextView-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
@@ -38,19 +28,19 @@
         android:textSize="20dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:textColor="@color/grey"/>
+        android:textColor="@color/black"/>
 
     <NumberPicker
         android:id="@+id/minutes_numberSpinner"
         android:layout_width="175dp"
-        android:selectionDividerHeight="0dp"
-
-        android:theme="@style/NumberPickerText"
-        android:dividerPadding="10dp"
         android:layout_height="wrap_content"
+
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
         android:background="@drawable/timer_selector_bg"
-        android:layout_marginTop="250dp" />
+        android:dividerPadding="10dp"
+        android:selectionDividerHeight="0dp"
+        android:theme="@style/NumberPickerText" />
 
     <TextView
         android:id="@+id/dataFrom2"
@@ -67,11 +57,11 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/minutes_numberSpinner"
-        android:layout_marginTop="44dp"
         android:layout_marginLeft="100dp"
+        android:layout_marginTop="44dp"
         android:backgroundTint="@color/white"
         android:text="Start"
-        android:textColor="@color/orange"
+        android:textColor="@color/complementaryColor1"
         app:cornerRadius="100dp" />
 
 

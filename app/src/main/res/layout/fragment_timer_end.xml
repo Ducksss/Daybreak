@@ -4,21 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/calm_background_3"
+    android:background="@drawable/timerbg"
     android:backgroundTint="#80FFFFFF"
     android:backgroundTintMode="src_over"
     tools:context=".Timer.EndTimer">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="Focus"
-        android:textColor="@color/grey"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +26,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
             android:text="You are AMAZING"
-            android:textColor="@color/orange"
+            android:textColor="@color/black"
             android:textSize="26dp"
             android:textStyle="bold" />
 
@@ -47,7 +39,7 @@
 
             android:text="We are so proud of you, you managed to put down your phone to focus! That's Impressive
 Keep it up"
-            android:textColor="@color/grey"
+            android:textColor="@color/black"
             android:textSize="18dp" />
     </LinearLayout>
 
@@ -55,8 +47,8 @@ Keep it up"
         android:id="@+id/smaller_card_view"
         android:layout_width="380dp"
         android:layout_height="204dp"
-        android:layout_marginTop="200sp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="200sp"
         app:cardCornerRadius="7dp"
         app:cardElevation="12dp"
         app:cardUseCompatPadding="true">
@@ -79,7 +71,8 @@ Keep it up"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:text="Your Total Number of Focus Sessions"
-                    android:textColor="@color/orange" />
+                    android:textStyle="bold"
+                    android:textColor="#00838F" />
 
                 <TextView
                     android:id="@+id/timer_count"
@@ -102,11 +95,12 @@ Keep it up"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/smaller_card_view"
-        android:layout_marginTop="68dp"
         android:layout_marginLeft="100dp"
+        android:layout_marginTop="68dp"
         android:backgroundTint="@color/white"
+        android:elevation="10dp"
         android:text="Back to home page"
-        android:textColor="@color/orange"
+        android:textColor="#00838F"
         app:cornerRadius="100dp" />
 
 

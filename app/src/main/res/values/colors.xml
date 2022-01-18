@@ -5,14 +5,14 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#232020</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_green">#8DBFB5</color>
     <color name="orange">#f06a22</color>
     <color name="transparency">#80000000</color>
     <color name="grey">#e5e3e8</color>
     <color name="colorInactive">#939393</color>
-    <color name="colorPrimary">#E0E0E0</color>
+    <color name="colorPrimary">#F6FBFA</color>
     <color name="colorPrimaryDark">#E8DEF8</color>
     <color name="colorAccent">#FEDBD0</color>
     <color name="textColorPrimary">#442C2E</color>
@@ -20,4 +20,6 @@
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFBFA</color>
     <color name="textInputOutlineColor">#8DBFB5</color>
+    <color name="complementaryColor1">#8DBEB5</color>
+    <color name="complementaryColor2">#8CE6BE</color>
 </resources>
