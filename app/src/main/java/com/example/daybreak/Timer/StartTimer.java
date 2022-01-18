@@ -38,7 +38,7 @@ public class StartTimer extends Fragment {
         numberPicker = view.findViewById(R.id.minutes_numberSpinner);
         numberPicker.setMinValue(1);
         numberPicker.setMaxValue(60);
-        textView.setText(String.format("User's Number: %s", numberPicker.getValue()));
+        textView.setText(String.format("Focus Time: %s", numberPicker.getValue()));
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
