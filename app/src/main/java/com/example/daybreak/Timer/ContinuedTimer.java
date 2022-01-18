@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -36,22 +37,25 @@ public class ContinuedTimer extends Fragment {
     ItemViewModel viewModel;
     private static final long START_TIME_IN_MILLIS = 600000;
     private long mTimeLeftInMillis = START_TIME_IN_MILLIS;
+    private long initialValue = 0;
+    private ProgressBar progressBar;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_timer_continued, container, false);
-
+        progressBar = view.findViewById(R.id.progressBar);
         tv = view.findViewById(R.id.txt);
         viewModel = new ViewModelProvider(requireActivity()).get(ItemViewModel.class);
-
-        System.out.println(viewModel.getSelectedItem().getValue());
+        initialValue = Integer.parseInt(viewModel.getSelectedItem().getValue())*60000;
         new CountDownTimer(Integer.parseInt(viewModel.getSelectedItem().getValue())*60000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 mTimeLeftInMillis = millisUntilFinished;
+                double percentageLeft = ((double) mTimeLeftInMillis/(double) initialValue)*100;
+                progressBar.setProgress((int)percentageLeft);
+                progressBar.setMax(100);
                 updateCountDownText();
-                //here you can have your logic to set text to edittext
             }
 
             public void onFinish() {
@@ -96,9 +100,7 @@ public class ContinuedTimer extends Fragment {
 
         tv.setText(timeLeftFormatted);
     }
-    //REPLACES FRAGMENT WITH THE NEXT FRAGMENT
-    // Note that getting activity before parent class activity is mandatory or binding does not occur
-    // Also not that though it is an entirely lifecycle, retracting from lifecycle is possible
+
     private void replaceFragment(Fragment fragment) {
 
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
