@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+import com.example.daybreak.Timer.EndTimer;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -22,6 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -108,6 +110,14 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         }
 
         player.start();
+        //end Button
+        ImageView endTimer = findViewById(R.id.inner_back_button);
+        endTimer.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                finish();
+            }
+        });
     }
 
     private void stopPlayer() {
