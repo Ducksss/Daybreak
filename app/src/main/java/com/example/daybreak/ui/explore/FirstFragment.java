@@ -7,6 +7,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -15,10 +16,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.EditorInfo;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -33,6 +39,7 @@ import com.google.android.material.card.MaterialCardView;
 import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,6 +54,7 @@ public class FirstFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
+    private List<SearchItem> countryList;
     private String mParam1;
     private String mParam2;
     private Bitmap bitmap;
@@ -56,7 +64,7 @@ public class FirstFragment extends Fragment {
     private ArrayList<RecyclerExploreCardItem> singlePracticeItems = new ArrayList<>();
     private ArrayList<RecyclerExploreCardItem> meditationSeriesItems = new ArrayList<>();
     private ArrayList<RecyclerExploreLongCardItem> forYouSeriesItems = new ArrayList<>();
-
+    private List<SearchItem> exampleList;
     public FirstFragment() {
         // Required empty public constructor
     }
@@ -86,14 +94,17 @@ public class FirstFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
-
+        fillExampleList();
+        AutoCompleteTextView editText = view.findViewById(R.id.actv);
+        AutoCompleteSearchAdapter adapter = new AutoCompleteSearchAdapter(getActivity(), exampleList);
+        editText.setAdapter(adapter);
         bindRecyclerViews(view);
 
         // Find View of the MaterialCard
@@ -129,6 +140,13 @@ public class FirstFragment extends Fragment {
         });
 
         return view;
+    }
+    private void fillExampleList() {
+        exampleList = new ArrayList<>();
+        exampleList.add(new SearchItem(R.drawable.calm_background_4, "Steps", "Slow down your pace, feel the wonderful coordination of your body, and meet your own true self."));
+        exampleList.add(new SearchItem(R.drawable.calm_background_1, "Street", "I know this one the best. I think of the streets in Japan, which are quiet and full of lovely shops. I want this alarm!"));
+        exampleList.add(new SearchItem(R.drawable.calm_background_3,  "Light", "As I inhale the impalpable breeze that set in upon me, the ocean mysterious rolls toward me closer and closer."));
+        exampleList.add(new SearchItem(R.drawable.calm_background_2,  "Library", "Close the book, still feeling what it was like to dwell in that light."));
     }
 
     private void bindRecyclerViews(View view) {

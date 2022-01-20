@@ -24,35 +24,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/search_field"
-                    android:layout_width="wrap_content"
+                <AutoCompleteTextView
+                    android:id="@+id/actv"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="15dp"
-                    android:layout_marginTop="0dp"
-                    android:background="@drawable/search_bar"
-                    android:ems="20"
-                    android:fontFamily="@font/roboto"
-                    android:hint="Search entire library"
-                    android:inputType="textPersonName"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="7.5dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="7.5dp"
-                    android:textColor="#999999"
-                    android:textSize="16sp" />
+                    android:layout_marginLeft="20dp"
+                    android:completionThreshold="0"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Search for you"
+                    android:scaleType="centerCrop" />
 
-                <ImageButton
-                    android:id="@+id/search_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/search_field"
-                    android:layout_alignBottom="@+id/search_field"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginHorizontal="12.5dp"
-                    android:layout_marginRight="30dp"
-                    android:background="#F5F5F5"
-                    android:src="@drawable/ic_baseline_search_24" />
             </RelativeLayout>
 
             <!-- Weekly Recommendations-->
