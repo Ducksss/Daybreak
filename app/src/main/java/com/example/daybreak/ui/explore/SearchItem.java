@@ -3,11 +3,13 @@ package com.example.daybreak.ui.explore;
 public class SearchItem {
     private int imageResource;
     private String title;
+    private String subtitle;
     private String description;
 
-    public SearchItem(int imageResource, String title, String description) {
+    public SearchItem(int imageResource, String title, String subtitle, String description) {
         this.imageResource = imageResource;
         this.title = title;
+        this.subtitle = subtitle;
         this.description = description;
     }
 
@@ -15,11 +17,14 @@ public class SearchItem {
         return imageResource;
     }
 
-    public String getText1() {
+    public String getTitle() {
         return title;
     }
-
-    public String getText2() {
+    public String getSubtitle() {
+        return subtitle;
+    }
+    public String getDescription() {
         return description;
     }
+
 }

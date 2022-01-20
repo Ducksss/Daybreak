@@ -51,8 +51,8 @@ public class AutoCompleteSearchAdapter extends ArrayAdapter<SearchItem> {
         SearchItem searchItem = getItem(position);
 
         if (searchItem != null) {
-            textViewTitle.setText(searchItem.getText1());
-            textViewDescription.setText(searchItem.getText2());
+            textViewTitle.setText(searchItem.getTitle());
+            textViewDescription.setText(searchItem.getSubtitle());
             imageViewFlag.setImageResource(searchItem.getImageResource());
         }
         // Set on click listener
@@ -65,10 +65,10 @@ public class AutoCompleteSearchAdapter extends ArrayAdapter<SearchItem> {
             public void onClick(View view) {
                 int position = (Integer) view.getTag();
                 Intent intent = new Intent(view.getContext(), InnerExploreActivity.class);
-                intent.putExtra("Title", getItem(position).getText1());
-                intent.putExtra("Subtitle", "test");
+                intent.putExtra("Title", getItem(position).getTitle());
+                intent.putExtra("Subtitle", getItem(position).getSubtitle());
                 intent.putExtra("Background", getItem(position).getImageResource());
-                intent.putExtra("Description", getItem(position).getText2());
+                intent.putExtra("Description", getItem(position).getDescription());
                 view.getContext().startActivity(intent);
             }
         });
@@ -88,7 +88,7 @@ public class AutoCompleteSearchAdapter extends ArrayAdapter<SearchItem> {
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
                 for (SearchItem item : searchListFull) {
-                    if (item.getText1().toLowerCase().contains(filterPattern)) {
+                    if (item.getTitle().toLowerCase().contains(filterPattern)) {
                         suggestions.add(item);
                     }
                 }
@@ -109,7 +109,7 @@ public class AutoCompleteSearchAdapter extends ArrayAdapter<SearchItem> {
 
         @Override
         public CharSequence convertResultToString(Object resultValue) {
-            return ((SearchItem) resultValue).getText1();
+            return ((SearchItem) resultValue).getTitle();
         }
     };
 }

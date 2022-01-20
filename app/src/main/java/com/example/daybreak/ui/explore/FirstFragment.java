@@ -143,10 +143,10 @@ public class FirstFragment extends Fragment {
     }
     private void fillExampleList() {
         exampleList = new ArrayList<>();
-        exampleList.add(new SearchItem(R.drawable.calm_background_4, "Steps", "Slow down your pace, feel the wonderful coordination of your body, and meet your own true self."));
-        exampleList.add(new SearchItem(R.drawable.calm_background_1, "Street", "I know this one the best. I think of the streets in Japan, which are quiet and full of lovely shops. I want this alarm!"));
-        exampleList.add(new SearchItem(R.drawable.calm_background_3,  "Light", "As I inhale the impalpable breeze that set in upon me, the ocean mysterious rolls toward me closer and closer."));
-        exampleList.add(new SearchItem(R.drawable.calm_background_2,  "Library", "Close the book, still feeling what it was like to dwell in that light."));
+        exampleList.add(new SearchItem(R.drawable.calm_background_4, "Steps", "10 Min • Singles","Slow down your pace, feel the wonderful coordination of your body, and meet your own true self."));
+        exampleList.add(new SearchItem(R.drawable.calm_background_1, "Street", "10 Min • Singles","I know this one the best. I think of the streets in Japan, which are quiet and full of lovely shops. I want this alarm!"));
+        exampleList.add(new SearchItem(R.drawable.calm_background_3,  "Light", "5 Min • Singles","As I inhale the impalpable breeze that set in upon me, the ocean mysterious rolls toward me closer and closer."));
+        exampleList.add(new SearchItem(R.drawable.calm_background_2,  "Library","5 Min • Singles", "Close the book, still feeling what it was like to dwell in that light."));
     }
 
     private void bindRecyclerViews(View view) {
