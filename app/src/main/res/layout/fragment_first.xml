@@ -164,16 +164,25 @@
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:scrollbars="none"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     android:layout_below="@id/selected_podcast_subtitle">
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/selected_podcasts"
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/selected_podcast_subtitle"
-                        android:layout_marginHorizontal="4.5dp"
-                        android:layout_marginTop="-5dp"
-                        android:orientation="horizontal" />
+                        android:layout_below="@id/selected_podcast_subtitle">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/selected_podcasts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="4.5dp"
+                            android:layout_marginTop="-5dp"
+                            android:nestedScrollingEnabled="true"
+                            android:orientation="horizontal" />
+                    </RelativeLayout>
 
                 </HorizontalScrollView>
             </RelativeLayout>
@@ -205,14 +214,27 @@
                     android:textColor="#808080"
                     android:textSize="12dp" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/meditation_series"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_below="@id/meditation_series_subtitle"
-                    android:layout_marginHorizontal="4.5dp"
-                    android:layout_marginTop="-5dp"
-                    android:orientation="horizontal" />
+                    android:fillViewport="true"
+                    android:scrollbars="none">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/meditation_series_subtitle">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/meditation_series"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="4.5dp"
+                            android:layout_marginTop="-5dp"
+                            android:orientation="horizontal" />
+                    </RelativeLayout>
+                </HorizontalScrollView>
             </RelativeLayout>
 
             <!-- For you Recommendations -->
@@ -243,20 +265,16 @@
                     android:textColor="#808080"
                     android:textSize="12dp" />
 
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@id/for_you_series_subtitle">
 
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/for_you_series"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/for_you_series_subtitle"
-                        android:layout_marginHorizontal="4.5dp"
-                        android:layout_marginTop="-5dp"
-                        android:orientation="horizontal" />
-                </HorizontalScrollView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/for_you_series"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/for_you_series_subtitle"
+                    android:layout_marginHorizontal="4.5dp"
+                    android:layout_marginTop="-5dp"
+                    android:orientation="horizontal" />
+
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
