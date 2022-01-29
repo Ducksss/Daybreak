@@ -1,40 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:background="@drawable/timerbg"
     android:backgroundTint="#80FFFFFF"
     android:backgroundTintMode="src_over"
     tools:context=".Timer.StartTimer">
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/timerTextView"-->
-<!--        android:textSize="50dp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:text="a"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:id=@+id/fragmentTextDisplay"/>-->
     <TextView
         android:id="@+id/timerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:text=""
-        android:textSize="20dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        android:textColor="@color/black"/>
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <NumberPicker
         android:id="@+id/minutes_numberSpinner"
         android:layout_width="175dp"
         android:layout_height="wrap_content"
-
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
         android:background="@drawable/timer_selector_bg"
@@ -46,11 +35,11 @@
         android:id="@+id/dataFrom2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
         android:layout_centerHorizontal="true"
         android:layout_marginTop="150dp"
+        android:text=""
         android:textColor="@color/black"
-        android:textSize="26dp"/>
+        android:textSize="26dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/sendData1btn"

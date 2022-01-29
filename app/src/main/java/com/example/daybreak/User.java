@@ -1,43 +1,28 @@
 package com.example.daybreak;
 
-public class User {
+import java.util.Date;
 
+public class User {
     private String email;
     private String username;
     private String contactNumber;
     private String password;
-    private int id;
+    private Date created_at;
 
     // Constructor
     public User() {
     }
 
     public User(int id, String username) {
-        this.id = id;
         this.username = username;
     }
 
-    public User(String username, String email, String contactNumber, String password) {
+    public User(String username, String email, String contactNumber, String password, Date created_at) {
         this.email = email;
         this.username = username;
         this.contactNumber = contactNumber;
         this.password = password;
-    }
-
-    public User(int id, String email, String username, String contactNumber, String password) {
-        this.id = id;
-        this.email = email;
-        this.username = username;
-        this.contactNumber = contactNumber;
-        this.password = password;
-    }
-
-    public int getID() {
-        return id;
-    }
-
-    public void setID(int id) {
-        this.id = id;
+        this.created_at = created_at;
     }
 
     public String getEmail() {

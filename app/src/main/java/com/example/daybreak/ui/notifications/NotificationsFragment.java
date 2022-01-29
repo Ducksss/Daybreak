@@ -27,6 +27,7 @@ import com.anychart.chart.common.listener.Event;
 import com.anychart.chart.common.listener.ListenersInterface;
 import com.anychart.charts.Cartesian;
 import com.anychart.charts.Pie;
+import com.anychart.core.Text;
 import com.anychart.core.cartesian.series.Column;
 import com.anychart.enums.Anchor;
 import com.anychart.enums.HoverMode;
@@ -52,7 +53,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class NotificationsFragment extends Fragment {
@@ -68,7 +75,7 @@ public class NotificationsFragment extends Fragment {
     List<DataEntry> pieChartData = new ArrayList<>();
     List<DataEntry> columnChartData = new ArrayList<>();
 
-    // Ad
+    // Adverts
     AdView adView1;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -95,7 +102,26 @@ public class NotificationsFragment extends Fragment {
                 User user = snapshot.getValue(User.class);
                 ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
                 CollapsingToolbarLayout toolBarLayout = view.findViewById(R.id.toolbar_layout);
-                toolBarLayout.setTitle(user.getUsername());
+
+                // User tracker
+                TextView user_greeting = view.findViewById(R.id.user_greeting);
+                if (user.getUsername().length() <= 13) {
+                    user_greeting.setText(user.getUsername());
+                } else {
+                    user_greeting.setText(user.getUsername().substring(0, 13) + "...");
+                }
+
+                // Date tracker
+                LocalDate from = Instant.ofEpochMilli(MUser.getMetadata().getCreationTimestamp()).atZone(ZoneId.systemDefault()).toLocalDate();
+                LocalDate to = LocalDate.now();
+                long result = ChronoUnit.DAYS.between(from, to);
+
+                TextView day_tracker_greeting = view.findViewById(R.id.day_tracker_greeting);
+                if (result == 0) {
+                    day_tracker_greeting.setText("Joined Daybreak for " + String.valueOf(result + 1) + " day");
+                } else {
+                    day_tracker_greeting.setText("Joined Daybreak for " + String.valueOf(result + 1) + " days");
+                }
             }
 
             @Override
@@ -113,7 +139,6 @@ public class NotificationsFragment extends Fragment {
             MobileAds.initialize(view.getContext(), new OnInitializationCompleteListener() {
                 @Override
                 public void onInitializationComplete(InitializationStatus initializationStatus) {
-                    Log.d("Middle east", initializationStatus.toString());
                 }
             });
 
@@ -125,7 +150,6 @@ public class NotificationsFragment extends Fragment {
                 @Override
                 public void onAdClosed() {
                     super.onAdClosed();
-
                 }
 
                 @Override

@@ -26,6 +26,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
+
 public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
 
@@ -40,6 +42,9 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         Intent i;
         Bundle animationBundle = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_left,
                 R.animator.slide_out_right).toBundle();
+
+        Bundle animationBundle2 = ActivityOptions.makeCustomAnimation(this, R.animator.slide_in_right,
+                R.animator.slide_out_left).toBundle();
 
         switch (v.getId()) {
             case R.id.back_button:
@@ -124,7 +129,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                                                    @Override
                                                    public void onComplete(@NonNull Task<AuthResult> task) {
                                                        if (task.isSuccessful()) {
-                                                           User user = new User(username_text_input_string, email_text_input_string, contact_number_text_input_string, password_text_input_string);
+                                                           User user = new User(username_text_input_string, email_text_input_string, contact_number_text_input_string, password_text_input_string, new Date());
 
                                                            // Firebase table
                                                            FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://daybreak-b9a84-default-rtdb.asia-southeast1.firebasedatabase.app");
@@ -141,8 +146,10 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                                                                                @Override
                                                                                public void onComplete(@NonNull Task<Void> task) {
                                                                                    if (task.isSuccessful()) {
-                                                                                       Toast.makeText(SignupActivity.this, "This is my Toast message!",
-                                                                                               Toast.LENGTH_LONG).show();
+
+                                                                                       Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                                                                       startActivity(intent, animationBundle2);
+                                                                                       finish();
                                                                                    }
                                                                                }
                                                                            }
