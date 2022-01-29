@@ -66,6 +66,7 @@
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_sick_24.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_timer_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_waving_hand_24.xml" value="0.16822916666666668" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_bottomnavbar.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.22135416666666666" />
@@ -73,6 +74,7 @@
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_navbar.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/item_bg.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/rounded_background.xml" value="0.16822916666666668" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/rounded_corner_view.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/search_bar.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/tab_indicator.xml" value="0.22135416666666666" />
@@ -80,12 +82,14 @@
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_inner_explore.xml" value="0.19746376811594202" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_onboard.xml" value="0.22" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_onboard.xml" value="0.18" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_signup.xml" value="0.264" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_splashscreen.xml" value="0.17391304347826086" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_timer.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_verify_email.xml" value="0.2" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/explore_recycleritem.xml" value="0.19746376811594202" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/explore_recycleritem2.xml" value="0.4" />
+        <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_continued_timer.xml" value="0.15208333333333332" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_explore.xml" value="0.22" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_first.xml" value="0.25" />
         <entry key="..\:/Users/chaip/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_home.xml" value="0.17391304347826086" />

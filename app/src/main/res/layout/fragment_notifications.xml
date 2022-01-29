@@ -83,15 +83,16 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#EFEFF4"
         android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".ui.notifications.NotificationsFragment"
+        android:background="@color/white"
         tools:showIn="@layout/fragment_notifications">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#EFEFF4"
             android:orientation="vertical">
 
             <TextView

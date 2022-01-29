@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Fullscreen">
         <activity
+            android:name=".VerifyEmailActivity"
+            android:exported="false" />
+        <activity
             android:name=".InnerExploreActivity"
             android:exported="false" />
         <activity
@@ -54,10 +57,9 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-8728399283300475~6080407201"/>
+            android:value="ca-app-pub-8728399283300475~6080407201" />
     </application>
 
 </manifest>

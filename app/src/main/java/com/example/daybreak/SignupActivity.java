@@ -23,6 +23,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -145,11 +146,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                                                                            new OnCompleteListener<Void>() {
                                                                                @Override
                                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                                   FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                                                                                    if (task.isSuccessful()) {
+                                                                                       if (!user.isEmailVerified()) {
+                                                                                           user.sendEmailVerification();
+                                                                                       }
 
-                                                                                       Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                                                                                       Intent intent = new Intent(SignupActivity.this, VerifyEmailActivity.class);
                                                                                        startActivity(intent, animationBundle2);
-                                                                                       finish();
                                                                                    }
                                                                                }
                                                                            }
