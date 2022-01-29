@@ -54,10 +54,8 @@ public class FirstFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private List<SearchItem> countryList;
     private String mParam1;
     private String mParam2;
-    private Bitmap bitmap;
     private RecyclerView singlePracticeRecyclerView;
     private RecyclerView meditationSeriesRecyclerView;
     private RecyclerView forYouSeriesRecyclerView;

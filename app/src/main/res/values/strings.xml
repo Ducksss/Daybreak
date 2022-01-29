@@ -146,4 +146,6 @@
         <item>2x</item>
         <item>4x</item>
     </string-array>
+
+    <string name="banner_ad_unit_id">ca-app-pub-8728399283300475/2998948297</string>
 </resources>

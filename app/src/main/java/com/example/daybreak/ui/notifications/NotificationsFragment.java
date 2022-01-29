@@ -3,6 +3,7 @@ package com.example.daybreak.ui.notifications;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,14 @@ import com.anychart.enums.TooltipPositionMode;
 import com.example.daybreak.R;
 import com.example.daybreak.User;
 import com.example.daybreak.databinding.FragmentNotificationsBinding;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -48,13 +57,20 @@ import java.util.List;
 
 public class NotificationsFragment extends Fragment {
 
+    // Database
+    private FirebaseUser MUser;
+    private SharedPreferences timerPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
+
+    // Graphical
     private NotificationsViewModel notificationsViewModel;
     private FragmentNotificationsBinding binding;
     List<DataEntry> pieChartData = new ArrayList<>();
     List<DataEntry> columnChartData = new ArrayList<>();
-    private SharedPreferences timerPreferences;
-    private SharedPreferences.Editor loginPrefsEditor;
-    private FirebaseUser MUser;
+
+    // Ad
+    AdView adView1;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -62,6 +78,8 @@ public class NotificationsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         Toolbar toolbar = view.findViewById(R.id.toolbar);
+
+        // -----DATABASE
         // Dynamically greet the user
         MUser = FirebaseAuth.getInstance().getCurrentUser();
         // Retrieving data from firebase on the user user name / full name
@@ -75,17 +93,61 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
-                ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+                ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
                 CollapsingToolbarLayout toolBarLayout = view.findViewById(R.id.toolbar_layout);
                 toolBarLayout.setTitle(user.getUsername());
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(getActivity(), "Uh oh! Failure!", Toast.LENGTH_LONG).show();
             }
         });
 
+        // ----- ADS
+        try {
+            AdView adView = new AdView(view.getContext());
+            adView.setAdSize(AdSize.BANNER);
+            adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
 
+            MobileAds.initialize(view.getContext(), new OnInitializationCompleteListener() {
+                @Override
+                public void onInitializationComplete(InitializationStatus initializationStatus) {
+                    Log.d("Middle east", initializationStatus.toString());
+                }
+            });
+
+            adView1 = view.findViewById(R.id.adView);
+            AdRequest adRequest = new AdRequest.Builder().build();
+            adView1.loadAd(adRequest);
+
+            adView1.setAdListener(new AdListener() {
+                @Override
+                public void onAdClosed() {
+                    super.onAdClosed();
+
+                }
+
+                @Override
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                    super.onAdFailedToLoad(loadAdError);
+                }
+
+                @Override
+                public void onAdOpened() {
+                    super.onAdOpened();
+                }
+
+                @Override
+                public void onAdLoaded() {
+                    super.onAdLoaded();
+                }
+            });
+        } catch (Exception e) {
+            Log.d("Failure point", e.toString());
+        }
+
+        // ----- GRAPHICAL
         // Pie chart creation
         AnyChartView anyChartView = view.findViewById(R.id.any_chart_view);
         APIlib.getInstance().setActiveAnyChartView(anyChartView);
@@ -122,17 +184,16 @@ public class NotificationsFragment extends Fragment {
         timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
         loginPrefsEditor = timerPreferences.edit();
         TextView tv = view.findViewById(R.id.focus_description);
-        tv.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) +" Times");
+        tv.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) + " Times");
         // Check if threshold is met
         if (true) {
-            loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0)+1);
+            loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0) + 1);
         } else {
             loginPrefsEditor.clear();
         }
         loginPrefsEditor.commit();
         return view;
     }
-
 
 
     public void bindGraphData() {

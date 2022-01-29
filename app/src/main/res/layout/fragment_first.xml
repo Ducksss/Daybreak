@@ -20,21 +20,25 @@
             android:orientation="vertical">
 
             <!-- Searchbar-->
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:orientation="horizontal">
 
                 <AutoCompleteTextView
                     android:id="@+id/actv"
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="20dp"
                     android:completionThreshold="0"
-                    android:hint="Search for you"
-                    android:scaleType="centerCrop" />
+                    android:drawableLeft="@drawable/ic_baseline_search_24"
+                    android:hint=" Search"
+                    android:scaleType="centerCrop">
 
-            </RelativeLayout>
+                </AutoCompleteTextView>
+
+            </LinearLayout>
 
             <!-- Weekly Recommendations-->
             <RelativeLayout
@@ -164,10 +168,10 @@
                 <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_below="@id/selected_podcast_subtitle"
                     android:fillViewport="true"
                     android:scrollbars="none"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    android:layout_below="@id/selected_podcast_subtitle">
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
