@@ -23,6 +23,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -120,15 +121,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    loginPrefsEditor.putBoolean("saveLogin", true);
-                                    loginPrefsEditor.putString("username", email_text_input_string);
-                                    loginPrefsEditor.putString("password", password_text_input_string);
-                                    loginPrefsEditor.commit();
+                                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                    if (user.isEmailVerified()) {
+                                        loginPrefsEditor.putBoolean("saveLogin", true);
+                                        loginPrefsEditor.putString("username", email_text_input_string);
+                                        loginPrefsEditor.putString("password", password_text_input_string);
+                                        loginPrefsEditor.commit();
 
-                                    passwordTextInput.setErrorEnabled(false); // Clear the error
-                                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                                    startActivity(i);
-                                    finish();
+                                        passwordTextInput.setErrorEnabled(false); // Clear the error
+                                        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                                        startActivity(i);
+                                        finish();
+                                    } else {
+                                        user.sendEmailVerification();
+                                        Toast.makeText(LoginActivity.this, "Check your email to verify your account", Toast.LENGTH_LONG).show();
+                                    }
                                 } else {
                                     passwordTextInput.setError("Incorrect password!");
                                 }
