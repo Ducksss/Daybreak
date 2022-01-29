@@ -36,22 +36,21 @@ import java.util.Optional;
 public class InnerExploreActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ActivityInnerExploreBinding binding;
-    MediaPlayer player = null;
-    TextView titleTextView;
-    TextView subtitleTextView;
-    TextView descriptionTextView;
-    Chip Chip1;
-    Chip Chip2;
-    ImageView imageView;
-    String Title;
-    String Subtitle;
-    String Description;
-    String[] ChipArray;
+    private MediaPlayer player = null;
+    private TextView titleTextView;
+    private TextView subtitleTextView;
+    private TextView descriptionTextView;
+    private Chip Chip1;
+    private Chip Chip2;
+    private ImageView imageView;
+    private String Title;
+    private String Subtitle;
+    private String Description;
+    private String[] ChipArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
 
         binding = ActivityInnerExploreBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -69,10 +68,12 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
+
+        // Getting views
+        imageView = findViewById(R.id.imageView1);
         titleTextView = findViewById(R.id.inner_explore_title);
         subtitleTextView = findViewById(R.id.inner_explore_subtitle);
         descriptionTextView = findViewById(R.id.inner_explore_description);
-        imageView = findViewById(R.id.imageView1);
         Chip1 = findViewById(R.id.chip6);
         Chip2 = findViewById(R.id.chip7);
 
@@ -81,21 +82,27 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
             Subtitle = Optional.ofNullable(intent.getStringExtra("Subtitle")).orElse("Unable to retrieve Subtitle");
             Description = Optional.ofNullable(intent.getStringExtra("Description")).orElse("Unable to retrieve Description");
             int diff = getIntent().getIntExtra("Background", 0);
-            try{
-                ChipArray = intent.getStringArrayExtra("Chip");;
-            }catch (Exception e){
+
+            try {
+                ChipArray = intent.getStringArrayExtra("Chip");
+            } catch (Exception e) {
 
             }
-            if(ChipArray != null){
+
+            if (ChipArray != null) {
                 Chip1.setText(ChipArray[0]);
                 Chip2.setText(ChipArray[1]);
             }
+
             toolBarLayout.setTitle(Title);
             titleTextView.setText(Title);
             subtitleTextView.setText(Subtitle);
             descriptionTextView.setText(Description);
             imageView.getLayoutParams().height = 1500;
-            imageView.setImageDrawable(getDrawable(diff));
+
+            Drawable image = getDrawable(diff);
+            imageView.setImageDrawable(image);
+
         }
 
         if (player == null) {
@@ -112,9 +119,9 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         player.start();
         //end Button
         ImageView endTimer = findViewById(R.id.inner_back_button);
-        endTimer.setOnClickListener(new View.OnClickListener(){
+        endTimer.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 finish();
             }
         });

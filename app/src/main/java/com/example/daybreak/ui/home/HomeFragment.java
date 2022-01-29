@@ -87,15 +87,17 @@ public class HomeFragment extends Fragment implements StartTimer.FragmentAListen
 
         // Dynamically display timing of the day
         Calendar cal = Calendar.getInstance();
-
+        int timeOfDay = cal.get(Calendar.HOUR_OF_DAY);
         TextView time_greeting = view.findViewById(R.id.time_greeting);
-        Log.d("Current time in hours", "" + cal.get(Calendar.HOUR));
-        if (cal.get(Calendar.HOUR) >= 12 && cal.get(Calendar.HOUR) <= 17) {
-            time_greeting.setText("Afternoon");
-        } else if (cal.get(Calendar.HOUR) >= 12 && cal.get(Calendar.HOUR) <= 24) {
-            time_greeting.setText("Evening");
-        } else {
-            time_greeting.setText("Morning");
+
+        if (timeOfDay >= 0 && timeOfDay < 12) {
+            time_greeting.setText("Good Morning");
+        } else if (timeOfDay >= 12 && timeOfDay < 16) {
+            time_greeting.setText("Good Afternoon");
+        } else if (timeOfDay >= 16 && timeOfDay < 21) {
+            time_greeting.setText("Good Evening");
+        } else if (timeOfDay >= 21 && timeOfDay < 24) {
+            time_greeting.setText("Good Night");
         }
 
         // Setting the background of the viewpager

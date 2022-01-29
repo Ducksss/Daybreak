@@ -36,33 +36,30 @@
                 android:layout_width="700dp"
                 android:layout_height="700dp"
                 android:layout_gravity="center"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
-
     <com.like.LikeButton
-        app:icon_type="heart"
-        app:icon_size="11dp"
         android:id="@+id/star_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:layout_marginTop="18dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="18dp"/>
+        app:icon_size="11dp"
+        app:icon_type="heart" />
 
     <ImageView
         android:id="@+id/inner_back_button"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:background="@drawable/ic_baseline_arrow_back_24"
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"/>
-
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_baseline_arrow_back_24" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -70,6 +67,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".ScrollingActivity"
         tools:showIn="@layout/activity_inner_explore">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,25 +77,25 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                app:chipSpacingHorizontal="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="401dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                app:chipSpacingHorizontal="20dp">
+                tools:layout_editor_absoluteY="401dp">
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip6"
                     android:layout_width="wrap_content"
-                    android:text="#Personal Growth"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="#Personal Growth" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip7"
                     android:layout_width="wrap_content"
-                    android:text="#Inspiration"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="#Inspiration" />
             </com.google.android.material.chip.ChipGroup>
 
             <TextView
@@ -106,14 +104,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/text_margin"
                 android:text="Self Discipline"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <Spinner
                 android:id="@+id/playback_spinner"
-                android:layout_marginTop="-40dp"
                 android:layout_width="200dp"
                 android:layout_height="34dp"
-                android:layout_gravity="right" />
+                android:layout_gravity="right"
+                android:layout_marginTop="-40dp" />
 
             <TextView
                 android:id="@+id/inner_explore_subtitle"
@@ -125,10 +123,10 @@
                 android:textStyle="italic" />
 
             <TextView
+                android:id="@+id/inner_explore_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/text_margin"
-                android:id="@+id/inner_explore_description"
                 android:text="@string/large_text" />
 
         </LinearLayout>
