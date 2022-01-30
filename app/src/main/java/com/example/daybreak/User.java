@@ -8,6 +8,7 @@ public class User {
     private String contactNumber;
     private String password;
     private Date created_at;
+    private boolean isPremium;
 
     // Constructor
     public User() {

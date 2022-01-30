@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,8 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -62,7 +66,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class NotificationsFragment extends Fragment implements View.OnClickListener {
+public class NotificationsFragment extends Fragment {
 
     // Database
     private FirebaseUser MUser;
@@ -129,6 +133,17 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
         });
 
         // ----- PREMIUM
+        MaterialCardView support_premium_button = view.findViewById(R.id.support_premium_button);
+        support_premium_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
+
+                View parentView = getLayoutInflater().inflate(R.layout.activity_bottom_modal, null);
+                bottomSheetDialog.setContentView(parentView);
+                bottomSheetDialog.show();
+            }
+        });
 
         // ----- ADS
         try {
@@ -223,11 +238,6 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
         }
 
         return view;
-    }
-
-    @Override
-    public void onClick(View view) {
-
     }
 
     public void bindGraphData() {
