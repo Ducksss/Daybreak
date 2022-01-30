@@ -136,10 +136,8 @@ public class NotificationsFragment extends Fragment {
                     MaterialCardView support_premium_button = view.findViewById(R.id.support_premium_button);
                     // if is premium, don't show the "buy premium stuff"
                     if (isPremium == true) {
-                        Log.d("Alpha3", "Is Premium - logged");
                         support_premium_button.setVisibility(View.GONE);
                     } else {
-                        Log.d("Alpha4", "Is Not Premium - logged");
                         support_premium_button.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
@@ -164,6 +162,7 @@ public class NotificationsFragment extends Fragment {
                                         parentView2.findViewById(R.id.payment_done_button).setOnClickListener(new View.OnClickListener() {
                                             @Override
                                             public void onClick(View view) {
+                                                reference.child(UserID).child("premium").setValue(true);
                                                 bottomSheetDialog2.dismiss();
                                             }
                                         });
