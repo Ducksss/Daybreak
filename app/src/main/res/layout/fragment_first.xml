@@ -20,25 +20,31 @@
             android:orientation="vertical">
 
             <!-- Searchbar-->
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="15dp"
-                android:orientation="horizontal">
+                android:hint=" Search entire library"
+                app:boxCornerRadiusBottomEnd="20dp"
+                app:boxCornerRadiusBottomStart="20dp"
+                app:boxCornerRadiusTopEnd="20dp"
+                app:boxCornerRadiusTopStart="20dp"
+                app:hintAnimationEnabled="true">
 
                 <AutoCompleteTextView
                     android:id="@+id/actv"
-                    android:layout_width="fill_parent"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
+                    android:background="#F5F5F5"
                     android:completionThreshold="0"
-                    android:drawableLeft="@drawable/ic_baseline_search_24"
-                    android:hint=" Search"
-                    android:scaleType="centerCrop">
+                    android:drawableStart="@drawable/ic_baseline_search_18"
+                    android:padding="12.5dp"
+                    android:scaleType="centerCrop"
+                    android:textSize="12dp" />
 
-                </AutoCompleteTextView>
-
-            </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Weekly Recommendations-->
             <RelativeLayout

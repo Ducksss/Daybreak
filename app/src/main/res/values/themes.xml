@@ -51,6 +51,7 @@
     <style name="Fullscreen.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Fullscreen.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <style name="NumberPickerText">
         <item name="android:textSize">25sp</item>
     </style>
@@ -59,4 +60,14 @@
     <style name="Theme.MobileUX4.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MobileUX4.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- START OF: Bottom Modal Styling-->
+    <style name="BottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+    <!-- END OF: Bottom Modal Styling-->
 </resources>

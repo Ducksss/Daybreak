@@ -62,7 +62,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class NotificationsFragment extends Fragment {
+public class NotificationsFragment extends Fragment implements View.OnClickListener {
 
     // Database
     private FirebaseUser MUser;
@@ -80,8 +80,6 @@ public class NotificationsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-        bindGraphData();
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         Toolbar toolbar = view.findViewById(R.id.toolbar);
@@ -130,6 +128,8 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
+        // ----- PREMIUM
+
         // ----- ADS
         try {
             AdView adView = new AdView(view.getContext());
@@ -173,52 +173,62 @@ public class NotificationsFragment extends Fragment {
 
         // ----- GRAPHICAL
         // Pie chart creation
-        AnyChartView anyChartView = view.findViewById(R.id.any_chart_view);
-        APIlib.getInstance().setActiveAnyChartView(anyChartView);
-        anyChartView.setProgressBar(view.findViewById(R.id.progress_bar));
+        try {
+            bindGraphData();
+            AnyChartView anyChartView = view.findViewById(R.id.any_chart_view);
+            APIlib.getInstance().setActiveAnyChartView(anyChartView);
+            anyChartView.setProgressBar(view.findViewById(R.id.progress_bar));
 
-        Pie pie = AnyChart.pie();
-        pie.palette(new String[]{"#ffd505", "#ff7e05"});
-        pie.data(pieChartData);
+            Pie pie = AnyChart.pie();
+            pie.palette(new String[]{"#ffd505", "#ff7e05"});
+            pie.data(pieChartData);
 
-        anyChartView.setChart(pie);
+            anyChartView.setChart(pie);
 
-        // Cartesian chart creation
-        AnyChartView anyChartView1 = view.findViewById(R.id.any_chart_view1);
-        APIlib.getInstance().setActiveAnyChartView(anyChartView1);
+            // Cartesian chart creation
+            AnyChartView anyChartView1 = view.findViewById(R.id.any_chart_view1);
+            APIlib.getInstance().setActiveAnyChartView(anyChartView1);
 
-        Cartesian cartesian = AnyChart.column();
-        Column column = cartesian.column(columnChartData);
-        column.tooltip()
-                .titleFormat("{%X}")
-                .position(Position.CENTER_BOTTOM)
-                .anchor(Anchor.CENTER_BOTTOM)
-                .offsetX(0d)
-                .offsetY(0d)
-                .format("{%Value}{groupsSeparator: } Hours");
+            Cartesian cartesian = AnyChart.column();
+            Column column = cartesian.column(columnChartData);
+            column.tooltip()
+                    .titleFormat("{%X}")
+                    .position(Position.CENTER_BOTTOM)
+                    .anchor(Anchor.CENTER_BOTTOM)
+                    .offsetX(0d)
+                    .offsetY(0d)
+                    .format("{%Value}{groupsSeparator: } Hours");
 
-        cartesian.animation(true);
-        cartesian.yScale().minimum(0d);
-        cartesian.yAxis(0).labels().format("{%Value}{groupsSeparator: } Hrs");
-        cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
-        cartesian.interactivity().hoverMode(HoverMode.BY_X);
-        cartesian.palette(new String[]{"#ff7e05", "#ff7e05"});
-        anyChartView1.setChart(cartesian);
+            cartesian.animation(true);
+            cartesian.yScale().minimum(0d);
+            cartesian.yAxis(0).labels().format("{%Value}{groupsSeparator: } Hrs");
+            cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
+            cartesian.interactivity().hoverMode(HoverMode.BY_X);
+            cartesian.palette(new String[]{"#ff7e05", "#ff7e05"});
+            anyChartView1.setChart(cartesian);
 
-        timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
-        loginPrefsEditor = timerPreferences.edit();
-        TextView tv = view.findViewById(R.id.focus_description);
-        tv.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) + " Times");
-        // Check if threshold is met
-        if (true) {
-            loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0) + 1);
-        } else {
-            loginPrefsEditor.clear();
+            timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
+            loginPrefsEditor = timerPreferences.edit();
+            TextView tv = view.findViewById(R.id.focus_description);
+            tv.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) + " Times");
+            // Check if threshold is met
+            if (true) {
+                loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0) + 1);
+            } else {
+                loginPrefsEditor.clear();
+            }
+            loginPrefsEditor.commit();
+        } catch (Exception e) {
+
         }
-        loginPrefsEditor.commit();
+
         return view;
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
 
     public void bindGraphData() {
         pieChartData.add(new ValueDataEntry("Focus", 10));
@@ -232,10 +242,6 @@ public class NotificationsFragment extends Fragment {
         columnChartData.add(new ValueDataEntry("Fri", 6));
         columnChartData.add(new ValueDataEntry("Sat", 7));
         columnChartData.add(new ValueDataEntry("Sun", 2));
-    }
-
-    public void createPieChart() {
-
     }
 
     @Override
