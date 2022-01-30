@@ -138,10 +138,24 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
+                BottomSheetDialog bottomSheetDialog2 = new BottomSheetDialog(getContext());
 
                 View parentView = getLayoutInflater().inflate(R.layout.activity_bottom_modal, null);
+                View parentView2 = getLayoutInflater().inflate(R.layout.activity_bottom_modal_paid, null);
+
                 bottomSheetDialog.setContentView(parentView);
+                bottomSheetDialog2.setContentView(parentView2);
+
+                // Showing the first modal
                 bottomSheetDialog.show();
+
+                parentView.findViewById(R.id.confirm_payment_button).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        bottomSheetDialog.dismiss();
+                        bottomSheetDialog2.show();
+                    }
+                });
             }
         });
 

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottomSheetContainer"
+    style="@style/BottomSheetDialogTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -15,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:padding="15dp"
-        android:text="One-time Subscription Fee"
+        android:text="Payment confirmed!"
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold" />
@@ -28,39 +29,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="5dp">
 
-        <com.makeramen.roundedimageview.RoundedImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/logo_daybreak" />
+        <ImageView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_baseline_check_circle_outline_24" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="You are now a premium member!" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Purchase Daybreak premium"
-                android:textColor="@color/black"
-                android:textSize="17dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="One-time transaction" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SGD $9.90"
-                android:textColor="@color/orange" />
-        </LinearLayout>
     </LinearLayout>
 
     <View
@@ -74,21 +57,14 @@
         android:layout_marginHorizontal="15dp"
         android:orientation="vertical">
 
-        <com.stripe.android.view.CardInputWidget
-            android:id="@+id/cardInputWidget"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:gravity="center" />
-
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirm_payment_button"
             style="@style/Widget.DayBreak.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="@color/light_green"
-            android:text="Confirm Payment"
-            android:id="@+id/confirm_payment_button"
+            android:text="Done!"
             android:textColor="@color/white" />
     </LinearLayout>
 </LinearLayout>
