@@ -2,8 +2,6 @@ package com.example.daybreak.ui.explore;
 
 import android.graphics.drawable.Drawable;
 
-import java.util.ArrayList;
-
 public class RecyclerExploreLongCardItem {
 
     private String title;

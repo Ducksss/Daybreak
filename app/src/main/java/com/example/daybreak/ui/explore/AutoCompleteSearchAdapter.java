@@ -13,12 +13,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.example.daybreak.InnerExploreActivity;
 import com.example.daybreak.R;
 import com.google.android.material.card.MaterialCardView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AutoCompleteSearchAdapter extends ArrayAdapter<SearchItem> {
     private List<SearchItem> searchListFull;

@@ -2,7 +2,6 @@ package com.example.daybreak.ui.explore;
 
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -82,13 +82,13 @@
             android:gravity="center" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/confirm_payment_button"
             style="@style/Widget.DayBreak.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="@color/light_green"
             android:text="Confirm Payment"
-            android:id="@+id/confirm_payment_button"
             android:textColor="@color/white" />
     </LinearLayout>
 </LinearLayout>

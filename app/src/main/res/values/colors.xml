@@ -9,6 +9,7 @@
     <color name="light_green">#8DBFB5</color>
     <color name="orange">#f06a22</color>
     <color name="grey">#e5e3e8</color>
+    <color name="lightGrey">#4a4b53</color>
     <color name="colorInactive">#939393</color>
     <color name="textColorPrimary">#442C2E</color>
     <color name="textInputOutlineColor">#8DBFB5</color>

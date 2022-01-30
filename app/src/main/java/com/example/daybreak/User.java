@@ -1,7 +1,5 @@
 package com.example.daybreak;
 
-import java.util.Date;
-
 public class User {
     private String email;
     private String username;
