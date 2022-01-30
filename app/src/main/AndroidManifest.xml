@@ -15,9 +15,6 @@
         android:supportsRtl="true"
         android:theme="@style/Fullscreen">
         <activity
-            android:name=".BottomModalActivity"
-            android:exported="false" />
-        <activity
             android:name=".VerifyEmailActivity"
             android:exported="false" />
         <activity
@@ -32,9 +29,7 @@
         <activity
             android:name=".SignupActivity"
             android:exported="false" />
-        <activity
-            android:name=".ExploreRecycleritemActivity"
-            android:exported="false" /> <!-- SPLASHSCREEN -->
+        <!-- SPLASHSCREEN -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"

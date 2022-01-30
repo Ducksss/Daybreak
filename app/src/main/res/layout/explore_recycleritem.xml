@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="7dp"
     app:cardElevation="8dp"
-    app:cardUseCompatPadding="true"
-    tools:context=".ExploreRecycleritemActivity">
+    app:cardUseCompatPadding="true">
 
     <LinearLayout
         android:layout_width="wrap_content"
