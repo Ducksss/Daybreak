@@ -7,8 +7,7 @@ public class User {
     private String username;
     private String contactNumber;
     private String password;
-    private Date created_at;
-    private boolean isPremium;
+    private boolean premium;
 
     // Constructor
     public User() {
@@ -18,12 +17,12 @@ public class User {
         this.username = username;
     }
 
-    public User(String username, String email, String contactNumber, String password, Date created_at) {
+    public User(String username, String email, String contactNumber, String password, boolean premium) {
         this.email = email;
         this.username = username;
         this.contactNumber = contactNumber;
         this.password = password;
-        this.created_at = created_at;
+        this.premium = premium;
     }
 
     public String getEmail() {
@@ -56,5 +55,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean getPremium() {
+        return premium;
+    }
+
+    public void setPremium(boolean premium) {
+        this.premium = premium;
     }
 }

@@ -73,6 +73,10 @@ public class NotificationsFragment extends Fragment {
     private SharedPreferences timerPreferences;
     private SharedPreferences.Editor loginPrefsEditor;
 
+    // Premium
+    private User user;
+    private boolean isPremium;
+
     // Graphical
     private NotificationsViewModel notificationsViewModel;
     private FragmentNotificationsBinding binding;
@@ -88,7 +92,7 @@ public class NotificationsFragment extends Fragment {
         binding = FragmentNotificationsBinding.inflate(inflater, container, false);
         Toolbar toolbar = view.findViewById(R.id.toolbar);
 
-        // -----DATABASE
+        // -----DATABASE + ADS + PREMIUM
         // Dynamically greet the user
         MUser = FirebaseAuth.getInstance().getCurrentUser();
         // Retrieving data from firebase on the user user name / full name
@@ -101,7 +105,7 @@ public class NotificationsFragment extends Fragment {
         reference.child(UserID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User user = snapshot.getValue(User.class);
+                user = snapshot.getValue(User.class);
                 ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
                 CollapsingToolbarLayout toolBarLayout = view.findViewById(R.id.toolbar_layout);
 
@@ -112,6 +116,8 @@ public class NotificationsFragment extends Fragment {
                 } else {
                     user_greeting.setText(user.getUsername().substring(0, 13) + "...");
                 }
+
+                isPremium = (boolean) user.getPremium();
 
                 // Date tracker
                 LocalDate from = Instant.ofEpochMilli(MUser.getMetadata().getCreationTimestamp()).atZone(ZoneId.systemDefault()).toLocalDate();
@@ -124,6 +130,94 @@ public class NotificationsFragment extends Fragment {
                 } else {
                     day_tracker_greeting.setText("Joined Daybreak for " + String.valueOf(result + 1) + " days");
                 }
+
+                // ----- PREMIUM
+                try {
+                    MaterialCardView support_premium_button = view.findViewById(R.id.support_premium_button);
+                    // if is premium, don't show the "buy premium stuff"
+                    if (isPremium == true) {
+                        Log.d("Alpha3", "Is Premium - logged");
+                        support_premium_button.setVisibility(View.GONE);
+                    } else {
+                        Log.d("Alpha4", "Is Not Premium - logged");
+                        support_premium_button.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
+                                BottomSheetDialog bottomSheetDialog2 = new BottomSheetDialog(getContext());
+
+                                View parentView = getLayoutInflater().inflate(R.layout.activity_bottom_modal, null);
+                                View parentView2 = getLayoutInflater().inflate(R.layout.activity_bottom_modal_paid, null);
+
+                                bottomSheetDialog.setContentView(parentView);
+                                bottomSheetDialog2.setContentView(parentView2);
+
+                                // Showing the first modal
+                                bottomSheetDialog.show();
+
+                                parentView.findViewById(R.id.confirm_payment_button).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        bottomSheetDialog.dismiss();
+                                        bottomSheetDialog2.show();
+
+                                        parentView2.findViewById(R.id.payment_done_button).setOnClickListener(new View.OnClickListener() {
+                                            @Override
+                                            public void onClick(View view) {
+                                                bottomSheetDialog2.dismiss();
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+                    Log.d("Failure Point - Alpha", e.toString());
+                }
+
+                // ----- ADS
+                try {
+                    if (!isPremium) {
+                        AdView adView = new AdView(view.getContext());
+                        adView.setAdSize(AdSize.BANNER);
+                        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+
+                        MobileAds.initialize(view.getContext(), new OnInitializationCompleteListener() {
+                            @Override
+                            public void onInitializationComplete(InitializationStatus initializationStatus) {
+                            }
+                        });
+
+                        adView1 = view.findViewById(R.id.adView);
+                        AdRequest adRequest = new AdRequest.Builder().build();
+                        adView1.loadAd(adRequest);
+
+                        adView1.setAdListener(new AdListener() {
+                            @Override
+                            public void onAdClosed() {
+                                super.onAdClosed();
+                            }
+
+                            @Override
+                            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                                super.onAdFailedToLoad(loadAdError);
+                            }
+
+                            @Override
+                            public void onAdOpened() {
+                                super.onAdOpened();
+                            }
+
+                            @Override
+                            public void onAdLoaded() {
+                                super.onAdLoaded();
+                            }
+                        });
+                    }
+                } catch (Exception e) {
+                    Log.d("Failure point - Beta", e.toString());
+                }
             }
 
             @Override
@@ -131,74 +225,6 @@ public class NotificationsFragment extends Fragment {
                 Toast.makeText(getActivity(), "Uh oh! Failure!", Toast.LENGTH_LONG).show();
             }
         });
-
-        // ----- PREMIUM
-        MaterialCardView support_premium_button = view.findViewById(R.id.support_premium_button);
-        support_premium_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext());
-                BottomSheetDialog bottomSheetDialog2 = new BottomSheetDialog(getContext());
-
-                View parentView = getLayoutInflater().inflate(R.layout.activity_bottom_modal, null);
-                View parentView2 = getLayoutInflater().inflate(R.layout.activity_bottom_modal_paid, null);
-
-                bottomSheetDialog.setContentView(parentView);
-                bottomSheetDialog2.setContentView(parentView2);
-
-                // Showing the first modal
-                bottomSheetDialog.show();
-
-                parentView.findViewById(R.id.confirm_payment_button).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        bottomSheetDialog.dismiss();
-                        bottomSheetDialog2.show();
-                    }
-                });
-            }
-        });
-
-        // ----- ADS
-        try {
-            AdView adView = new AdView(view.getContext());
-            adView.setAdSize(AdSize.BANNER);
-            adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
-
-            MobileAds.initialize(view.getContext(), new OnInitializationCompleteListener() {
-                @Override
-                public void onInitializationComplete(InitializationStatus initializationStatus) {
-                }
-            });
-
-            adView1 = view.findViewById(R.id.adView);
-            AdRequest adRequest = new AdRequest.Builder().build();
-            adView1.loadAd(adRequest);
-
-            adView1.setAdListener(new AdListener() {
-                @Override
-                public void onAdClosed() {
-                    super.onAdClosed();
-                }
-
-                @Override
-                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                    super.onAdFailedToLoad(loadAdError);
-                }
-
-                @Override
-                public void onAdOpened() {
-                    super.onAdOpened();
-                }
-
-                @Override
-                public void onAdLoaded() {
-                    super.onAdLoaded();
-                }
-            });
-        } catch (Exception e) {
-            Log.d("Failure point", e.toString());
-        }
 
         // ----- GRAPHICAL
         // Pie chart creation
