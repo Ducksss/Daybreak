@@ -2,9 +2,9 @@ package com.example.daybreak.ui.home;
 
 import android.media.MediaPlayer;
 import android.view.LayoutInflater;
-import android.widget.MediaController;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.VideoView;
