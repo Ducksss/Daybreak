@@ -71,8 +71,8 @@ Keep it up"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:text="Your Total Number of Focus Sessions"
-                    android:textStyle="bold"
-                    android:textColor="#00838F" />
+                    android:textColor="#00838F"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/timer_count"
