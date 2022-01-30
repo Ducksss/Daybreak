@@ -3,6 +3,7 @@ package com.example.daybreak;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
@@ -61,7 +62,7 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
 
         Spinner spinner = findViewById(R.id.playback_spinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.playback_speed, android.R.layout.simple_spinner_item);
+                R.array.playback_speed_labels, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
@@ -122,6 +123,7 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         endTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopPlayer();
                 finish();
             }
         });
@@ -137,7 +139,10 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
+        // Converts labels to readable value (position get at playback speed label)
+        String text = getResources().getStringArray(R.array.playback_speed)[position];
+        // Changes text size, can't do it non programatically/hard to do
+        ((TextView) parent.getChildAt(0)).setTextSize(13);
         if (text.equals("1x")) {
             player.setPlaybackParams(player.getPlaybackParams().setSpeed(1f));
         } else if (text.equals("2x")) {
