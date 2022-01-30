@@ -147,10 +147,10 @@
         <item>4x</item>
     </string-array>
     <string-array name="playback_speed_labels" >
-        <item ><FONT COLOR="#006600">Playback Speed: <b>0.5x</b></FONT></item>
-        <item ><FONT COLOR="#006600">Playback Speed: <b>1x</b></FONT></item>
-        <item ><FONT COLOR="#006600">Playback Speed: <b>2x</b></FONT></item>
-        <item ><FONT COLOR="#006600">Playback Speed: <b>4x</b></FONT></item>
+        <item ><FONT COLOR="#e5e3e8">Playback Speed: <b>0.5x</b></FONT></item>
+        <item ><FONT COLOR="#e5e3e8">Playback Speed: <b>1x</b></FONT></item>
+        <item ><FONT COLOR="#e5e3e8">Playback Speed: <b>2x</b></FONT></item>
+        <item ><FONT COLOR="#e5e3e8">Playback Speed: <b>4x</b></FONT></item>
     </string-array>
     <string name="banner_ad_unit_id">ca-app-pub-8728399283300475/2998948297</string>
 </resources>

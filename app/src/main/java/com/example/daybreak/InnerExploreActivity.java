@@ -122,6 +122,7 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         endTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopPlayer();
                 finish();
             }
         });
