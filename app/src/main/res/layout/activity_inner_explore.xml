@@ -111,7 +111,7 @@
                 android:layout_height="34dp"
                 android:layout_gravity="right"
                 android:layout_marginRight="5dp"
-                android:layout_marginTop="-40dp"
+                android:layout_marginTop="-35dp"
                 android:background="@drawable/spinner_border"
                 android:orientation="horizontal">
 
@@ -139,7 +139,7 @@
                 android:layout_width="121dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="-15dp"
                 android:text="5 min single"
                 android:textStyle="italic" />
 
