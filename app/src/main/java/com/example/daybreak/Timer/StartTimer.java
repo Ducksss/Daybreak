@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -33,7 +34,6 @@ public class StartTimer extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_timer_selection, container, false);
 
-        Button button = view.findViewById(R.id.sendData1btn);
         textView = view.findViewById(R.id.timerTextView);
         numberPicker = view.findViewById(R.id.minutes_numberSpinner);
         numberPicker.setMinValue(1);
@@ -45,7 +45,14 @@ public class StartTimer extends Fragment {
                 textView.setText(String.format("Focus Time: %s Minutes", i1));
             }
         });
-
+        //end Button
+        ImageView endTimer = view.findViewById(R.id.selection_back_button);
+        endTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
         return view;
     }
 
@@ -65,9 +72,6 @@ public class StartTimer extends Fragment {
         });
     }
 
-    //REPLACES FRAGMENT WITH THE NEXT FRAGMENT
-    // Note that getting activity before parent class activity is mandatory or binding does not occur
-    // Also not that though it is an entirely lifecycle, retracting from lifecycle is possible
     private void replaceFragment(Fragment fragment) {
 
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

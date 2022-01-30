@@ -20,8 +20,6 @@ import com.example.daybreak.R;
 
 public class TimerActivity extends AppCompatActivity {
 
-    Button firstFragmentBtn, secondFragmentBtn;
-    TextView FragmentText;
     private ItemViewModel viewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

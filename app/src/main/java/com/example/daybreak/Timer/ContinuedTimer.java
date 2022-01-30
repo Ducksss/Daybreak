@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -32,7 +33,6 @@ import java.util.Locale;
 
 public class ContinuedTimer extends Fragment {
     View view;
-    TextView textView;
     TextView tv;
     ItemViewModel viewModel;
     private static final long START_TIME_IN_MILLIS = 600000;
@@ -72,7 +72,7 @@ public class ContinuedTimer extends Fragment {
 
         viewModel = new ViewModelProvider(requireActivity()).get(ItemViewModel.class);
 
-        Button button = view.findViewById(R.id.timer_back_button);
+        ImageView button = view.findViewById(R.id.timer_back_button);
         button.setOnClickListener(new View.OnClickListener() {
             //Back Button
             @Override
@@ -102,7 +102,6 @@ public class ContinuedTimer extends Fragment {
     }
 
     private void replaceFragment(Fragment fragment) {
-
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout, fragment);

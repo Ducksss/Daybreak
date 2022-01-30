@@ -24,7 +24,7 @@ public class StartTimer extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_start_timer, container, false);
+        View v = inflater.inflate(R.layout.fragment_timer_selection, container, false);
 
         editText = v.findViewById(R.id.edit_text);
         buttonOk = v.findViewById(R.id.button_ok);

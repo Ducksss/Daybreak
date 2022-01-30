@@ -27,6 +27,7 @@ public class EndTimer extends Fragment {
     private SharedPreferences.Editor loginPrefsEditor;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_timer_end, container, false);
         timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);

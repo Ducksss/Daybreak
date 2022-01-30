@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
 import android.widget.ImageView;
@@ -77,6 +76,7 @@ public class AutoCompleteSearchAdapter extends ArrayAdapter<SearchItem> {
 
     private Filter searchFilter = new Filter() {
 
+        // filters using title of card
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults results = new FilterResults();

@@ -57,13 +57,12 @@
         android:textColor="@color/complementaryColor1"
         app:cornerRadius="100dp" />
 
-    <Button
+    <ImageView
         android:id="@+id/timer_back_button"
-        android:layout_width="42dp"
-        android:layout_height="37dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_below="@id/dataFrom1"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="-141dp"
-        android:background="@drawable/ic_baseline_arrow_back_ios_24"
-        android:backgroundTint="@color/grey" />
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 </RelativeLayout>
