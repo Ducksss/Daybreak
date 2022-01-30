@@ -3,6 +3,7 @@ package com.example.daybreak;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
@@ -140,7 +141,8 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // Converts labels to readable value (position get at playback speed label)
         String text = getResources().getStringArray(R.array.playback_speed)[position];
-
+        // Changes text size, can't do it non programatically/hard to do
+        ((TextView) parent.getChildAt(0)).setTextSize(13);
         if (text.equals("1x")) {
             player.setPlaybackParams(player.getPlaybackParams().setSpeed(1f));
         } else if (text.equals("2x")) {
