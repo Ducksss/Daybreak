@@ -133,7 +133,6 @@ public class InnerExploreActivity extends AppCompatActivity implements AdapterVi
         if (player != null) {
             player.release();
             player = null;
-            Toast.makeText(this, "MediaPlayer released", Toast.LENGTH_SHORT).show();
         }
     }
 
