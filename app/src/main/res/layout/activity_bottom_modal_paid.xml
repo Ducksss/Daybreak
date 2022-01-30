@@ -58,7 +58,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/confirm_payment_button"
+            android:id="@+id/payment_done_button"
             style="@style/Widget.DayBreak.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

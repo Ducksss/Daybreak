@@ -130,7 +130,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                                                    @Override
                                                    public void onComplete(@NonNull Task<AuthResult> task) {
                                                        if (task.isSuccessful()) {
-                                                           User user = new User(username_text_input_string, email_text_input_string, contact_number_text_input_string, password_text_input_string, new Date());
+                                                           User user = new User(username_text_input_string, email_text_input_string, contact_number_text_input_string, password_text_input_string, false);
 
                                                            // Firebase table
                                                            FirebaseDatabase rootNode = FirebaseDatabase.getInstance("https://daybreak-b9a84-default-rtdb.asia-southeast1.firebasedatabase.app");
