@@ -115,7 +115,7 @@ public class FirstFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
                 intent.putExtra("Title", "Mind Before Matter");
                 intent.putExtra("Subtitle", "SecondKeyValue");
-                intent.putExtra("background", R.drawable.background_image_1);
+                intent.putExtra("Background", R.drawable.background_image_1);
                 intent.putExtra("Description", "mind before matter.\n" +
                         "\n" +
                         "You can't force my decisions.\n" +

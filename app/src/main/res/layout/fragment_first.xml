@@ -86,6 +86,7 @@
 
                         <!-- Media -->
                         <ImageView
+                            android:id="@+id/weekly_recommendation_background_image"
                             android:layout_width="match_parent"
                             android:layout_height="300dp"
                             android:contentDescription="Calm background image"
