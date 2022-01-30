@@ -106,12 +106,33 @@
                 android:text="Self Discipline"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/playback_spinner"
-                android:layout_width="200dp"
+            <RelativeLayout
+                android:layout_width="210dp"
                 android:layout_height="34dp"
                 android:layout_gravity="right"
-                android:layout_marginTop="-40dp" />
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="-40dp"
+                android:background="@drawable/spinner_border"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/playback_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="599dp"
+                    android:src="@drawable/ic_baseline_arrow_drop_down_24" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/inner_explore_subtitle"

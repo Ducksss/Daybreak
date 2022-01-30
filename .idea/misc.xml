@@ -8,6 +8,8 @@
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_explore_24.xml" value="0.3828125" />
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/search_bar.xml" value="0.3828125" />
+        <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/spinner_border.xml" value="0.3828125" />
+        <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/drawable/spinner_text.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_inner_explore.xml" value="0.24625" />
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
@@ -31,7 +33,11 @@
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/fragment_timer_selection.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/search_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/search_recycleritem.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/spinner_text.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/spinnner_dropdown.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Matthew Chan/AndroidStudioProjects/Daybreak/app/src/main/res/layout/videoview_recycleritem.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Matthew Chan/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Matthew Chan/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_item.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/rounded_button.xml" value="0.26614583333333336" />
         <entry key="..\:/Users/Matthew Chan/StudioProjects/Daybreak/app/src/main/res/drawable/rounded_corner_view.xml" value="0.26614583333333336" />
@@ -137,5 +143,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.24625" />
+      </ProjectState>
+    </option>
   </component>
 </project>
