@@ -48,7 +48,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="24dp"
             android:paddingHorizontal="24dp"
-            android:text="We are so proud of you! You managed to put down your phone and remained focus! That is very Impressive, keep it up"
+            android:text="We are so proud of you! You managed to put down your phone and remain focus! That is very Impressive!\n\nKeep it up!"
             android:textColor="@color/black"
             android:textSize="16dp" />
 
@@ -88,7 +88,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="100dp"
+                        android:layout_marginTop="75dp"
                         android:layout_marginBottom="10dp"
                         android:fontFamily="@font/roboto_bold"
                         android:text="13 Times"
