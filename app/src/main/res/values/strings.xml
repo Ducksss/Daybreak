@@ -36,6 +36,19 @@
     <string name="meditation_series_title">Meditation Series</string>
     <string name="meditation_series_subtitle">Go deeper into meditation</string>
 
+    <!-- meditation series page -->
+    <string name="meditation_series_title_1">Sunrise Vibe</string>
+    <string name="meditation_series_duration_1">1 Hour • Singles</string>
+    <string name="meditation_series_description_1">The day had begun on a bright note. The sun finally peeked through the rain for the first time in a week, and the birds were singing in its warmth. There was no way to anticipate what was about to happen. It was a worst-case scenario and there was no way out of it.</string>
+
+    <string name="meditation_series_title_2">Doors of Life</string>
+    <string name="meditation_series_duration_2">2 Hour • Singles</string>
+    <string name="meditation_series_description_2">Devon couldn\'t figure out the color of her eyes. He initially would have guessed that they were green, but the more he looked at them he almost wanted to say they were a golden yellow. Then there were the flashes of red and orange that seemed to be streaked throughout them. It was almost as if her eyes were made of opal with the sun constantly glinting off of them and bringing out more color. They were definitely the most unusual pair of eyes he\'d ever seen.</string>
+
+    <string name="meditation_series_title_3">The Night Sky</string>
+    <string name="meditation_series_duration_3">15 Min • Singles</string>
+    <string name="meditation_series_description_3">It was a weird concept. Why would I really need to generate a random paragraph? Could I actually learn something from doing so? All these questions were running through her head as she pressed the generate button. To her surprise, she found what she least expected to see.</string>
+
     <!-- Selected mix page -->
     <string name="selected_mix_title_1">Spring Ambience (Seasonal Sensation Series)</string>
     <string name="selected_mix_duration_1">20 Min • Series</string>
