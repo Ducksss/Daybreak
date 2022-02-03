@@ -1,9 +1,12 @@
 package com.example.daybreak.ui.explore;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -45,11 +48,17 @@ public class ExploreFragment extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager2.setCurrentItem(tab.getPosition());
+
+                LinearLayout tabLayoutChild = (LinearLayout)((ViewGroup) tabLayout.getChildAt(0)).getChildAt(tab.getPosition());
+                TextView tabTextView = (TextView) tabLayoutChild.getChildAt(1);
+                tabTextView.setTypeface(tabTextView.getTypeface(), Typeface.BOLD);
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-
+                LinearLayout tabLayoutChild = (LinearLayout)((ViewGroup) tabLayout.getChildAt(0)).getChildAt(tab.getPosition());
+                TextView tabTextView = (TextView) tabLayoutChild.getChildAt(1);
+                tabTextView.setTypeface(null, Typeface.NORMAL);
             }
 
             @Override
