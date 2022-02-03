@@ -60,17 +60,29 @@
                 android:scaleX="-1" />
         </RelativeLayout>
 
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:id="@+id/sendData1btn"-->
+<!--            android:layout_width="200dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="121dp"-->
+<!--            android:backgroundTint="@color/light_green"-->
+<!--            android:text="End Focus"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="@color/white"-->
+<!--            app:cornerRadius="100dp" />-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sendData1btn"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="121dp"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/light_green"
+            android:paddingHorizontal="40dp"
             android:text="End Focus"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            app:cornerRadius="100dp" />
+            android:textStyle="italic" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
