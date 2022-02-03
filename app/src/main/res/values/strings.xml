@@ -20,8 +20,11 @@
     <string name="signup_text">Sign up to continue</string>
     <string name="remember_me_checkbox">Remember me</string>
 
-    <!-- Home page -->
+    <!-- Email verification page -->
+    <string name="verify_email_title">Please Verify Your Email\nAddress</string>
+    <string name="verify_email_subtitle">We have sent a verification email to\n your email address. Please verify your email\nto login into the app.</string>
 
+    <!-- Home page -->
 
     <!-- Explore page -->
     <string name="weekly_recommendation_title">Weekly Recommendation:</string>
@@ -32,6 +35,51 @@
     <string name="single_practice_subtitle">Slow down, energy up</string>
     <string name="meditation_series_title">Meditation Series</string>
     <string name="meditation_series_subtitle">Go deeper into meditation</string>
+
+    <!-- Selected mix page -->
+    <string name="selected_mix_title_1">Spring Ambience (Seasonal Sensation Series)</string>
+    <string name="selected_mix_duration_1">20 Min • Series</string>
+    <string name="selected_mix_description_1">It\'s spring with tulips. Tulips are in full bloom in the creek garden. Everyone be happy to see tulips swaying gently in the spring breeze.</string>
+
+    <string name="selected_mix_title_2">Summer Ambience (Seasonal Sensation Series)</string>
+    <string name="selected_mix_duration_2">20 Min • Series</string>
+    <string name="selected_mix_description_2">Enjoy this lazy summer afternoon ambience with 8 hours of gentle river and bird sounds for relaxation, meditation, reading, or studying. Let your shoulders soften and take a few deep breaths as you settle into this peaceful summer day in the countryside. Watch the butterflies dance through the swaying grass beneath the rustling leaves as a river gently flows by. Listen to the gentle sounds of rippling water, singing birds, and a soft summer breeze.</string>
+
+    <string name="selected_mix_title_3">Autumn Ambience (Seasonal Sensation Series)</string>
+    <string name="selected_mix_duration_3">20 Min • Series</string>
+    <string name="selected_mix_description_3">Enjoy this cozy fall coffee shop bookstore ambience with relaxing rain sounds and jazz music for studying, relaxation, and sleep. It\'s a rainy autumn night and you’re at your favorite bookstore. Watch falling leaves and listen to the soothing sounds of heavy rain, smooth jazz, and ambient coffee shop noise including soft conversation and gentle clinks of dishes. This dimly lit late night cafe ASMR ambience is perfect for improved focus for work, reading, or studying, or to help with relaxation, meditation, and sleeping.</string>
+
+    <string name="selected_mix_title_4">Winter Ambience (Seasonal Sensation Series)</string>
+    <string name="selected_mix_duration_4">20 Min • Series</string>
+    <string name="selected_mix_description_4">Sit back and relax on a cozy porch in the winter mountains while admiring lots of beautiful falling snow. You can warm up and fall asleep to the sound of a crackling fireplace or read a book and study. Enjoy cozy beautiful winter in snowy mountains.</string>
+
+    <string name="selected_mix_title_5">River and Rainforest sounds for relaxation (Sounds of Nature)</string>
+    <string name="selected_mix_duration_5">10 Hours • Series</string>
+    <string name="selected_mix_description_5">This video features 10 Hours of rain sounds for sleep or for studying. A white noise sound, like jungle rain, effectively blocks out distracting noises. It\'s calming to listen to a rain storm inside the warmth of a home, school or office, while envisioning it raining heavily outside. Rainy weather truly provides a great sleep noise and relaxing study sounds.</string>
+
+    <string name="selected_mix_title_6">Beach and seaside sounds for relaxation (Sounds of Nature)</string>
+    <string name="selected_mix_duration_6">11 Hours • Series</string>
+    <string name="selected_mix_description_6">A wonderful experience of sleeping beside the ocean with waves rolling next to your bed. High quality stereo ocean sounds, better than any sleep music will provide a great relaxing atmosphere for deep sleeping. All you need to do is playing this video and listen to the waves. All of you sleepyheads will enjoy the full 11 hours of sleep, just make yourself comfortable in bed, close your eyes and think about this place. You may also play any sleep music you like or just leave the sounds of the waves. Sweet dreams!</string>
+
+    <string name="selected_mix_title_7">Mellow city night sounds for relaxation (Sounds of Nature)</string>
+    <string name="selected_mix_duration_7">10 Hours • Series</string>
+    <string name="selected_mix_description_7">City soundscape of Midtown New York City in binaural audio. This is a view of 33rd street from my hotel room in the evening. The audio is not looped and recorded on location. This recording features sirens, construction,  people, traffic sounds, and more. Sounds can be used for sleep, study or entertainment. There\'s also a bit of white noise. Thank you for your support. Enjoy!</string>
+
+    <string name="selected_mix_title_8">Introduction to Astronomy [ASMR] (Smart Sleepers Collection)</string>
+    <string name="selected_mix_duration_8">1 Hour • Series</string>
+    <string name="selected_mix_description_8">Astronomy has unlocked much of the cosmos. Let\'s find out the basic discoveries, epiphanies, and deductions that will help us average folk understand the Universe more deeply. Thanks for watching.</string>
+
+    <string name="selected_mix_title_9">French History [ASMR] (Smart Sleepers Collection)</string>
+    <string name="selected_mix_duration_9">1 Hour • Series</string>
+    <string name="selected_mix_description_9">I will include the Napoleonic Wars into the story, until 1815. As an introduction, I discuss the various interpretations of the Revolution that co-existed over the past 2 centuries. I hope you will find it informative. Take care.</string>
+
+    <string name="selected_mix_title_10">Mathametics [ASMR] (Smart Sleepers Collection)</string>
+    <string name="selected_mix_duration_10">1 Hour • Series</string>
+    <string name="selected_mix_description_10">Solving relaxing and brain-tingling maths problems in ASMR to help you sleep and get tingles! From integration, to statistics and geometry - join me as I try some ASMR Maths!</string>
+
+    <!-- Selected stories page -->
+    <string name="cinderella_description">When Cinderella\'s dream of attending the Royal Ball and meeting the Grand Duke is hindered by her cruel stepmother, she gets some astounding help from her Fairy Godmother.</string>
+    <string name="jack_and_the_beanstalk_description">A children\'s story. Jack, a poor country boy, trades the family cow for a handful of magic beans, which grow into an enormous beanstalk reaching up into the clouds. Jack climbs the beanstalk and finds himself in the castle of an unfriendly giant</string>
 
     <!-- Navigation bar -->
     <string name="title_home">Home</string>
@@ -136,10 +184,12 @@
         <item>2x</item>
         <item>4x</item>
     </string-array>
-    <string-array name="playback_speed_labels" >
-        <item ><FONT COLOR="#e5e3e8">Playback Speed: <b>0.5x</b></FONT></item>
-        <item ><FONT COLOR="#e5e3e8">Playback Speed: <b>1x</b></FONT></item>
-        <item ><FONT COLOR="#e5e3e8">Playback Speed: <b>2x</b></FONT></item>
-        <item ><FONT COLOR="#e5e3e8">Playback Speed: <b>4x</b></FONT></item>
+    <string-array name="playback_speed_labels">
+        <item><FONT COLOR="#e5e3e8">Playback Speed: <b>0.5x</b></FONT></item>
+        <item><FONT COLOR="#e5e3e8">Playback Speed: <b>1x</b></FONT></item>
+        <item><FONT COLOR="#e5e3e8">Playback Speed: <b>2x</b></FONT></item>
+        <item><FONT COLOR="#e5e3e8">Playback Speed: <b>4x</b></FONT></item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

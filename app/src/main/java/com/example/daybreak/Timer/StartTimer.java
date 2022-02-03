@@ -23,6 +23,7 @@ public class StartTimer extends Fragment {
     ItemViewModel viewModel;
     TextView textView;
     NumberPicker numberPicker;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,15 +35,16 @@ public class StartTimer extends Fragment {
         textView = view.findViewById(R.id.timerTextView);
         numberPicker = view.findViewById(R.id.minutes_numberSpinner);
         numberPicker.setMinValue(1);
-        numberPicker.setMaxValue(60);
+        numberPicker.setMaxValue(120);
+
         textView.setText(String.format("0%s:00", numberPicker.getValue()));
         numberPicker.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
             public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-                if(i1 <10){
+                if (i1 < 10) {
                     textView.setText(String.format("0%s:00", i1));
 
-                }else{
+                } else {
                     textView.setText(String.format("%s:00", i1));
                 }
             }
@@ -65,9 +67,9 @@ public class StartTimer extends Fragment {
         viewModel = new ViewModelProvider(requireActivity()).get(ItemViewModel.class);
 
         Button button = view.findViewById(R.id.sendData1btn);
-        button.setOnClickListener(new View.OnClickListener(){
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 viewModel.setData(Integer.toString(numberPicker.getValue()));
                 replaceFragment(new ContinuedTimer());
             }
@@ -78,7 +80,7 @@ public class StartTimer extends Fragment {
 
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
 
     }

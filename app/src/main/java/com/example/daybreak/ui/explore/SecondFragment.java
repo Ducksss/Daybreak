@@ -26,12 +26,8 @@ public class SecondFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private RecyclerView singlePracticeRecyclerView;
-    private RecyclerView meditationSeriesRecyclerView;
-    private RecyclerView forYouSeriesRecyclerView;
-    private ArrayList<RecyclerExploreCardItem> singlePracticeItems = new ArrayList<>();
-    private ArrayList<RecyclerExploreCardItem> meditationSeriesItems = new ArrayList<>();
-    private ArrayList<RecyclerExploreLongCardItem> forYouSeriesItems = new ArrayList<>();
+    private RecyclerView specialisedRecyclerview;
+    private ArrayList<RecyclerExploreCardItem> specialisedContentItem = new ArrayList<>();
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -81,48 +77,33 @@ public class SecondFragment extends Fragment {
 
     private void bindPodCastData() {
         // SINGLE SERIES
-        singlePracticeItems.add(new RecyclerExploreCardItem("Cloud", "10 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_4), R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        singlePracticeItems.add(new RecyclerExploreCardItem("Sedentary", "5-15 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_2), R.drawable.calm_background_2, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        singlePracticeItems.add(new RecyclerExploreCardItem("Morning Planning", "5-10 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_3), R.drawable.calm_background_3, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        singlePracticeItems.add(new RecyclerExploreCardItem("Insomnia", "5-15 Min • Singles", getActivity().getDrawable(R.drawable.background_image_1), R.drawable.background_image_1, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        singlePracticeItems.add(new RecyclerExploreCardItem("Work Burnout", "5-10 Min • Singles", getActivity().getDrawable(R.drawable.background_image_2), R.drawable.background_image_2, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        singlePracticeItems.add(new RecyclerExploreCardItem("Falling Asleep", "5 Min • Singles", getActivity().getDrawable(R.drawable.background_image_3), R.drawable.background_image_3, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-
-        // MEDITATION SERIES
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Dreamland", "10 Min • Singles", getActivity().getDrawable(R.drawable.background_image_3), R.drawable.background_image_3, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Fantasyland", "5-10 Min • Singles", getActivity().getDrawable(R.drawable.background_image_2), R.drawable.background_image_2, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Morning Exercise", "5 Min • Singles", getActivity().getDrawable(R.drawable.background_image_1), R.drawable.background_image_1, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Healthy Eating", "10 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_3), R.drawable.calm_background_3, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Happiness", "5-15 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_2), R.drawable.calm_background_2, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        meditationSeriesItems.add(new RecyclerExploreCardItem("Coping With Stress", "5-15 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_4), R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-
-        // SELECTED MIX
-
-        // SELECTED STORY
-
-
-        // FOR YOU
-        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Steps", "Slow down your pace, feel the wonderful coordination of your body, and meet your own true self.", getActivity().getDrawable(R.drawable.calm_background_4), new String[]{"Meditation", "Melody", "Nature"}, R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Street", "I know this one the best. I think of the streets in Japan, which are quiet and full of lovely shops. I want this alarm!", getActivity().getDrawable(R.drawable.calm_background_1), new String[]{"Nature", "Sleep", "Performance"}, R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Lighthouse", "As I inhale the impalpable breeze that set in upon me, the ocean mysterious rolls toward me closer and closer.", getActivity().getDrawable(R.drawable.calm_background_3), new String[]{"Nature", "Meditation"}, R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
-        forYouSeriesItems.add(new RecyclerExploreLongCardItem("Library", "Close the book, still feeling what it was like to dwell in that light.", getActivity().getDrawable(R.drawable.calm_background_2), new String[]{"Performance", "Stress"}, R.drawable.calm_background_4, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
+        specialisedContentItem.add(new RecyclerExploreCardItem("Fantasyland", "5-10 Min • Singles", getActivity().getDrawable(R.drawable.background_image_3), R.drawable.background_image_3, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
+        specialisedContentItem.add(new RecyclerExploreCardItem("Healthy Eating", "10 Min • Singles", getActivity().getDrawable(R.drawable.calm_background_3), R.drawable.calm_background_3, "Sedentary relatives who watch TV and eat the worst, indeed eat what is often labeled as \"healthy,\" \"good,\" or \"diet\" foods do the most harm to a family's health. \"Sedentary living and eating promotes the development and accumulation of age-related disease,\" wrote Dr. Douglas Denzer"));
+        specialisedContentItem.add(new RecyclerExploreCardItem("Zen Mediation", "30 Min • Singles", getActivity().getDrawable(R.drawable.image_5), R.drawable.image_5, "Use our Zen music for meditation as calming music to bring soothing relaxation and healing to your body-mind. Through our meditation music, we hope you can experience true fulfilment and stress relief. This peaceful music, enhanced with binaural beats, is ideal relaxing music for autogenic practice and can be used as stress relief music or peaceful music when practicing meditation for anxiety during quarantine.  Our relaxing music is gentle piano music used for healing meditation, as healing music or as ambient music, perfect for meditation or relaxation."));
+        specialisedContentItem.add(new RecyclerExploreCardItem("Relaxing with Japanese Instruments", "3 Hours • Singles", getActivity().getDrawable(R.drawable.image_6), R.drawable.image_6, "Relaxing With Japanese Bamboo Flute , Guzheng, Erhu | Musical Instrument Collection"));
+        specialisedContentItem.add(new RecyclerExploreCardItem("Lofi hip hop to study to", "1 Hour • Singles", getActivity().getDrawable(R.drawable.image_7), R.drawable.image_7, "This playlist contains the smoothest lofi hip hop beats, perfect to help you chill or fall asleep"));
+        specialisedContentItem.add(new RecyclerExploreCardItem("Rain Relaxation", "15 Min • Singles", getActivity().getDrawable(R.drawable.image_8), R.drawable.image_8, "Gentle Rain at night for Sleep, Insomnia, Study, Relax. Gentle Night Rain Sounds (No Music, No Thunder) Gentle Rain for 3 Hours with a Dark Screen - the Rain is just visible. Highly recommended for Sleeping and insomnia. Also ideal for Relaxing or Studying. Light Rain works well for Reducing Stress or Anxiety. Gentle Rain to Block Noise, Help Baby Sleep, Relax Pets, Improve Focus, Meditate, Sleep Instantly, Sleep Immediately, Sleep Fast, Sleep without Waking. Share with family & friends to help them feel better too. Enjoy the Gentle Rain..."));
     }
 
     public void bindSinglePracticeItems(View view) {
         // SINGLE SERIES
-        singlePracticeRecyclerView = view.findViewById(R.id.selected_podcasts);
+        specialisedRecyclerview = view.findViewById(R.id.specialised_recyclerview);
         // Set Layout Manager to RecyclerView
-        singlePracticeRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        specialisedRecyclerview.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         //Create adapter
-        RecyclerExploreCardAdapter myRecyclerViewAdapter = new RecyclerExploreCardAdapter(singlePracticeItems, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
+        RecyclerExploreCardAdapter myRecyclerViewAdapter = new RecyclerExploreCardAdapter(specialisedContentItem, new RecyclerExploreCardAdapter.MyRecyclerViewItemClickListener() {
             //Handling clicks
             @Override
-            public void onItemClicked(RecyclerExploreCardItem country) {
+            public void onItemClicked(RecyclerExploreCardItem item) {
                 Intent intent = new Intent(getActivity(), InnerExploreActivity.class);
-
+                intent.putExtra("Title", item.getTitle());
+                intent.putExtra("Subtitle", item.getSubtitle());
+                intent.putExtra("Background", item.getDrawableID());
+                intent.putExtra("Description", item.getInnerContent());
                 startActivity(intent);
             }
         });
-        singlePracticeRecyclerView.setAdapter(myRecyclerViewAdapter);
+
+        specialisedRecyclerview.setAdapter(myRecyclerViewAdapter);
     }
 }

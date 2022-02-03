@@ -36,11 +36,10 @@ public class ExploreFragment extends Fragment {
         viewPager2.setAdapter(adapter);
 
         tabLayout.addTab(tabLayout.newTab().setText("Explore"));
-        tabLayout.addTab(tabLayout.newTab().setText("Meditation"));
         tabLayout.addTab(tabLayout.newTab().setText("Single Series"));
+        tabLayout.addTab(tabLayout.newTab().setText("Meditation"));
         tabLayout.addTab(tabLayout.newTab().setText("Selected Mix"));
         tabLayout.addTab(tabLayout.newTab().setText("Selected Story"));
-        tabLayout.addTab(tabLayout.newTab().setText("Delta2"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

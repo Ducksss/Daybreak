@@ -31,21 +31,23 @@
             android:src="@drawable/ic_baseline_email_24" />
 
         <TextView
+            android:id="@+id/verify_email_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
-            android:text="Please Verify Your Email\nAddress"
+            android:text="@string/verify_email_title"
             android:textAlignment="center"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/verify_email_subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="We have sent a verification email to\n your email address. Please verify your email\nto login into the app."
+            android:text="@string/verify_email_subtitle"
             android:textAlignment="center" />
 
         <com.google.android.material.button.MaterialButton

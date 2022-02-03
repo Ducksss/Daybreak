@@ -15,10 +15,14 @@ public class ExploreFragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position) {
-            case 1:
-                return new SecondFragment();
             case 2:
+                return new SecondFragment();
+            case 1:
                 return new ThirdFragment();
+            case 3:
+                return new FourthFragment();
+            case 4:
+                return new FifthFragment();
             default:
                 return new FirstFragment();
         }
@@ -26,6 +30,6 @@ public class ExploreFragmentAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 5;
     }
 }
