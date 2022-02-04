@@ -254,10 +254,10 @@ public class NotificationsFragment extends Fragment {
             timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
             loginPrefsEditor = timerPreferences.edit();
             TextView tv = view.findViewById(R.id.focus_description);
-            tv.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) + " Times");
+            tv.setText(Integer.toString(timerPreferences.getInt("focusamount", 0)) + " Times");
             // Check if threshold is met
             if (true) {
-                loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0) + 0);
+                loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0));
             } else {
                 loginPrefsEditor.clear();
             }

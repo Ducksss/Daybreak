@@ -23,6 +23,7 @@ public class EndTimer extends Fragment {
     TextView timerCount;
     private SharedPreferences timerPreferences;
     private SharedPreferences.Editor loginPrefsEditor;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -31,10 +32,10 @@ public class EndTimer extends Fragment {
         timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);
         loginPrefsEditor = timerPreferences.edit();
         timerCount = view.findViewById(R.id.timer_count);
-        timerCount.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) +" Times");
+        timerCount.setText(Integer.toString(timerPreferences.getInt("focusamount", 0) + 1) + " Times");
         // Check if threshold is met
         if (true) {
-            loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0)+1);
+            loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0) + 1);
         } else {
             loginPrefsEditor.clear();
         }
@@ -42,14 +43,15 @@ public class EndTimer extends Fragment {
 
         return view;
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         Button homeButton = view.findViewById(R.id.timer_home_button);
-        homeButton.setOnClickListener(new View.OnClickListener(){
+        homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 Intent i = new Intent(getActivity().getApplicationContext(), MainActivity.class);
                 startActivity(i);
             }
