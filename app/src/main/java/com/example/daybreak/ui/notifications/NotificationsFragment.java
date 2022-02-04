@@ -224,7 +224,7 @@ public class NotificationsFragment extends Fragment {
             anyChartView.setProgressBar(view.findViewById(R.id.progress_bar));
 
             Pie pie = AnyChart.pie();
-            pie.palette(new String[]{"#ffd505", "#ff7e05"});
+            pie.palette(new String[]{"#8CE6BE", "#8DBEB5"});
             pie.data(pieChartData);
 
             anyChartView.setChart(pie);
@@ -248,7 +248,7 @@ public class NotificationsFragment extends Fragment {
             cartesian.yAxis(0).labels().format("{%Value}{groupsSeparator: } Hrs");
             cartesian.tooltip().positionMode(TooltipPositionMode.POINT);
             cartesian.interactivity().hoverMode(HoverMode.BY_X);
-            cartesian.palette(new String[]{"#ff7e05", "#ff7e05"});
+            cartesian.palette(new String[]{"#97C4BB", "#E26D5C"});
             anyChartView1.setChart(cartesian);
 
             timerPreferences = this.getActivity().getSharedPreferences("loginPrefs", Context.MODE_PRIVATE);

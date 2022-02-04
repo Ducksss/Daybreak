@@ -108,17 +108,17 @@
                     android:layout_width="370dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
                     android:background="@color/black"
                     ads:cardBackgroundColor="@color/lightGrey"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="1dp"
-                    android:layout_marginBottom="10dp">
+                    app:cardElevation="1dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginHorizontal="15dp">
+                        android:layout_marginHorizontal="15dp"
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -137,12 +137,12 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/aguafina_script"
-                                android:layout_marginLeft="5dp"
                                 android:text="Daybreak"
-                                android:textSize="20dp"
                                 android:textColor="#b2905f"
+                                android:textSize="20dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -221,11 +221,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="13dp"
-                        android:layout_marginTop="10dp"
                         android:background="@color/white"
                         android:gravity="start"
+                        android:layout_marginTop="7.5dp"
                         android:text="Total Hours"
-                        android:textColor="@color/orange" />
+                        android:textColor="#16302B"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -272,7 +274,9 @@
                             android:background="@color/white"
                             android:gravity="start"
                             android:text="Focus Time"
-                            android:textColor="@color/orange" />
+                            android:textColor="#16302B"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/focus_description"
@@ -314,7 +318,9 @@
                             android:background="@color/white"
                             android:gravity="start"
                             android:text="Day Streak"
-                            android:textColor="@color/orange" />
+                            android:textColor="#16302B"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/streak_max"
@@ -368,7 +374,9 @@
                         android:background="@color/white"
                         android:gravity="start"
                         android:text="Total Hours"
-                        android:textColor="@color/orange" />
+                        android:textColor="#16302B"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
 
                     <com.anychart.AnyChartView
                         android:id="@+id/any_chart_view"
