@@ -257,7 +257,7 @@ public class NotificationsFragment extends Fragment {
             tv.setText(Integer.toString(timerPreferences.getInt("focusamount", 1)) + " Times");
             // Check if threshold is met
             if (true) {
-                loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0) + 1);
+                loginPrefsEditor.putInt("focusamount", timerPreferences.getInt("focusamount", 0) + 0);
             } else {
                 loginPrefsEditor.clear();
             }
