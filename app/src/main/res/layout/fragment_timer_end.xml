@@ -34,8 +34,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
                 android:text=" amazing!"
-                android:textColor="@color/light_green"
+                android:textColor="#62A799"
+                android:shadowColor="@color/black"
                 android:textSize="26dp"
                 android:textStyle="italic" />
         </LinearLayout>
@@ -99,19 +101,19 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-<!--        <com.google.android.material.button.MaterialButton-->
-<!--            android:id="@+id/timer_home_button"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@+id/smaller_card_view"-->
-<!--            android:layout_marginHorizontal="24dp"-->
-<!--            android:layout_marginTop="68dp"-->
-<!--            android:backgroundTint="@color/light_green"-->
-<!--            android:elevation="10dp"-->
-<!--            android:text="Back to home page!"-->
-<!--            android:textAllCaps="false"-->
-<!--            android:textColor="@color/white"-->
-<!--            app:cornerRadius="100dp" />-->
+        <!--        <com.google.android.material.button.MaterialButton-->
+        <!--            android:id="@+id/timer_home_button"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_below="@+id/smaller_card_view"-->
+        <!--            android:layout_marginHorizontal="24dp"-->
+        <!--            android:layout_marginTop="68dp"-->
+        <!--            android:backgroundTint="@color/light_green"-->
+        <!--            android:elevation="10dp"-->
+        <!--            android:text="Back to home page!"-->
+        <!--            android:textAllCaps="false"-->
+        <!--            android:textColor="@color/white"-->
+        <!--            app:cornerRadius="100dp" />-->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/timer_home_button"
             android:layout_width="wrap_content"

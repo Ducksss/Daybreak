@@ -67,7 +67,7 @@
                 style="@style/Widget.DayBreak.Button.TextButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#007BFF"
+                android:backgroundTint="#6FAEA2"
                 android:fontFamily="@font/roboto"
                 android:padding="15dp"
                 android:text="@string/signin_button"
